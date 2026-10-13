@@ -18,6 +18,7 @@ export function LatihanBaca({
   onLulus,
   onGagal,
   onLewati,
+  label = rapikan,
 }: {
   compiled: CompiledSign | null
   sign?: Sign
@@ -26,6 +27,7 @@ export function LatihanBaca({
   onLulus: () => void
   onGagal: () => void
   onLewati: () => void
+  label?: (id: string) => string
 }) {
   const [benar, setBenar] = useState<boolean | null>(null)
   const [gagal, setGagal] = useState(0)
@@ -72,7 +74,7 @@ export function LatihanBaca({
             onClick={() => pilih(id)}
             className="tombol-sekunder justify-start text-left capitalize"
           >
-            {rapikan(id)}
+            {label(id)}
           </button>
         ))}
       </div>
@@ -83,7 +85,7 @@ export function LatihanBaca({
       {benar === null ? null : (
         <UmpanJawab
           benar={benar}
-          jawaban={rapikan(signId)}
+          jawaban={label(signId)}
           onLanjut={tutupLalu(onLulus)}
           onCobaLagi={() => setBenar(null)}
           onLewati={gagal >= ESCAPE_AFTER_FAILURES ? tutupLalu(onLewati) : undefined}
