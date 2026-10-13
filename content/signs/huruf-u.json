@@ -16,14 +16,15 @@
       "hold": 900,
       "easing": "ease-out",
       "dominant": {
-        "handshape": "l-shape",
+        "handshape": "u-thumb",
         "location": {
           "anchor": "ruang-netral",
           "offset": [0.2, 0.3, 0.05]
         },
         "orientation": {
           "palm": "forward",
-          "fingers": "up"
+          "fingers": "up",
+          "lean": -15
         }
       }
     },

@@ -1,20 +1,20 @@
 {
-  "id": "a-peak",
+  "id": "u-thumb",
   "label": {
-    "id": "telunjuk dan jempol membuka, telunjuk condong",
-    "en": "index and thumb open, index leaning"
+    "id": "telunjuk dan jempol tegak merenggang",
+    "en": "index and thumb up, spread"
   },
   "localName": null,
   "dialect": "bisindo-jakarta",
   "fingers": {
     "thumb": {
       "flex": [0, 0, 0],
-      "abduct": 0,
+      "abduct": 25,
       "oppose": 0
     },
     "index": {
-      "flex": [10, 0, 0],
-      "abduct": 25
+      "flex": [0, 0, 0],
+      "abduct": 0
     },
     "middle": {
       "flex": [90, 100, 70],
@@ -29,7 +29,7 @@
       "abduct": 0
     }
   },
-  "usedIn": ["huruf-a"],
+  "usedIn": ["huruf-u", "huruf-w"],
   "notes": "Kandidat anatomis untuk ejaan jari abjad, diturunkan dari klip HaiDokter × GERKATIN × PUSBISINDO.",
   "source": "candidate",
   "review": {
