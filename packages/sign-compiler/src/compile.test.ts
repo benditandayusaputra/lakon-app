@@ -355,6 +355,15 @@ describe('orientationQuat', () => {
     expect(index('left', 30).x).toBeLessThan(index('left', 0).x - 0.3)
     expect(index('right', -30).x).toBeLessThan(index('right', 0).x - 0.3)
   })
+
+  it('twist memutar telapak ke arah jempol, bercermin di tangan kiri', () => {
+    for (const side of ['left', 'right'] as const) {
+      const rest = new Quaternion().fromArray(rig.hands[side].restFrame)
+      const twisted = orientationQuat(side, { palm: 'forward', fingers: 'up', twist: 90 }, rest)
+      const palmIn = orientationQuat(side, { palm: 'in', fingers: 'up' }, rest)
+      expect(twisted.angleTo(palmIn)).toBeLessThan(1e-6)
+    }
+  })
 })
 
 describe('isyarat asimetris', () => {

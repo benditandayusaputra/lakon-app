@@ -234,8 +234,18 @@ export const orientationQuat = (
   normal.addScaledVector(forward, -forward.dot(normal)).normalize()
   const thumbSide = new Vector3().crossVectors(forward, normal).multiplyScalar(-lateralSign(side))
   const lean = toRad(orientation.lean ?? 0)
-  const leaned = forward.multiplyScalar(Math.cos(lean)).addScaledVector(thumbSide, Math.sin(lean))
-  return frameFromForwardNormal(leaned, normal).multiply(restFrame.clone().invert())
+  const twist = toRad(orientation.twist ?? 0)
+  const leaned = forward
+    .clone()
+    .multiplyScalar(Math.cos(lean))
+    .addScaledVector(thumbSide, Math.sin(lean))
+  const leanedThumb = thumbSide
+    .multiplyScalar(Math.cos(lean))
+    .addScaledVector(forward, -Math.sin(lean))
+  const twisted = normal
+    .multiplyScalar(Math.cos(twist))
+    .addScaledVector(leanedThumb, Math.sin(twist))
+  return frameFromForwardNormal(leaned, twisted).multiply(restFrame.clone().invert())
 }
 
 export const solveArm = (

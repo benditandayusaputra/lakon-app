@@ -165,14 +165,15 @@ describe('validateContent', () => {
     expect(issues.some((i) => i.path.includes('fingers.thumb.oppose'))).toBe(true)
   })
 
-  it('menerima kemiringan tangan dan menolak yang melewati 90 derajat', () => {
-    const miring = (lean: number) => {
+  it('menerima kemiringan dan putaran tangan, menolak yang melewati 90 derajat', () => {
+    const putar = (lean: number, twist: number) => {
       const isyarat = sign('halo')
-      isyarat.phases[0]!.dominant.orientation = { palm: 'in', fingers: 'up', lean } as never
+      isyarat.phases[0]!.dominant.orientation = { palm: 'in', fingers: 'up', lean, twist } as never
       return validateContent(content({ signs: { halo: isyarat } }))
     }
-    expect(miring(-40)).toEqual([])
-    expect(miring(120).some((i) => i.path.endsWith('orientation.lean'))).toBe(true)
+    expect(putar(-40, 50)).toEqual([])
+    expect(putar(120, 0).some((i) => i.path.endsWith('orientation.lean'))).toBe(true)
+    expect(putar(0, -120).some((i) => i.path.endsWith('orientation.twist'))).toBe(true)
   })
 })
 
