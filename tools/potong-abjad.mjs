@@ -6,21 +6,40 @@ const root = join(import.meta.dirname, '..')
 const sumber = process.argv[2] ?? join(root, 'content', 'BISINDO', 'Abjad_Bisindo.mp4')
 const tujuan = join(root, 'apps', 'web', 'public', 'peraga')
 
-// Detik kartu huruf A–Z berganti di video HaiDokter, ditambah akhir Z.
-const MULAI = [
-  1.07, 2.3, 3.47, 6.53, 7.87, 8.93, 10.6, 12.37, 13.93, 16.07, 17.4, 18.97, 20.77, 22.37, 24.2,
-  26.13, 28.43, 29.87, 32.07, 33.63, 34.93, 37.67, 38.87, 40.3, 41.87, 44.1, 46.0,
-]
-// Tangan penanda baru membentuk huruf sekitar 0,3 detik setelah kartunya muncul.
-const JEDA_TANGAN = 0.3
+// Detik saat tangan diam membentuk huruf; diukur dari gerak tangan, bukan kartu huruf yang kadang tertinggal.
+const TAHAN = {
+  a: [1.5, 2.37],
+  b: [3.17, 3.73],
+  c: [4.5, 5.47],
+  d: [6.27, 7.37],
+  e: [8.13, 9.1],
+  f: [9.8, 10.63],
+  g: [11.43, 12.47],
+  h: [13.17, 14.07],
+  i: [14.83, 15.83],
+  j: [16.8, 17.33],
+  k: [18.2, 19.07],
+  l: [19.77, 20.7],
+  m: [21.5, 22.57],
+  n: [23.17, 24.13],
+  o: [25.0, 25.87],
+  p: [26.67, 27.7],
+  q: [28.53, 29.47],
+  r: [30.27, 31.3],
+  s: [32.1, 33.13],
+  t: [33.9, 34.87],
+  u: [35.57, 36.8],
+  v: [37.53, 38.8],
+  w: [39.3, 39.73],
+  x: [40.4, 41.5],
+  y: [42.67, 43.47],
+  z: [44.47, 45.53],
+}
 const POTONG_DEKAT = 'crop=656:556:80:137,format=yuv420p'
 
 mkdirSync(tujuan, { recursive: true })
 
-for (let i = 0; i < 26; i++) {
-  const huruf = String.fromCharCode(97 + i)
-  const awal = MULAI[i] + JEDA_TANGAN
-  const akhir = MULAI[i + 1]
+for (const [huruf, [awal, akhir]] of Object.entries(TAHAN)) {
   execFileSync('ffmpeg', [
     ...['-v', 'error', '-y', '-ss', awal.toFixed(2), '-to', akhir.toFixed(2), '-i', sumber],
     ...['-vf', POTONG_DEKAT, '-an', '-c:v', 'libx264', '-preset', 'slow', '-crf', '23'],
