@@ -314,6 +314,23 @@ export function ScenarioPicker() {
             </div>
           </fieldset>
 
+          <Link
+            href="/abjad"
+            className="border-border-halus bg-kartu shadow-kartu hover:border-border-tegas rounded-kartu flex items-center gap-3 border-2 p-4 transition-colors"
+          >
+            <span
+              aria-hidden
+              className="bg-panggung text-halaman font-display flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-lg font-bold"
+            >
+              Aa
+            </span>
+            <span className="flex min-w-0 flex-1 flex-col">
+              <span className="font-bold">Abjad BISINDO</span>
+              <span className="text-teks-sekunder text-sm">Belajar 26 huruf, satu per satu.</span>
+            </span>
+            <ArrowRight aria-hidden size={16} className="text-aksen shrink-0" />
+          </Link>
+
           {siap && berikutnya ? (
             <div
               className="border-border-halus bg-kartu shadow-kartu rounded-kartu hidden flex-col gap-3 border p-4 xl:flex"

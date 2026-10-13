@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'lakon-v2'
+const CACHE_VERSION = 'lakon-v3'
 const HALAMAN_PRIBADI = ['/profil']
 const PAGE_CACHE = `${CACHE_VERSION}-pages`
 const ASSET_CACHE = `${CACHE_VERSION}-assets`
@@ -11,6 +11,7 @@ const PRECACHE_PAGES = [
   '/skenario/transportasi',
   '/skenario/wawancara-kerja',
   '/skenario/darurat',
+  '/abjad',
   '/masuk',
   '/daftar',
   '/api/content',
