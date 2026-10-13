@@ -12,6 +12,7 @@
     "check:signs": "node tools/check-signs.mjs",
     "check:content": "node tools/validate-content.mjs",
     "peraga": "node tools/encode-peraga.mjs",
+    "peraga:abjad": "node tools/potong-abjad.mjs",
     "typecheck": "tsc -b --pretty && pnpm --filter @lakon/web exec tsc --noEmit",
     "test": "vitest run",
     "e2e": "pnpm --filter @lakon/web e2e",
