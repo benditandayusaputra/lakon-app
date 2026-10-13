@@ -24,7 +24,7 @@
         "orientation": {
           "palm": "forward",
           "fingers": "up",
-          "lean": -15
+          "lean": -5
         }
       }
     },

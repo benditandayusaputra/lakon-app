@@ -1,0 +1,41 @@
+{
+  "id": "c-wide",
+  "label": {
+    "id": "jempol dan telunjuk membuka lebar C",
+    "en": "thumb and index wide C"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [0, 10, 0],
+      "abduct": 30,
+      "oppose": 10
+    },
+    "index": {
+      "flex": [0, 25, 15],
+      "abduct": 0
+    },
+    "middle": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "ring": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "pinky": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    }
+  },
+  "usedIn": ["huruf-d"],
+  "notes": "Kandidat anatomis untuk ejaan jari abjad, diturunkan dari klip HaiDokter × GERKATIN × PUSBISINDO.",
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

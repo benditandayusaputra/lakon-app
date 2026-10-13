@@ -16,10 +16,10 @@
       "hold": 900,
       "easing": "ease-out",
       "dominant": {
-        "handshape": "u-two",
+        "handshape": "v-two",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.3, 0.55, 0.1]
+          "offset": [0.3, 0.5, 0.1]
         },
         "orientation": {
           "palm": "back",
@@ -30,7 +30,7 @@
         "handshape": "index",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.05, 0.25, 0.1]
+          "offset": [0.05, 0.15, 0.1]
         },
         "orientation": {
           "palm": "in",
@@ -56,7 +56,7 @@
     }
   ],
   "contact": {
-    "activePart": "index-tip",
+    "activePart": "middle-tip",
     "passivePart": "nondominant-index-tip",
     "type": "touch"
   },

@@ -19,7 +19,7 @@
         "handshape": "index",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.3, 0.72, 0.12]
+          "offset": [0.2, 0.72, 0.12]
         },
         "orientation": {
           "palm": "down",

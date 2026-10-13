@@ -8,24 +8,24 @@
   "dialect": "bisindo-jakarta",
   "fingers": {
     "thumb": {
-      "flex": [30, 20, 0],
+      "flex": [40, 20, 10],
       "abduct": 0,
-      "oppose": 50
+      "oppose": 90
     },
     "index": {
-      "flex": [50, 60, 20],
+      "flex": [30, 80, 30],
       "abduct": 0
     },
     "middle": {
-      "flex": [0, 0, 0],
+      "flex": [0, 10, 5],
       "abduct": 10
     },
     "ring": {
-      "flex": [0, 0, 0],
+      "flex": [0, 10, 5],
       "abduct": 10
     },
     "pinky": {
-      "flex": [0, 0, 0],
+      "flex": [0, 10, 5],
       "abduct": 10
     }
   },

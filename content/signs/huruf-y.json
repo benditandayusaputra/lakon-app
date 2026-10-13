@@ -19,7 +19,7 @@
         "handshape": "index",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.35, 0.3, 0.12]
+          "offset": [0.35, 0.15, 0.12]
         },
         "orientation": {
           "palm": "down",
@@ -27,14 +27,15 @@
         }
       },
       "nonDominant": {
-        "handshape": "v-two",
+        "handshape": "u-thumb",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.08, 0.25, 0.1]
+          "offset": [0.12, 0.45, 0.1]
         },
         "orientation": {
           "palm": "forward",
-          "fingers": "up"
+          "fingers": "up",
+          "lean": -15
         }
       }
     },

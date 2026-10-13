@@ -7,47 +7,24 @@
   "dialect": "bisindo-jakarta",
   "structure": "dominant-only",
   "dominance": "right",
-  "duration": 2100,
+  "duration": 1900,
   "recognitionMode": true,
   "phases": [
     {
-      "name": "onset",
-      "duration": 500,
-      "hold": 250,
+      "name": "stroke",
+      "duration": 550,
+      "hold": 900,
       "easing": "ease-out",
       "dominant": {
         "handshape": "b-flat",
         "location": {
           "anchor": "bahu",
-          "offset": [0.35, 0.15, 0.25]
+          "offset": [0.75, 0.2, 0.2]
         },
         "orientation": {
           "palm": "down",
-          "fingers": "forward"
+          "fingers": "in"
         }
-      }
-    },
-    {
-      "name": "stroke",
-      "duration": 450,
-      "hold": 450,
-      "easing": "ease-in-out",
-      "dominant": {
-        "handshape": "b-flat",
-        "location": {
-          "anchor": "ruang-netral",
-          "offset": [0, -0.1, 0.35]
-        },
-        "orientation": {
-          "palm": "down",
-          "fingers": "forward"
-        }
-      },
-      "path": {
-        "shape": "zigzag",
-        "plane": "frontal",
-        "curvature": 0.5,
-        "repeat": 1
       }
     },
     {

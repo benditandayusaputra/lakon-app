@@ -19,18 +19,19 @@
         "handshape": "three-mid",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.1, 0.3, 0.15]
+          "offset": [0.2, 0.12, 0.22]
         },
         "orientation": {
           "palm": "back",
-          "fingers": "up"
+          "fingers": "up",
+          "lean": -35
         }
       },
       "nonDominant": {
         "handshape": "b-flat",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.08, 0.3, 0.05]
+          "offset": [0.12, 0.3, 0.05]
         },
         "orientation": {
           "palm": "forward",
@@ -55,11 +56,7 @@
       }
     }
   ],
-  "contact": {
-    "activePart": "middle-tip",
-    "passivePart": "nondominant-palm",
-    "type": "touch"
-  },
+  "contact": null,
   "nonManual": {
     "brow": null,
     "mouth": null,

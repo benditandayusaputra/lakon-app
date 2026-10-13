@@ -19,7 +19,7 @@
         "handshape": "index",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.28, 0.35, 0.16]
+          "offset": [0.28, 0.3, 0.16]
         },
         "orientation": {
           "palm": "forward",
@@ -31,7 +31,7 @@
         "handshape": "index",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.28, 0.35, 0.08]
+          "offset": [0.28, 0.3, 0.08]
         },
         "orientation": {
           "palm": "forward",

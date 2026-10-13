@@ -16,14 +16,15 @@
       "hold": 900,
       "easing": "ease-out",
       "dominant": {
-        "handshape": "v-two",
+        "handshape": "u-thumb",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.2, 0.3, 0.05]
+          "offset": [0.22, 0.3, 0.05]
         },
         "orientation": {
           "palm": "forward",
-          "fingers": "up"
+          "fingers": "up",
+          "lean": -15
         }
       }
     },
@@ -62,5 +63,5 @@
     "role": null,
     "date": null
   },
-  "notes": "Draf dari klip video, BELUM divalidasi penanda Tuli. Sumber: \"Belajar Bahasa Isyarat (Perkenalan Dasar Abjad & Jari)\", HaiDokter bekerja sama dengan GERKATIN dan PUSBISINDO, 11 Jan 2018, https://www.youtube.com/watch?v=AZ8pT075NFI, varian: kemungkinan Jakarta (belum dipastikan), diakses 13 Okt 2026."
+  "notes": "Draf dari klip video, BELUM divalidasi penanda Tuli. Sumber: \"Belajar Bahasa Isyarat (Perkenalan Dasar Abjad & Jari)\", HaiDokter bekerja sama dengan GERKATIN dan PUSBISINDO, 11 Jan 2018, https://www.youtube.com/watch?v=AZ8pT075NFI, varian: kemungkinan Jakarta (belum dipastikan), diakses 13 Okt 2026. Video memperagakan V(1) satu tangan atau V(2) dua tangan; peraga 3D memakai V(1)."
 }

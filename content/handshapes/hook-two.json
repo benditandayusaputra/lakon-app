@@ -13,11 +13,11 @@
       "oppose": 40
     },
     "index": {
-      "flex": [15, 55, 30],
+      "flex": [5, 30, 15],
       "abduct": 5
     },
     "middle": {
-      "flex": [15, 55, 30],
+      "flex": [5, 30, 15],
       "abduct": 5
     },
     "ring": {
