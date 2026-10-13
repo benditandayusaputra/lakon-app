@@ -232,7 +232,10 @@ export const orientationQuat = (
     normal = Math.abs(forward.y) > 0.9 ? new Vector3(0, 0, 1) : new Vector3(0, 1, 0)
   }
   normal.addScaledVector(forward, -forward.dot(normal)).normalize()
-  return frameFromForwardNormal(forward, normal).multiply(restFrame.clone().invert())
+  const thumbSide = new Vector3().crossVectors(forward, normal).multiplyScalar(-lateralSign(side))
+  const lean = toRad(orientation.lean ?? 0)
+  const leaned = forward.multiplyScalar(Math.cos(lean)).addScaledVector(thumbSide, Math.sin(lean))
+  return frameFromForwardNormal(leaned, normal).multiply(restFrame.clone().invert())
 }
 
 export const solveArm = (

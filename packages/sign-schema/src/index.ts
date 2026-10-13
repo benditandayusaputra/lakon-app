@@ -99,6 +99,8 @@ export const locationSchema = z.object({
 export const orientationSchema = z.object({
   palm: z.enum(DIRECTIONS),
   fingers: z.enum(DIRECTIONS),
+  // Derajat putaran jari di bidang telapak; positif condong ke sisi jempol.
+  lean: z.number().min(-90).max(90).optional(),
 })
 
 export const handSpecSchema = z.object({

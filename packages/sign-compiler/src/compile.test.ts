@@ -14,6 +14,7 @@ import {
   compileSign,
   evalPath,
   handshapeQuats,
+  orientationQuat,
   sampleCompiled,
   type CompiledFrame,
 } from './compile'
@@ -336,6 +337,23 @@ describe('handshapeQuats', () => {
 
   it.each(['left', 'right'] as const)('abduct jempol membuka menjauhi telunjuk (%s)', (side) => {
     expect(thumbSpreadDeg(side, 45)).toBeGreaterThan(thumbSpreadDeg(side, 0) + 30)
+  })
+})
+
+describe('orientationQuat', () => {
+  const index = (side: 'left' | 'right', lean: number) => {
+    const q = orientationQuat(
+      side,
+      { palm: 'forward', fingers: 'up', lean },
+      new Quaternion().fromArray(rig.hands[side].restFrame),
+    )
+    return new Vector3(...rig.hands[side].fingers.index[1]).normalize().applyQuaternion(q)
+  }
+
+  it('lean memiringkan jari ke arah jempol, bercermin di tangan kiri', () => {
+    expect(index('right', 30).x).toBeGreaterThan(index('right', 0).x + 0.3)
+    expect(index('left', 30).x).toBeLessThan(index('left', 0).x - 0.3)
+    expect(index('right', -30).x).toBeLessThan(index('right', 0).x - 0.3)
   })
 })
 
