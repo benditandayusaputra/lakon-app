@@ -1,0 +1,41 @@
+{
+  "id": "c-index",
+  "label": {
+    "id": "jempol dan telunjuk melengkung C",
+    "en": "thumb and index curved C"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [20, 10, 0],
+      "abduct": 25,
+      "oppose": 40
+    },
+    "index": {
+      "flex": [30, 45, 20],
+      "abduct": 0
+    },
+    "middle": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "ring": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "pinky": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    }
+  },
+  "usedIn": ["huruf-c", "huruf-p", "huruf-s"],
+  "notes": "Kandidat anatomis untuk ejaan jari abjad, diturunkan dari klip HaiDokter × GERKATIN × PUSBISINDO.",
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

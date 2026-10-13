@@ -1,0 +1,41 @@
+{
+  "id": "three-mid",
+  "label": {
+    "id": "telunjuk, tengah, manis terbuka",
+    "en": "index, middle, ring extended"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [20, 40, 0],
+      "abduct": 0,
+      "oppose": 40
+    },
+    "index": {
+      "flex": [0, 0, 0],
+      "abduct": 8
+    },
+    "middle": {
+      "flex": [0, 0, 0],
+      "abduct": 0
+    },
+    "ring": {
+      "flex": [0, 0, 0],
+      "abduct": 8
+    },
+    "pinky": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    }
+  },
+  "usedIn": ["huruf-e", "huruf-m"],
+  "notes": "Kandidat anatomis untuk ejaan jari abjad, diturunkan dari klip HaiDokter × GERKATIN × PUSBISINDO.",
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

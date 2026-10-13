@@ -1,0 +1,89 @@
+{
+  "id": "huruf-z",
+  "gloss": {
+    "id": "huruf Z",
+    "en": "letter Z"
+  },
+  "dialect": "bisindo-jakarta",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 2100,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 500,
+      "hold": 250,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.35, 0.15, 0.25]
+        },
+        "orientation": {
+          "palm": "down",
+          "fingers": "forward"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 450,
+      "hold": 450,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "ruang-netral",
+          "offset": [0, -0.1, 0.35]
+        },
+        "orientation": {
+          "palm": "down",
+          "fingers": "forward"
+        }
+      },
+      "path": {
+        "shape": "zigzag",
+        "plane": "frontal",
+        "curvature": 0.5,
+        "repeat": 1
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": null,
+    "mouth": null,
+    "head": null,
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/huruf-z.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari klip video, BELUM divalidasi penanda Tuli. Sumber: \"Belajar Bahasa Isyarat (Perkenalan Dasar Abjad & Jari)\", HaiDokter bekerja sama dengan GERKATIN dan PUSBISINDO, 11 Jan 2018, https://www.youtube.com/watch?v=AZ8pT075NFI, varian: kemungkinan Jakarta (belum dipastikan), diakses 13 Okt 2026."
+}

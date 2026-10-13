@@ -1,0 +1,81 @@
+{
+  "id": "huruf-y",
+  "gloss": {
+    "id": "huruf Y",
+    "en": "letter Y"
+  },
+  "dialect": "bisindo-jakarta",
+  "structure": "asymmetric",
+  "dominance": "right",
+  "duration": 1900,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "stroke",
+      "duration": 550,
+      "hold": 900,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "index",
+        "location": {
+          "anchor": "ruang-netral",
+          "offset": [0.35, 0.3, 0.12]
+        },
+        "orientation": {
+          "palm": "down",
+          "fingers": "in"
+        }
+      },
+      "nonDominant": {
+        "handshape": "v-two",
+        "location": {
+          "anchor": "ruang-netral",
+          "offset": [0.08, 0.25, 0.1]
+        },
+        "orientation": {
+          "palm": "forward",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": {
+    "activePart": "index-tip",
+    "passivePart": "nondominant-palm",
+    "type": "touch"
+  },
+  "nonManual": {
+    "brow": null,
+    "mouth": null,
+    "head": null,
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/huruf-y.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari klip video, BELUM divalidasi penanda Tuli. Sumber: \"Belajar Bahasa Isyarat (Perkenalan Dasar Abjad & Jari)\", HaiDokter bekerja sama dengan GERKATIN dan PUSBISINDO, 11 Jan 2018, https://www.youtube.com/watch?v=AZ8pT075NFI, varian: kemungkinan Jakarta (belum dipastikan), diakses 13 Okt 2026."
+}

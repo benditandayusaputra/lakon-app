@@ -1,0 +1,88 @@
+{
+  "id": "huruf-j",
+  "gloss": {
+    "id": "huruf J",
+    "en": "letter J"
+  },
+  "dialect": "bisindo-jakarta",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 2100,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 500,
+      "hold": 250,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "pinky",
+        "location": {
+          "anchor": "ruang-netral",
+          "offset": [0.2, 0.35, 0.05]
+        },
+        "orientation": {
+          "palm": "forward",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 450,
+      "hold": 450,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "pinky",
+        "location": {
+          "anchor": "ruang-netral",
+          "offset": [0.08, 0.15, 0.05]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "up"
+        }
+      },
+      "path": {
+        "shape": "busur",
+        "plane": "frontal",
+        "curvature": 0.4
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": null,
+    "mouth": null,
+    "head": null,
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/huruf-j.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari klip video, BELUM divalidasi penanda Tuli. Sumber: \"Belajar Bahasa Isyarat (Perkenalan Dasar Abjad & Jari)\", HaiDokter bekerja sama dengan GERKATIN dan PUSBISINDO, 11 Jan 2018, https://www.youtube.com/watch?v=AZ8pT075NFI, varian: kemungkinan Jakarta (belum dipastikan), diakses 13 Okt 2026."
+}

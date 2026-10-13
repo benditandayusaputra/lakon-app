@@ -1,0 +1,66 @@
+{
+  "id": "huruf-o",
+  "gloss": {
+    "id": "huruf O",
+    "en": "letter O"
+  },
+  "dialect": "bisindo-jakarta",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 1900,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "stroke",
+      "duration": 550,
+      "hold": 900,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "ring-f",
+        "location": {
+          "anchor": "ruang-netral",
+          "offset": [0.2, 0.35, 0.1]
+        },
+        "orientation": {
+          "palm": "forward",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": null,
+    "mouth": null,
+    "head": null,
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/huruf-o.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari klip video, BELUM divalidasi penanda Tuli. Sumber: \"Belajar Bahasa Isyarat (Perkenalan Dasar Abjad & Jari)\", HaiDokter bekerja sama dengan GERKATIN dan PUSBISINDO, 11 Jan 2018, https://www.youtube.com/watch?v=AZ8pT075NFI, varian: kemungkinan Jakarta (belum dipastikan), diakses 13 Okt 2026."
+}

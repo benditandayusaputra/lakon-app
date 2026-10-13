@@ -29,7 +29,23 @@
       "abduct": 0
     }
   },
-  "usedIn": ["mata", "pahit", "perawat", "sama-sama"],
+  "usedIn": [
+    "huruf-b",
+    "huruf-d",
+    "huruf-f",
+    "huruf-h",
+    "huruf-i",
+    "huruf-k",
+    "huruf-p",
+    "huruf-q",
+    "huruf-t",
+    "huruf-x",
+    "huruf-y",
+    "mata",
+    "pahit",
+    "perawat",
+    "sama-sama"
+  ],
   "notes": null,
   "source": "candidate",
   "review": {

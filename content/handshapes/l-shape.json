@@ -1,0 +1,41 @@
+{
+  "id": "l-shape",
+  "label": {
+    "id": "telunjuk tegak, jempol menyamping",
+    "en": "index up, thumb out"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [0, 0, 0],
+      "abduct": 0,
+      "oppose": 0
+    },
+    "index": {
+      "flex": [0, 0, 0],
+      "abduct": 0
+    },
+    "middle": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "ring": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "pinky": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    }
+  },
+  "usedIn": ["huruf-h", "huruf-l", "huruf-u", "huruf-w"],
+  "notes": "Kandidat anatomis untuk ejaan jari abjad, diturunkan dari klip HaiDokter × GERKATIN × PUSBISINDO.",
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}
