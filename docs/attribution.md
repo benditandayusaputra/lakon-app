@@ -70,9 +70,9 @@ untuk tiap isyarat ada di bidang `notes`-nya.
 Isyarat varian Jawa Timur akan diganti begitu sumber varian Jakarta tersedia.
 `uji-gerak` adalah uji gerak teknis, bukan isyarat BISINDO. Kedelapan belas
 kandidat bentuk tangan di `content/handshapes/` adalah kandidat anatomis dari
-dokumen inventaris tim, bukan klaim tentang bentuk BISINDO. Enam kandidat
+dokumen inventaris tim, bukan klaim tentang bentuk BISINDO. Delapan kandidat
 tambahan untuk ejaan jari (`c-index`, `c-wide`, `hook-two`, `l-shape`, `r-hook`,
-`three-mid`, `u-thumb`) disusun dengan menyamakan pose 3D terhadap klip abjad.
+`three-mid`, `u-thumb`, `v-thumb`) disusun dengan menyamakan pose 3D terhadap klip abjad.
 
 ## Video peragaan manusia
 

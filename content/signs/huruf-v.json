@@ -16,7 +16,7 @@
       "hold": 900,
       "easing": "ease-out",
       "dominant": {
-        "handshape": "u-thumb",
+        "handshape": "v-thumb",
         "location": {
           "anchor": "ruang-netral",
           "offset": [0.22, 0.3, 0.05]
@@ -24,7 +24,7 @@
         "orientation": {
           "palm": "forward",
           "fingers": "up",
-          "lean": -15
+          "lean": -20
         }
       }
     },

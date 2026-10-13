@@ -23,8 +23,7 @@
         },
         "orientation": {
           "palm": "forward",
-          "fingers": "up",
-          "lean": -5
+          "fingers": "up"
         }
       }
     },

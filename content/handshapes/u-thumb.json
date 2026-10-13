@@ -1,15 +1,15 @@
 {
   "id": "u-thumb",
   "label": {
-    "id": "telunjuk dan jempol tegak merenggang",
-    "en": "index and thumb up, spread"
+    "id": "telunjuk dan jempol tegak berdekatan",
+    "en": "index and thumb up, close"
   },
   "localName": null,
   "dialect": "bisindo-jakarta",
   "fingers": {
     "thumb": {
       "flex": [0, 0, 0],
-      "abduct": 15,
+      "abduct": 0,
       "oppose": 0
     },
     "index": {
@@ -29,7 +29,7 @@
       "abduct": 0
     }
   },
-  "usedIn": ["huruf-a", "huruf-u", "huruf-v", "huruf-w", "huruf-y"],
+  "usedIn": ["huruf-u"],
   "notes": "Kandidat anatomis untuk ejaan jari abjad, diturunkan dari klip HaiDokter × GERKATIN × PUSBISINDO.",
   "source": "candidate",
   "review": {
