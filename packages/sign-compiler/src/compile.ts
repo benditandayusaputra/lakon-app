@@ -401,6 +401,22 @@ const resolveHandSpec = (
   return { wristPos, wristQuat, fingers: fingersFromHandshape(shape) }
 }
 
+// Fase tanpa nonDominant menahan pose sebelumnya; retraksi mengembalikannya ke istirahat.
+const nonDominantTargets = (
+  phases: SignPhase[],
+  rest: HandTarget,
+  resolve: (spec: HandSpec) => HandTarget,
+): HandTarget[] =>
+  phases.reduce<HandTarget[]>((targets, phase) => {
+    const previous = targets.at(-1) ?? rest
+    const next = phase.nonDominant
+      ? resolve(phase.nonDominant)
+      : phase.name === 'retraction'
+        ? rest
+        : previous
+    return [...targets, next]
+  }, [])
+
 type Segment = {
   start: number
   moveDuration: number
@@ -541,15 +557,16 @@ export const compileSign = (
   const domSegments = buildSegments(sign.phases, domTargets, domRest)
 
   const nonDomRest = restTarget(rig, nonDom)
-  let nonDomStatic: HandTarget | null = null
-  if (sign.structure === 'asymmetric') {
-    const baseSpec = sign.phases.find((phase) => phase.nonDominant)?.nonDominant
-    nonDomStatic = baseSpec
-      ? resolveHandSpec(rig, nonDom, dominance, anchors, baseSpec, shapes)
-      : nonDomRest
-  } else if (sign.structure === 'dominant-only') {
-    nonDomStatic = nonDomRest
-  }
+  const nonDomSegments =
+    sign.structure === 'asymmetric'
+      ? buildSegments(
+          sign.phases.map((phase) => ({ ...phase, path: undefined })),
+          nonDominantTargets(sign.phases, nonDomRest, (spec) =>
+            resolveHandSpec(rig, nonDom, dominance, anchors, spec, shapes),
+          ),
+          nonDomRest,
+        )
+      : null
 
   const totalDuration = sign.phases.reduce(
     (sum, phase) => sum + phase.duration + (phase.hold ?? 0),
@@ -609,11 +626,13 @@ export const compileSign = (
         wristQuat: mirrorQuatX(dom.wristQuat),
         fingers: dom.fingers,
       }
+    } else if (nonDomSegments) {
+      nonDomSample = sampleSegments(nonDomSegments, t, rig.shoulderWidth)
     } else {
       nonDomSample = {
-        wristPos: nonDomStatic!.wristPos.clone(),
-        wristQuat: nonDomStatic!.wristQuat.clone(),
-        fingers: nonDomStatic!.fingers,
+        wristPos: nonDomRest.wristPos.clone(),
+        wristQuat: nonDomRest.wristQuat.clone(),
+        fingers: nonDomRest.fingers,
       }
     }
 

@@ -357,6 +357,38 @@ describe('orientationQuat', () => {
   })
 })
 
+describe('isyarat asimetris', () => {
+  it('tangan non-dominan naik dari istirahat, menahan pose, lalu turun saat retraksi', () => {
+    const pose = {
+      handshape: 'b-flat',
+      location: { anchor: 'ruang-netral' as const, offset: [0.2, 0.3, 0.1] as Vec3Tuple },
+      orientation: { palm: 'in' as const, fingers: 'up' as const },
+    }
+    const compiled = compileSign(
+      baseSign({
+        structure: 'asymmetric',
+        duration: 900,
+        phases: [
+          { name: 'onset', duration: 300, easing: 'linear', dominant: pose, nonDominant: pose },
+          { name: 'stroke', duration: 300, easing: 'linear', dominant: pose },
+          {
+            name: 'retraction',
+            duration: 300,
+            easing: 'linear',
+            dominant: { ...pose, location: { anchor: 'perut', offset: [0.3, -0.5, 0] } },
+          },
+        ],
+      }),
+      shapes,
+      rig,
+    )
+    const leftY = (t: number) => sampleCompiled(compiled, t).hands.left.wristPos[1]
+    expect(leftY(0)).toBeLessThan(leftY(300) - 0.1)
+    expect(leftY(450)).toBeCloseTo(leftY(300), 6)
+    expect(leftY(900)).toBeCloseTo(leftY(0), 6)
+  })
+})
+
 describe('evalPath', () => {
   it('semua bentuk lintasan mulai di A dan berakhir di B', () => {
     const a = new Vector3(0, 1, 0)
