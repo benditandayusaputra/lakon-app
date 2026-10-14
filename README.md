@@ -10,7 +10,7 @@ Satu skenario, dua peran: sisi Tuli belajar menjalani transaksi, sisi pekerja
 layanan belajar melayani pelanggan Tuli. Lakon adalah alat belajar bahasa untuk
 kedua pihak — tidak pernah dibingkai sebagai bantuan untuk satu pihak.
 
-**Demo langsung: <https://lakon-learn.vercel.app>** — Aplikasi berbahasa
+**Demo langsung: <https://lakon-app.vercel.app>** — Aplikasi berbahasa
 Indonesia dan landing page punya pilihan bahasa Inggris. Latihan memakai webcam
 (disarankan Chrome desktop); setiap latihan juga punya jalur tanpa kamera.
 
@@ -55,7 +55,7 @@ Tuli Indonesia di antara mereka.
 
 ## Akun contoh
 
-Masuk di <https://lakon-learn.vercel.app/masuk>. Semua akun di bawah dibuat
+Masuk di <https://lakon-app.vercel.app/masuk>. Semua akun di bawah dibuat
 oleh `node tools/seed.mjs`; menjalankannya lagi akan mengatur ulang progres
 keempat akun `demo`.
 
@@ -72,7 +72,7 @@ keempat akun `demo`.
 
 Akun-akun ini dipakai bersama, dan keempat akun `demo` tidak bisa menghapus
 data belajar atau mengubah profilnya. Untuk memulai dari nol, daftarkan akun
-sendiri di <https://lakon-learn.vercel.app/daftar>.
+sendiri di <https://lakon-app.vercel.app/daftar>.
 
 Akun internal `admin@lakon.id` dan `validator@lakon.id` membuka `/dev/*` dan
 `/tools/*`. Kata sandinya tidak pernah di-commit: atur `SEED_ADMIN_PASSWORD`
