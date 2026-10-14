@@ -1,0 +1,41 @@
+{
+  "id": "curved-b",
+  "label": {
+    "id": "telapak rapat, jari melengkung membungkus",
+    "en": "flat hand with fingers curved to wrap"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [10, 15, 0],
+      "abduct": 0,
+      "oppose": 45
+    },
+    "index": {
+      "flex": [25, 60, 0],
+      "abduct": 0
+    },
+    "middle": {
+      "flex": [25, 60, 0],
+      "abduct": 0
+    },
+    "ring": {
+      "flex": [25, 60, 0],
+      "abduct": 0
+    },
+    "pinky": {
+      "flex": [25, 60, 0],
+      "abduct": 0
+    }
+  },
+  "usedIn": ["tangan"],
+  "notes": null,
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

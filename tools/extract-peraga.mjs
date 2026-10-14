@@ -10,8 +10,6 @@ const bundle = join(root, 'apps/web/node_modules/@mediapipe/tasks-vision/vision_
 const outDir = join(root, 'content/peraga-landmarks')
 const ORIGIN = 'http://peraga.local'
 const POSE_POINTS = [11, 12, 15, 16]
-// Video peraga isyarat ini memakai tangan kiri, sedangkan avatarnya dicerminkan ke dominan kanan.
-const MIRRORED = new Set(['tangan'])
 
 const TYPES = {
   '.mjs': 'text/javascript',
@@ -19,23 +17,6 @@ const TYPES = {
   '.wasm': 'application/wasm',
   '.mp4': 'video/mp4',
 }
-
-const round = (n) => Math.round(n * 10000) / 10000
-
-const mirrorFrame = (frame) => ({
-  hands: frame.hands.map((hand) => ({
-    handedness: hand.handedness === 'Left' ? 'Right' : 'Left',
-    wrist: [round(1 - hand.wrist[0]), hand.wrist[1]],
-    world: hand.world.map(([x, y, z]) => [round(-x), y, z]),
-  })),
-  poses: frame.poses.map((pose) => {
-    const swap = (points, flip) => [1, 0, 3, 2].map((i) => flip(points[i]))
-    return {
-      image: swap(pose.image, ([x, y]) => [round(1 - x), y]),
-      world: swap(pose.world, ([x, y, z]) => [round(-x), y, z]),
-    }
-  }),
-})
 
 const trim = (frames) => {
   const first = frames.findIndex((f) => f.hands.length > 0)
@@ -119,7 +100,7 @@ for (const sign of signs) {
     { src: sign.media.video.depan, posePoints: POSE_POINTS },
   )
   const kept = trim(frames)
-  const data = { id: sign.id, aspect, frames: MIRRORED.has(sign.id) ? kept.map(mirrorFrame) : kept }
+  const data = { id: sign.id, aspect, frames: kept }
   await writeFile(join(outDir, `${sign.id}.json`), JSON.stringify(data) + '\n')
   console.log(`${sign.id}: ${kept.length} frame`)
 }

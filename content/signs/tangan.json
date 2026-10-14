@@ -6,8 +6,8 @@
   },
   "dialect": "bisindo-jatim",
   "structure": "asymmetric",
-  "dominance": "right",
-  "duration": 1850,
+  "dominance": "left",
+  "duration": 2150,
   "recognitionMode": true,
   "phases": [
     {
@@ -15,13 +15,13 @@
       "duration": 400,
       "easing": "ease-out",
       "dominant": {
-        "handshape": "b-flat",
+        "handshape": "curved-b",
         "location": {
           "anchor": "dada",
-          "offset": [0.0, 0.4, 0.25]
+          "offset": [-0.25, 0.03, 0.25]
         },
         "orientation": {
-          "palm": "down",
+          "palm": "back",
           "fingers": "in"
         }
       },
@@ -39,26 +39,68 @@
     },
     {
       "name": "stroke",
-      "duration": 900,
+      "duration": 300,
       "easing": "ease-in-out",
       "dominant": {
-        "handshape": "b-flat",
+        "handshape": "curved-b",
         "location": {
           "anchor": "dada",
-          "offset": [-0.08, 0.5, 0.25]
+          "offset": [-0.21, 0.14, 0.26]
         },
         "orientation": {
-          "palm": "down",
+          "palm": "back",
+          "fingers": "in"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 300,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "curved-b",
+        "location": {
+          "anchor": "dada",
+          "offset": [-0.25, 0.03, 0.25]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "in"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 300,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "curved-b",
+        "location": {
+          "anchor": "dada",
+          "offset": [-0.21, 0.14, 0.26]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "in"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 300,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "curved-b",
+        "location": {
+          "anchor": "dada",
+          "offset": [-0.25, 0.03, 0.25]
+        },
+        "orientation": {
+          "palm": "back",
           "fingers": "in"
         }
       },
-      "hold": 100,
-      "path": {
-        "shape": "gelombang",
-        "plane": "frontal",
-        "repeat": 2,
-        "curvature": 1.0
-      }
+      "hold": 100
     },
     {
       "name": "retraction",
@@ -68,7 +110,7 @@
         "handshape": "b-flat",
         "location": {
           "anchor": "bahu",
-          "offset": [0.0, -1.2, 0.08]
+          "offset": [0, -1.2, 0.08]
         },
         "orientation": {
           "palm": "in",
@@ -95,5 +137,5 @@
     "role": null,
     "date": null
   },
-  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"TANGAN\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9NVB45899A50XV8GFJ0K1W7.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 2,3-5,3 dtk: kedua tangan terbuka di depan dada, telapak dominan mengusap area lengan bawah tangan satunya dua kali. Video peraga memakai tangan kiri mengusap lengan kanan; avatar dicerminkan ke dominan kanan agar konsisten dengan isyarat lain."
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"TANGAN\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9NVB45899A50XV8GFJ0K1W7.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 2,3-5,3 dtk: kedua tangan terbuka di depan dada, telapak dominan mengusap area lengan bawah tangan satunya dua kali. Peraga memakai tangan kiri yang memegang dan mengusap lengan bawah kanan; avatar mengikuti sisi yang sama."
 }
