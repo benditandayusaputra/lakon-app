@@ -7,29 +7,30 @@
   "dialect": "bisindo-jakarta",
   "structure": "asymmetric",
   "dominance": "right",
-  "duration": 2150,
+  "duration": 3050,
   "recognitionMode": true,
   "phases": [
     {
       "name": "onset",
-      "duration": 400,
+      "duration": 600,
       "easing": "ease-out",
       "dominant": {
-        "handshape": "c-curve",
+        "handshape": "o-ring",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.15, 0.7, -0.1]
+          "offset": [0.45, 0.87, 0.12]
         },
         "orientation": {
           "palm": "down",
-          "fingers": "in"
+          "fingers": "in",
+          "lean": -27
         }
       },
       "nonDominant": {
-        "handshape": "fist",
+        "handshape": "o-round",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.1, -0.05, -0.15]
+          "offset": [0.22, 0.29, 0.15]
         },
         "orientation": {
           "palm": "in",
@@ -39,20 +40,20 @@
     },
     {
       "name": "stroke",
-      "duration": 1200,
+      "duration": 2000,
       "easing": "linear",
       "dominant": {
-        "handshape": "c-curve",
+        "handshape": "o-ring",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.2, 0.7, -0.1]
+          "offset": [0.5, 0.87, 0.12]
         },
         "orientation": {
           "palm": "down",
-          "fingers": "in"
+          "fingers": "in",
+          "lean": -27
         }
       },
-      "hold": 100,
       "path": {
         "shape": "lingkaran",
         "plane": "horizontal",
@@ -65,7 +66,7 @@
       "duration": 450,
       "easing": "ease-in",
       "dominant": {
-        "handshape": "c-curve",
+        "handshape": "o-ring",
         "location": {
           "anchor": "bahu",
           "offset": [0.0, -1.2, 0.08]
@@ -95,5 +96,5 @@
     "role": null,
     "date": null
   },
-  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: \"Belajar Bahasa Isyarat di Kopi Tuli\", kanal BenarNews Indonesia, https://www.youtube.com/watch?v=0TBz-UHOYtM, penanda: Adhika Prakoso (Tuli, pendiri Kopi Tuli/KOPTUL Jakarta), diakses 1 Sep 2026. Segmen 0,6-2,3 dtk (diulang 6,6-8,0 dtk, juga tergambar di logo KOPTUL): tangan kanan melengkung menghadap bawah memutar kecil di atas kepalan kiri, seperti memutar gilingan kopi."
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: \"Belajar Bahasa Isyarat di Kopi Tuli\", kanal BenarNews Indonesia, https://www.youtube.com/watch?v=0TBz-UHOYtM, penanda: Adhika Prakoso (Tuli, pendiri Kopi Tuli/KOPTUL Jakarta), diakses 1 Sep 2026. Segmen 0,6-2,3 dtk (diulang 6,6-8,0 dtk, juga tergambar di logo KOPTUL): tangan kiri mengepal seperti memegang gelas, tangan kanan dengan jempol dan telunjuk membentuk cincin dan tiga jari lain lurus memutar kecil di atasnya seperti mengaduk kopi."
 }
