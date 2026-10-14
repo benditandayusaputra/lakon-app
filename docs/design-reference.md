@@ -23,23 +23,22 @@ kebenarannya adalah token di `apps/web/app/globals.css` dan palet adegan di
 
 ### Logo
 
-Kotak membulat berwarna primary dengan huruf **L** warna kertas dan satu
-titik emas sebagai sorot panggung.
+Kotak membulat berwarna primary berisi siluet kepala emas dan dua tangan
+putih yang sedang berisyarat.
 
-| Elemen  | Spesifikasi                              |
-| ------- | ---------------------------------------- |
-| Kanvas  | `viewBox="0 0 64 64"`                    |
-| Kotak   | `rx="14"`, isi `#2b6cb0` (primary)       |
-| Huruf L | `M20 14v30h24v-8H30V14z`, isi `#faf7f2`  |
-| Titik   | `cx=44 cy=19 r=5`, isi `#d9a521` (sorot) |
-| Sumber  | `components/logo.tsx`, `app/icon.svg`    |
+| Elemen | Spesifikasi                                         |
+| ------ | --------------------------------------------------- |
+| Kotak  | sudut membulat, isi biru primary                    |
+| Kepala | lengkung rambut emas (sorot)                        |
+| Tangan | dua tangan putih berisyarat di depan wajah          |
+| Sumber | `public/logo.png` (256 px), `app/icon.png` (192 px) |
 
 Aturan pemakaian:
 
 - Ukuran minimum 16 px (favicon); di navigasi 28–30 px.
 - Boleh di atas latar terang (`#f5f8fc`) maupun panggung gelap (`#0d1b2e`);
   tidak perlu varian lain karena kotak primary sudah kontras di keduanya.
-- Jangan ubah warna titik emas; itu satu-satunya warna hangat di identitas.
+- Jangan ubah warna emas kepala; itu satu-satunya warna hangat di identitas.
 - Nama "Lakon" ditulis dengan huruf judul (Fraunces), bukan huruf kapital semua.
 
 ## Warna
@@ -74,12 +73,12 @@ jangan dipakai untuk "berhasil" atau "gagal".
 
 ### Panggung dan sorot
 
-| Token                     | Hex       | Peran                                                                     |
-| ------------------------- | --------- | ------------------------------------------------------------------------- |
-| `--color-panggung`        | `#0d1b2e` | Latar hero dan navigasi gelap (navy)                                       |
-| `--color-panggung-lantai` | `#08121f` | Lapisan terdalam panggung                                                 |
+| Token                     | Hex       | Peran                                                                   |
+| ------------------------- | --------- | ----------------------------------------------------------------------- |
+| `--color-panggung`        | `#0d1b2e` | Latar hero dan navigasi gelap (navy)                                    |
+| `--color-panggung-lantai` | `#08121f` | Lapisan terdalam panggung                                               |
 | `--color-sorot`           | `#8cc8ff` | Biru langit sorot: judul kecil, bar progres dan garis jalan di panggung |
-| `--color-aksen`           | `#1f5f99` | Biru tua: ikon dan tautan sekunder di latar terang                              |
+| `--color-aksen`           | `#1f5f99` | Biru tua: ikon dan tautan sekunder di latar terang                      |
 
 Sorot dan aksen bersifat dekoratif atau sekunder. Aksi utama selalu primary.
 
