@@ -5,11 +5,11 @@
   },
   "dokter": {
     "example": 1.939,
-    "others": 2.85
+    "others": 2.874
   },
   "halo": {
     "example": 1.407,
-    "others": 3.094
+    "others": 2.88
   },
   "kopi": {
     "example": 2.402,
@@ -17,11 +17,11 @@
   },
   "maaf": {
     "example": 1.267,
-    "others": 2.335
+    "others": 2.282
   },
   "makan": {
     "example": 1.406,
-    "others": 1.881
+    "others": 1.874
   },
   "manis": {
     "example": 1.442,
@@ -29,38 +29,38 @@
   },
   "mata": {
     "example": 1.518,
-    "others": 1.992
+    "others": 1.979
   },
   "minum": {
-    "example": 1.594,
-    "others": 2.047
+    "example": 1.548,
+    "others": 2.213
   },
   "pahit": {
-    "example": 1.566,
-    "others": 2.534
+    "example": 1.563,
+    "others": 2.559
   },
   "panas": {
     "example": 1.629,
-    "others": 2.844
+    "others": 2.803
   },
   "perawat": {
     "example": 3.087,
     "others": 3.972
   },
   "sakit": {
-    "example": 2.817,
-    "others": 3.214
+    "example": 1.237,
+    "others": 2.471
   },
   "sama-sama": {
     "example": 1.602,
-    "others": 2.955
+    "others": 3.163
   },
   "tangan": {
-    "example": 3.824,
-    "others": 4.76
+    "example": 3.437,
+    "others": 4.018
   },
   "terima-kasih": {
-    "example": 2.537,
-    "others": 3.317
+    "example": 2.307,
+    "others": 2.993
   }
 }

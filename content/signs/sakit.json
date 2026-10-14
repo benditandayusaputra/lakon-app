@@ -7,46 +7,77 @@
   "dialect": "bisindo-jakarta",
   "structure": "dominant-only",
   "dominance": "right",
-  "duration": 1900,
+  "duration": 2200,
   "recognitionMode": true,
   "phases": [
     {
       "name": "onset",
-      "duration": 400,
+      "duration": 500,
       "easing": "ease-out",
       "dominant": {
-        "handshape": "five-spread",
+        "handshape": "pinch-index-open",
         "location": {
           "anchor": "dahi",
-          "offset": [0.15, 0.05, 0.2]
+          "offset": [0.1, -0.3, 0.15]
         },
         "orientation": {
           "palm": "back",
-          "fingers": "in"
+          "fingers": "in",
+          "lean": 45
         }
       }
     },
     {
       "name": "stroke",
-      "duration": 900,
-      "easing": "linear",
+      "duration": 250,
+      "easing": "ease-in-out",
+      "hold": 150,
       "dominant": {
-        "handshape": "five-spread",
+        "handshape": "pinch-index",
         "location": {
           "anchor": "dahi",
-          "offset": [0.12, 0.0, 0.15]
+          "offset": [0.1, -0.3, 0.15]
         },
         "orientation": {
           "palm": "back",
-          "fingers": "in"
+          "fingers": "in",
+          "lean": 45
         }
-      },
-      "hold": 150,
-      "path": {
-        "shape": "gelombang",
-        "plane": "frontal",
-        "repeat": 2,
-        "curvature": 0.4
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 300,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "pinch-index-open",
+        "location": {
+          "anchor": "dahi",
+          "offset": [0.1, -0.3, 0.15]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "in",
+          "lean": 45
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 250,
+      "easing": "ease-in-out",
+      "hold": 300,
+      "dominant": {
+        "handshape": "pinch-index",
+        "location": {
+          "anchor": "dahi",
+          "offset": [0.1, -0.3, 0.15]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "in",
+          "lean": 45
+        }
       }
     },
     {
@@ -54,10 +85,10 @@
       "duration": 450,
       "easing": "ease-in",
       "dominant": {
-        "handshape": "five-spread",
+        "handshape": "pinch-index",
         "location": {
           "anchor": "bahu",
-          "offset": [0.0, -1.2, 0.08]
+          "offset": [0, -1.2, 0.08]
         },
         "orientation": {
           "palm": "in",
@@ -67,7 +98,7 @@
     }
   ],
   "contact": {
-    "activePart": "telapak",
+    "activePart": "ujung-telunjuk",
     "passivePart": "dahi",
     "type": "touch"
   },
@@ -88,5 +119,5 @@
     "role": null,
     "date": null
   },
-  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: \"PRIVATE LESSON IN SIGN LANGUAGE WITH SURYA SAHETAPY\", kanal Gogirl! TV, https://www.youtube.com/watch?v=G_MnbyHWa50, penanda: Surya Sahetapy (Tuli, besar di Jakarta), lisensi Creative Commons (reuse allowed), diakses 1 Sep 2026. Segmen 48,3-50,5 dtk (berlabel \"Sakit\"): telapak terbuka menyentuh dahi, digerakkan kecil, kepala miring dan wajah meringis."
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: \"PRIVATE LESSON IN SIGN LANGUAGE WITH SURYA SAHETAPY\", kanal Gogirl! TV, https://www.youtube.com/watch?v=G_MnbyHWa50, penanda: Surya Sahetapy (Tuli, besar di Jakarta), lisensi Creative Commons (reuse allowed), diakses 1 Sep 2026. Isyarat di video peraga: jempol dan telunjuk mencubit pangkal dahi dua kali, jari lain menggenggam, kepala miring dan wajah meringis."
 }

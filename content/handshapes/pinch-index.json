@@ -1,0 +1,41 @@
+{
+  "id": "pinch-index",
+  "label": {
+    "id": "jempol dan telunjuk mencubit, jari lain menggenggam",
+    "en": "index-thumb pinch, others closed"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [40, 20, 10],
+      "abduct": 0,
+      "oppose": 90
+    },
+    "index": {
+      "flex": [30, 80, 30],
+      "abduct": 0
+    },
+    "middle": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "ring": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "pinky": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    }
+  },
+  "usedIn": ["sakit"],
+  "notes": null,
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}
