@@ -70,9 +70,9 @@ untuk tiap isyarat ada di bidang `notes`-nya.
 Isyarat varian Jawa Timur akan diganti begitu sumber varian Jakarta tersedia.
 `uji-gerak` adalah uji gerak teknis, bukan isyarat BISINDO. Kedelapan belas
 kandidat bentuk tangan di `content/handshapes/` adalah kandidat anatomis dari
-dokumen inventaris tim, bukan klaim tentang bentuk BISINDO. Delapan kandidat
+dokumen inventaris tim, bukan klaim tentang bentuk BISINDO. Sembilan kandidat
 tambahan untuk ejaan jari (`c-index`, `c-wide`, `hook-two`, `l-shape`, `r-hook`,
-`three-mid`, `u-thumb`, `v-thumb`) disusun dengan menyamakan pose 3D terhadap klip abjad.
+`o-ring`, `three-mid`, `u-thumb`, `v-thumb`) disusun dengan menyamakan pose 3D terhadap klip abjad.
 
 ## Video peragaan manusia
 
@@ -84,8 +84,8 @@ tidak ikut git (`content/BISINDO/`).
 menautkan tiap klip ke isyarat bernama sama lewat `media.video`. Video-video
 ini tidak mengubah status `review` isyarat mana pun.
 
-Ke-26 klip `huruf-*.mp4` di folder yang sama adalah potongan video HaiDokter ×
+Ke-26 klip `huruf-*.mp4` (juga di Vercel Blob) adalah potongan video HaiDokter ×
 GERKATIN × PUSBISINDO di tabel atas, bukan rekaman tim. `pnpm peraga:abjad`
 memotong bagian close-up tangan per huruf dari berkas mentah
-`content/BISINDO/Abjad_Bisindo.mp4`. Izin pemakaian ulang dari pemilik video
+`content/BISINDO/Abjad_Bisindo.mp4`, lalu mengunggahnya ke Blob. Izin pemakaian ulang dari pemilik video
 belum didapat; halaman abjad mencantumkan sumbernya di bawah peraga.

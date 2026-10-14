@@ -1,10 +1,12 @@
+import { put } from '@vercel/blob'
 import { execFileSync } from 'node:child_process'
-import { mkdirSync } from 'node:fs'
+import { mkdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 const root = join(import.meta.dirname, '..')
 const sumber = process.argv[2] ?? join(root, 'content', 'BISINDO', 'Abjad_Bisindo.mp4')
 const tujuan = join(root, 'apps', 'web', 'public', 'peraga')
+process.loadEnvFile(join(root, '.env'))
 
 // Detik saat tangan diam membentuk huruf; diukur dari gerak tangan, bukan kartu huruf yang kadang tertinggal.
 const TAHAN = {
@@ -40,11 +42,18 @@ const POTONG_DEKAT = 'crop=656:556:80:137,format=yuv420p'
 mkdirSync(tujuan, { recursive: true })
 
 for (const [huruf, [awal, akhir]] of Object.entries(TAHAN)) {
+  const hasil = join(tujuan, `huruf-${huruf}.mp4`)
   execFileSync('ffmpeg', [
     ...['-v', 'error', '-y', '-ss', awal.toFixed(2), '-to', akhir.toFixed(2), '-i', sumber],
     ...['-vf', POTONG_DEKAT, '-an', '-c:v', 'libx264', '-preset', 'slow', '-crf', '23'],
     ...['-profile:v', 'high', '-movflags', '+faststart'],
-    join(tujuan, `huruf-${huruf}.mp4`),
+    hasil,
   ])
-  console.log(`huruf ${huruf.toUpperCase()}: ${awal.toFixed(2)}–${akhir.toFixed(2)} dtk`)
+  await put(`peraga/huruf-${huruf}.mp4`, readFileSync(hasil), {
+    access: 'private',
+    addRandomSuffix: false,
+    allowOverwrite: true,
+    contentType: 'video/mp4',
+  })
+  console.log(`huruf ${huruf.toUpperCase()}: ${awal.toFixed(2)}–${akhir.toFixed(2)} dtk + Blob`)
 }
