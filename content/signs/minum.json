@@ -7,56 +7,60 @@
   "dialect": "bisindo-jatim",
   "structure": "dominant-only",
   "dominance": "right",
-  "duration": 1950,
+  "duration": 1300,
   "recognitionMode": true,
   "phases": [
     {
       "name": "onset",
-      "duration": 400,
+      "duration": 200,
       "easing": "ease-out",
       "dominant": {
         "handshape": "c-curve",
         "location": {
           "anchor": "dagu",
-          "offset": [0.3, -0.6, 0.4]
+          "offset": [0.7, -0.38, 0.2]
         },
         "orientation": {
           "palm": "in",
-          "fingers": "up"
+          "fingers": "up",
+          "twist": -20
         }
+      },
+      "head": {
+        "turn": -15
       }
     },
     {
       "name": "stroke",
-      "duration": 900,
+      "duration": 170,
       "easing": "ease-in-out",
       "dominant": {
         "handshape": "c-curve",
         "location": {
           "anchor": "dagu",
-          "offset": [0.2, -0.45, 0.25]
+          "offset": [0.42, -0.26, 0.16]
         },
         "orientation": {
           "palm": "in",
-          "fingers": "up"
+          "fingers": "up",
+          "twist": -15
         }
       },
-      "hold": 200,
-      "path": {
-        "shape": "busur",
-        "plane": "sagittal",
-        "curvature": 0.3
+      "hold": 600,
+      "head": {
+        "turn": -22,
+        "tilt": 5
       }
     },
     {
       "name": "retraction",
-      "duration": 450,
+      "duration": 330,
       "easing": "ease-in",
       "dominant": {
         "handshape": "c-curve",
         "location": {
           "anchor": "bahu",
-          "offset": [0.0, -1.2, 0.08]
+          "offset": [0, -1.2, 0.08]
         },
         "orientation": {
           "palm": "in",
@@ -83,5 +87,5 @@
     "role": null,
     "date": null
   },
-  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"MINUM\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9NR0J84JHMW2PB60ES6E0DR.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 1,8-3,4 dtk: tangan membentuk genggaman gelas (lengkung C) diangkat ke mulut lalu dimiringkan seperti meneguk."
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"MINUM\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9NR0J84JHMW2PB60ES6E0DR.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 1,8-3,4 dtk: tangan membentuk genggaman gelas (lengkung C) diangkat ke samping mulut dengan ujung jempol di sudut bibir, lalu ditahan sejenak."
 }
