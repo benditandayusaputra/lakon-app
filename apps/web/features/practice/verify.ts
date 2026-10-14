@@ -30,6 +30,10 @@ export const featuresFromObservation = (
     pose: pose?.world ?? null,
   })
 
+// Pemelajar butuh waktu bereaksi dan biasanya lebih lambat dari peraga; frame tanpa tangan dipangkas saat menilai.
+export const recordingWindowMs = (signDurationMs: number): number =>
+  Math.max(3000, signDurationMs * 1.5 + 1000)
+
 export const scoreAgainstReference = (
   frames: Float32Array[],
   compiled: CompiledSign,

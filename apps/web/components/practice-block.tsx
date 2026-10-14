@@ -21,6 +21,7 @@ import { saveAttempt } from '@/features/progress/store'
 import { createPipeline, type Pipeline, type PipelineState } from '@/features/practice/pipeline'
 import {
   createVerifyRun,
+  recordingWindowMs,
   scoreAgainstReference,
   type VerifyResult,
   type VerifyRun,
@@ -167,7 +168,7 @@ export function PracticeBlock({
 
     const segmenter = createExplicitSegmenter({
       countdownMs: 3000,
-      windowMs: Math.max(2000, compiled.duration + 600),
+      windowMs: recordingWindowMs(compiled.duration),
     })
     runRef.current = createVerifyRun(
       segmenter,
