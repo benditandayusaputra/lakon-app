@@ -41,6 +41,7 @@ export default function TrySignBlock({
       peragaAwal
       sejajar
       kontrolPutar={false}
+      catatRiwayat={false}
     />
   )
 }

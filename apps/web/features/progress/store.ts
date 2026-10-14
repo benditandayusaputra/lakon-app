@@ -1,5 +1,7 @@
 'use client'
 
+import type { AttemptEntry } from './riwayat'
+
 export type Arah = 'deaf' | 'service'
 
 export type SignProgressEntry = {
@@ -108,12 +110,17 @@ const tungguTulisan = async () => {
 export const bacaProgres = async (): Promise<{
   signs: SignProgressEntry[]
   runs: RunEntry[]
+  attempts: AttemptEntry[]
 }> => {
   await tungguTulisan()
   const response = await fetch('/api/progress', { cache: 'no-store' })
   if (!response.ok) throw new Error(`progres gagal dimuat (${response.status})`)
-  const data = (await response.json()) as { signs: SignProgressEntry[]; runs: RunEntry[] }
-  return { signs: data.signs, runs: data.runs }
+  const data = (await response.json()) as {
+    signs: SignProgressEntry[]
+    runs: RunEntry[]
+    attempts: AttemptEntry[]
+  }
+  return { signs: data.signs, runs: data.runs, attempts: data.attempts }
 }
 
 export const saveSignProgress = (entry: Omit<SignProgressEntry, 'updatedAt'>) =>
@@ -128,6 +135,13 @@ export const saveRun = (run: RunEntry) =>
     url: '/api/progress',
     method: 'POST',
     body: JSON.stringify({ runs: [run] }),
+  })
+
+export const saveAttempt = (attempt: AttemptEntry) =>
+  kirim(`attempt:${attempt.signId}:${attempt.createdAt}`, {
+    url: '/api/progress',
+    method: 'POST',
+    body: JSON.stringify({ attempts: [attempt] }),
   })
 
 export const bacaCheckpoint = async <T>(

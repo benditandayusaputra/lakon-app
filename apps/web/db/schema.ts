@@ -1,4 +1,4 @@
-import { integer, pgTable, primaryKey, text, timestamp, uuid } from 'drizzle-orm/pg-core'
+import { boolean, integer, pgTable, primaryKey, text, timestamp, uuid } from 'drizzle-orm/pg-core'
 
 export const users = pgTable('users', {
   id: uuid('id').primaryKey().defaultRandom(),
@@ -66,4 +66,15 @@ export const scenarioRuns = pgTable('scenario_runs', {
   mastered: text('mastered').notNull().default('[]'),
   needsRepeat: text('needs_repeat').notNull().default('[]'),
   completedAt: timestamp('completed_at', { withTimezone: true }).notNull().defaultNow(),
+})
+
+export const practiceAttempts = pgTable('practice_attempts', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: uuid('user_id')
+    .notNull()
+    .references(() => users.id, { onDelete: 'cascade' }),
+  signId: text('sign_id').notNull(),
+  similarity: integer('similarity'),
+  passed: boolean('passed').notNull(),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
 })

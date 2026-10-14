@@ -21,6 +21,7 @@ import {
 import { AvatarAkun } from '@/components/avatar-akun'
 import { PilihKarakter, type Gender } from '@/components/pilih-karakter'
 import { Logo } from '@/components/logo'
+import { RiwayatPercobaan } from '@/components/riwayat-percobaan'
 import { SyncBadge } from '@/components/sync-badge'
 import { useContent } from '@/features/content/use-content'
 import {
@@ -30,6 +31,7 @@ import {
   type RunEntry,
   type SignProgressEntry,
 } from '@/features/progress/store'
+import type { AttemptEntry } from '@/features/progress/riwayat'
 import { scenarioSignIds } from '@/features/ui/adegan'
 import { paletteFor, scenarioRank } from '@/features/ui/tokens'
 
@@ -72,6 +74,7 @@ export function Profil({
   const { content } = useContent()
   const [runs, setRuns] = useState<RunEntry[]>([])
   const [signs, setSigns] = useState<SignProgressEntry[]>([])
+  const [attempts, setAttempts] = useState<AttemptEntry[]>([])
   const [avatar, setAvatar] = useState<string | null>(avatarAwal)
   const [gender, setGender] = useState<Gender>(genderAwal)
   const [genderPesan, setGenderPesan] = useState<string | null>(null)
@@ -94,6 +97,7 @@ export function Profil({
       .then((progres) => {
         setSigns(progres.signs)
         setRuns(progres.runs)
+        setAttempts(progres.attempts)
       })
       .catch(() => {})
       .finally(() => setProgresSiap(true))
@@ -212,6 +216,7 @@ export function Profil({
       .then(() => {
         setRuns([])
         setSigns([])
+        setAttempts([])
         setMinta(false)
         setDihapus(true)
       })
@@ -487,6 +492,12 @@ export function Profil({
             })}
           </div>
         </section>
+
+        <RiwayatPercobaan
+          attempts={attempts}
+          siap={progresSiap}
+          namaIsyarat={(id) => content?.signs[id]?.gloss.id ?? id}
+        />
 
         <section className="border-border-halus bg-kartu shadow-kartu rounded-kartu-besar flex flex-col gap-4 border p-5 sm:p-6">
           <h2 className="font-display flex items-center gap-2.5 text-2xl font-semibold">

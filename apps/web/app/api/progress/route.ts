@@ -21,9 +21,17 @@ const runEntry = z.object({
   completedAt: z.number().finite(),
 })
 
+const attemptEntry = z.object({
+  signId: z.string().min(1).max(64),
+  similarity: z.number().int().min(0).max(100).nullable(),
+  passed: z.boolean(),
+  createdAt: z.number().finite(),
+})
+
 const bodySchema = z.object({
   signs: z.array(signEntry).max(200).default([]),
   runs: z.array(runEntry).max(50).default([]),
+  attempts: z.array(attemptEntry).max(50).default([]),
 })
 
 export async function GET() {
@@ -38,6 +46,10 @@ export async function GET() {
     .select()
     .from(schema.scenarioRuns)
     .where(eq(schema.scenarioRuns.userId, user.id))
+  const attempts = await db
+    .select()
+    .from(schema.practiceAttempts)
+    .where(eq(schema.practiceAttempts.userId, user.id))
 
   return NextResponse.json({
     ok: true,
@@ -55,6 +67,12 @@ export async function GET() {
       mastered: JSON.parse(row.mastered) as string[],
       needsRepeat: JSON.parse(row.needsRepeat) as string[],
       completedAt: row.completedAt.getTime(),
+    })),
+    attempts: attempts.map((row) => ({
+      signId: row.signId,
+      similarity: row.similarity,
+      passed: row.passed,
+      createdAt: row.createdAt.getTime(),
     })),
   })
 }
@@ -103,6 +121,16 @@ export async function POST(request: Request) {
     })
   }
 
+  for (const attempt of parsed.data.attempts) {
+    await db.insert(schema.practiceAttempts).values({
+      userId: user.id,
+      signId: attempt.signId,
+      similarity: attempt.similarity,
+      passed: attempt.passed,
+      createdAt: new Date(attempt.createdAt),
+    })
+  }
+
   return NextResponse.json({ ok: true })
 }
 
@@ -112,6 +140,7 @@ export async function DELETE() {
   if (isDemoAccount(user.email)) return NextResponse.json({ ok: false }, { status: 403 })
   await db.delete(schema.signProgress).where(eq(schema.signProgress.userId, user.id))
   await db.delete(schema.scenarioRuns).where(eq(schema.scenarioRuns.userId, user.id))
+  await db.delete(schema.practiceAttempts).where(eq(schema.practiceAttempts.userId, user.id))
   await db.delete(schema.checkpoints).where(eq(schema.checkpoints.userId, user.id))
   return NextResponse.json({ ok: true })
 }

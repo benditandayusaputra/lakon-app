@@ -8,15 +8,16 @@ import type { Sign } from '@lakon/sign-schema'
 import { AvatarStage } from '@/components/avatar-stage'
 import { UmpanJawab } from '@/components/umpan-jawab'
 import calibrationData from '@/features/practice/calibration.json'
-import {
-  PASS_SIMILARITY,
-  passScore,
-  similarity,
-  type SignCalibration,
-} from '@/features/practice/calibration'
+import { passScore, type SignCalibration } from '@/features/practice/calibration'
 import { kameraHidup } from '@/features/practice/capture'
-import { decideAttempt } from '@/features/practice/decision'
+import {
+  attemptPercent,
+  decideAttempt,
+  PERAGA_SETELAH_GAGAL,
+  pesanBelumSesuai,
+} from '@/features/practice/decision'
 import { PAKAI_MODEL } from '@/features/practice/model-config'
+import { saveAttempt } from '@/features/progress/store'
 import { createPipeline, type Pipeline, type PipelineState } from '@/features/practice/pipeline'
 import {
   createVerifyRun,
@@ -40,8 +41,6 @@ export type PracticePhase =
 const DTW_THRESHOLD = 7
 const CALIBRATION: Record<string, SignCalibration> = calibrationData
 
-export const PERAGA_SETELAH_GAGAL = 3
-
 export function PracticeBlock({
   compiled,
   sign,
@@ -53,6 +52,7 @@ export function PracticeBlock({
   peragaAwal = false,
   sejajar = false,
   kontrolPutar = true,
+  catatRiwayat = true,
 }: {
   compiled: CompiledSign
   sign?: Sign
@@ -64,6 +64,7 @@ export function PracticeBlock({
   peragaAwal?: boolean
   sejajar?: boolean
   kontrolPutar?: boolean
+  catatRiwayat?: boolean
 }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -186,15 +187,30 @@ export function PracticeBlock({
         const scored = scoreAgainstReference(frames, compiled)
         const backend = pipelineRef.current?.stats.classifierBackend
         const modelSiap = PAKAI_MODEL && backend !== 'tanpa model' && backend != null
-        const decision = decideAttempt({
+        const input = {
           expectedSign: compiled.id,
           handsVisible: scored.analysis.hands.every((hand) => hand.present),
           score: scored.score,
           passScore: calibration ? passScore(calibration) : DTW_THRESHOLD,
-          model: modelSiap ? { label: stableRef.current?.label ?? null } : null,
-        })
+          model: modelSiap
+            ? {
+                label: stableRef.current?.label ?? null,
+                confidence: stableRef.current?.meanConfidence ?? 0,
+              }
+            : null,
+          calibration,
+        }
+        const decision = decideAttempt(input)
         setResult(scored)
         setVerdict(decision)
+        if (catatRiwayat && frames.length >= 5) {
+          void saveAttempt({
+            signId: compiled.id,
+            similarity: attemptPercent(input),
+            passed: decision.kind === 'lulus',
+            createdAt: Date.now(),
+          })
+        }
         if (frames.length < 5) {
           setFailures((count) => count + 1)
           setPhase('belum-tepat')
@@ -210,7 +226,7 @@ export function PracticeBlock({
         }
       },
     )
-  }, [calibration, compiled, onFailedAttempt])
+  }, [calibration, catatRiwayat, compiled, onFailedAttempt])
 
   const cameraRunning = pipelineState.status === 'running'
   const modelGagal = pipelineState.status === 'error' && pipelineState.sumber === 'model'
@@ -228,13 +244,6 @@ export function PracticeBlock({
   }
 
   const peragaWajib = failures >= PERAGA_SETELAH_GAGAL
-  const tanganTerlihat = result?.analysis.hands.every((hand) => hand.present) ?? false
-  const pesanBelumTepat =
-    verdict?.reason === 'klasifikasi-salah'
-      ? `Pengenal belum yakin minimal ${PASS_SIMILARITY * 100}% bahwa ini isyarat ${signLabel}. Perhatikan peragaan, lalu coba lagi.`
-      : calibration && result && tanganTerlihat
-        ? `Kemiripan ${Math.round(similarity(result.score, calibration) * 100)}%, perlu minimal ${PASS_SIMILARITY * 100}%. Perhatikan peragaan, lalu coba lagi.`
-        : 'Masih belum sesuai. Perhatikan peragaan, lalu coba lagi.'
 
   return (
     <div className="flex flex-col gap-4">
@@ -394,7 +403,7 @@ export function PracticeBlock({
         {phase === 'belum-tepat' ? (
           <UmpanJawab
             benar={false}
-            pesanSalah={pesanBelumTepat}
+            pesanSalah={pesanBelumSesuai(failures)}
             onCobaLagi={kembaliSiap}
             onLewati={failures >= PERAGA_SETELAH_GAGAL ? selfAssess : undefined}
           />
