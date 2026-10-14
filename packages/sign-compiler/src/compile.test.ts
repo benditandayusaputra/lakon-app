@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { Vector3 } from 'three'
+import { Quaternion, Vector3 } from 'three'
 import {
   FLAGS_OFFSET,
   FRAME_FEATURE_DIM,
