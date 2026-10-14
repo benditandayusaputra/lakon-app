@@ -17,6 +17,17 @@ export type ExplicitSegmenterOptions = {
   windowMs?: number
 }
 
+const hasHand = (feature: Float32Array) =>
+  (feature[FLAGS_OFFSET] ?? 0) > 0.5 || (feature[FLAGS_OFFSET + 1] ?? 0) > 0.5
+
+// Jarak 3 frame sama dengan pemangkasan rekaman peraga, jadi skor kamera setara dengan kalibrasinya.
+export const trimToHands = (frames: Float32Array[], margin = 3): Float32Array[] => {
+  const first = frames.findIndex(hasHand)
+  if (first < 0) return []
+  const last = frames.findLastIndex(hasHand)
+  return frames.slice(Math.max(0, first - margin), last + margin + 1)
+}
+
 export const createExplicitSegmenter = (options: ExplicitSegmenterOptions = {}): Segmenter => {
   const countdownMs = options.countdownMs ?? 3000
   const windowMs = options.windowMs ?? 2000
@@ -75,8 +86,7 @@ export const createAutoSegmenter = (options: AutoSegmenterOptions = {}): Segment
     update(feature, timestampMs) {
       if (done) return { phase: 'done', frames }
 
-      const handPresent =
-        (feature[FLAGS_OFFSET] ?? 0) > 0.5 || (feature[FLAGS_OFFSET + 1] ?? 0) > 0.5
+      const handPresent = hasHand(feature)
       let energy = 0
       if (previous && handPresent) {
         const dtSec = Math.max((timestampMs - previousAt) / 1000, 1 / 120)

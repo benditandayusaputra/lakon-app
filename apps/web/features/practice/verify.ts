@@ -4,6 +4,7 @@ import {
   frameFeatures,
   maskUnusedHands,
   translateFeedback,
+  trimToHands,
   type Feedback,
   type FeedbackThresholds,
   type PathAnalysis,
@@ -34,7 +35,8 @@ export const scoreAgainstReference = (
   compiled: CompiledSign,
   thresholds?: FeedbackThresholds,
 ): VerifyResult => {
-  const masked = maskUnusedHands(frames, compiled.reference)
+  const trimmed = trimToHands(frames)
+  const masked = maskUnusedHands(trimmed.length > 0 ? trimmed : frames, compiled.reference)
   const result = dtwDetailed(masked, compiled.reference)
   const analysis = analyzePath(masked, compiled.reference, result.path, compiled.phaseByFrame)
   const feedback = translateFeedback(analysis, thresholds)

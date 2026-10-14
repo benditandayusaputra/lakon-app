@@ -12,6 +12,7 @@ import {
   similarity,
   type PeragaRecording,
 } from './calibration'
+import { scoreAgainstReference } from './verify'
 
 const content = new URL('../../../../content/', import.meta.url)
 const readJsonDir = (dir: string) =>
@@ -78,6 +79,24 @@ describe('kalibrasi isyarat', () => {
     const calibration = calibrate(references, examples)
     await expect(JSON.stringify(calibration, null, 2) + '\n').toMatchFileSnapshot(
       './calibration.json',
+    )
+  })
+})
+
+describe('rekaman kamera', () => {
+  it('frame tanpa tangan sebelum dan sesudah isyarat tidak mengubah skor', () => {
+    const handshapes = readJsonDir('handshapes/').map((raw) => handshapeSchema.parse(raw))
+    const sign = signSchema.parse(readJsonDir('signs/').find((raw) => raw.id === 'halo'))
+    const reference = compileSign(sign, handshapes, SEED_SAN_RIG)
+    const recording = (readJsonDir('peraga-landmarks/') as PeragaRecording[]).find(
+      (r) => r.id === 'halo',
+    )!
+    const frames = recordingFeatures(recording)
+    const kosong = new Float32Array(FRAME_FEATURE_DIM)
+    const denganJeda = [...Array(30).fill(kosong), ...frames, ...Array(15).fill(kosong)]
+    expect(scoreAgainstReference(denganJeda, reference).score).toBeCloseTo(
+      scoreAgainstReference(frames, reference).score,
+      6,
     )
   })
 })
