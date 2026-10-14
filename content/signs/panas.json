@@ -7,57 +7,69 @@
   "dialect": "bisindo-jatim",
   "structure": "dominant-only",
   "dominance": "right",
-  "duration": 2200,
+  "duration": 3000,
   "recognitionMode": true,
   "phases": [
     {
       "name": "onset",
-      "duration": 400,
+      "duration": 500,
       "easing": "ease-out",
       "dominant": {
         "handshape": "five-spread",
         "location": {
           "anchor": "pelipis",
-          "offset": [0.3, 0.15, 0.15]
+          "offset": [0.5, 0.15, 0.15]
         },
         "orientation": {
-          "palm": "in",
-          "fingers": "up"
+          "palm": "forward",
+          "fingers": "up",
+          "lean": 18,
+          "twist": 70
         }
+      },
+      "head": {
+        "turn": -12,
+        "tilt": 8
       }
     },
     {
       "name": "stroke",
-      "duration": 1250,
+      "duration": 2000,
       "easing": "linear",
       "dominant": {
         "handshape": "five-spread",
         "location": {
           "anchor": "pelipis",
-          "offset": [0.35, 0.15, 0.2]
+          "offset": [0.5, 0.15, 0.15]
         },
         "orientation": {
-          "palm": "in",
-          "fingers": "up"
+          "palm": "forward",
+          "fingers": "up",
+          "lean": 18,
+          "twist": 70
         }
       },
-      "hold": 100,
       "path": {
         "shape": "gelombang",
-        "plane": "horizontal",
-        "repeat": 2,
-        "curvature": 0.65
+        "plane": "frontal",
+        "repeat": 4,
+        "curvature": 1,
+        "tilt": 24
+      },
+      "head": {
+        "turn": -12,
+        "tilt": 8
       }
     },
     {
       "name": "retraction",
-      "duration": 450,
+      "duration": 500,
       "easing": "ease-in",
       "dominant": {
         "handshape": "five-spread",
         "location": {
           "anchor": "bahu",
-          "offset": [0.0, -1.2, 0.08]
+          "offset": [0.4, -1.2, 0.08]
         },
         "orientation": {
           "palm": "in",
@@ -70,7 +82,7 @@
   "nonManual": {
     "brow": null,
     "mouth": null,
-    "head": "miring menjauhi tangan, kesan gerah",
+    "head": "menoleh sedikit ke arah tangan dan miring menjauhinya, kesan gerah",
     "gaze": null
   },
   "media": {

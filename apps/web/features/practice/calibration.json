@@ -8,8 +8,8 @@
     "others": 2.85
   },
   "halo": {
-    "example": 1.56,
-    "others": 3.163
+    "example": 1.407,
+    "others": 3.094
   },
   "kopi": {
     "example": 3.143,
@@ -40,16 +40,16 @@
     "others": 2.889
   },
   "panas": {
-    "example": 1.641,
-    "others": 2.725
+    "example": 1.629,
+    "others": 2.844
   },
   "perawat": {
     "example": 3.087,
     "others": 3.972
   },
   "sakit": {
-    "example": 2.767,
-    "others": 3.226
+    "example": 2.817,
+    "others": 3.214
   },
   "sama-sama": {
     "example": 1.602,
