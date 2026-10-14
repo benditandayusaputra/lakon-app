@@ -43,6 +43,7 @@ export function CompiledAvatar({
   useEffect(() => {
     const controls = new OrbitControls(camera, gl.domElement)
     controls.target.set(0, 1.25, 0)
+    controls.enableZoom = false
     controls.update()
     controlsRef.current = controls
     return () => {
