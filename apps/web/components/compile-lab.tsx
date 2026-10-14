@@ -116,6 +116,7 @@ export function CompileLab() {
   const rigRef = useRef<CompilerRig | null>(null)
   const timeEl = useRef<HTMLSpanElement | null>(null)
   const sliderEl = useRef<HTMLInputElement | null>(null)
+  const videoRef = useRef<HTMLVideoElement | null>(null)
 
   const [signs, setSigns] = useState<Record<string, Sign>>({})
   const [handshapes, setHandshapes] = useState<Handshape[]>([])
@@ -189,6 +190,25 @@ export function CompileLab() {
     playbackRef.current.speed = speed
   }, [playing, speed])
 
+  const videoPenanda = signs[selected]?.media?.video.depan
+
+  // Video diregang agar satu putaran sama panjang dengan animasi 3D.
+  const selaraskanVideo = useCallback(() => {
+    const video = videoRef.current
+    const { compiled, time, speed: kecepatan } = playbackRef.current
+    if (!video || !compiled || !Number.isFinite(video.duration)) return
+    video.currentTime = (time / compiled.duration) * video.duration
+    video.playbackRate = (video.duration / (compiled.duration / 1000)) * kecepatan
+  }, [])
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    selaraskanVideo()
+    if (playing) void video.play().catch(() => {})
+    else video.pause()
+  }, [playing, speed, selected, duration, selaraskanVideo])
+
   const stepFrame = (direction: 1 | -1) => {
     const compiled = playbackRef.current.compiled
     if (!compiled) return
@@ -199,12 +219,13 @@ export function CompileLab() {
       compiled.duration,
       Math.max(0, playbackRef.current.time + direction * step),
     )
+    selaraskanVideo()
   }
 
   const signIds = Object.keys(signs)
 
   return (
-    <main className="mx-auto flex max-w-5xl flex-col gap-8 px-6 py-10">
+    <main className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-10">
       <header className="flex flex-col gap-2">
         <h1 className="text-2xl font-semibold">Pratinjau kompilasi</h1>
         <p className="max-w-prose text-sm">
@@ -278,18 +299,42 @@ export function CompileLab() {
         </p>
       ) : null}
 
-      <div className={`aspect-4/3 relative w-full overflow-hidden rounded-lg bg-[#e8e6df]`}>
-        <div className={`h-full w-full ${mirror ? '-scale-x-100' : ''}`}>
-          <Canvas camera={{ fov: 35, position: [0, 1.3, 2.2] }}>
-            <CompiledAvatar
-              playbackRef={playbackRef}
-              timeEl={timeEl}
-              sliderEl={sliderEl}
-              onRigReady={onRigReady}
-              onRigError={setError}
-            />
-          </Canvas>
-        </div>
+      <div className="grid gap-4 md:grid-cols-2">
+        <figure className="flex flex-col gap-2">
+          <div className="aspect-4/3 relative w-full overflow-hidden rounded-lg bg-[#e8e6df]">
+            {videoPenanda ? (
+              <video
+                key={videoPenanda}
+                ref={videoRef}
+                src={videoPenanda}
+                loop
+                muted
+                playsInline
+                onLoadedMetadata={selaraskanVideo}
+                className={`h-full w-full object-cover ${mirror ? '-scale-x-100' : ''}`}
+              />
+            ) : (
+              <p className="p-4 text-sm">Isyarat ini belum punya video penanda.</p>
+            )}
+          </div>
+          <figcaption className="text-center text-sm">Penanda manusia</figcaption>
+        </figure>
+        <figure className="flex flex-col gap-2">
+          <div className="aspect-4/3 relative w-full overflow-hidden rounded-lg bg-[#e8e6df]">
+            <div className={`h-full w-full ${mirror ? '-scale-x-100' : ''}`}>
+              <Canvas camera={{ fov: 35, position: [0, 1.3, 2.2] }}>
+                <CompiledAvatar
+                  playbackRef={playbackRef}
+                  timeEl={timeEl}
+                  sliderEl={sliderEl}
+                  onRigReady={onRigReady}
+                  onRigError={setError}
+                />
+              </Canvas>
+            </div>
+          </div>
+          <figcaption className="text-center text-sm">Avatar 3D</figcaption>
+        </figure>
       </div>
 
       <div className="flex items-center gap-3 text-sm">
@@ -304,6 +349,7 @@ export function CompileLab() {
             setPlaying(false)
             playbackRef.current.playing = false
             playbackRef.current.time = Number((event.target as HTMLInputElement).value)
+            selaraskanVideo()
           }}
           className="flex-1"
           aria-label="Posisi waktu animasi"
