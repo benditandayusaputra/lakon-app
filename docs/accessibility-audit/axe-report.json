@@ -1,0 +1,52 @@
+[
+  {
+    "name": "landing",
+    "url": "/",
+    "violations": []
+  },
+  {
+    "name": "sign-in",
+    "url": "/masuk",
+    "violations": []
+  },
+  {
+    "name": "register",
+    "url": "/daftar",
+    "violations": []
+  },
+  {
+    "name": "scenario-picker",
+    "url": "/skenario",
+    "violations": []
+  },
+  {
+    "name": "scenario-intro",
+    "url": "/skenario/kedai-kopi?arah=deaf",
+    "violations": []
+  },
+  {
+    "name": "scenario-learning",
+    "url": "/skenario/kedai-kopi?arah=deaf",
+    "violations": []
+  },
+  {
+    "name": "internal-gate",
+    "url": "/dev/pipeline",
+    "violations": []
+  },
+  {
+    "name": "dev-pipeline",
+    "url": "/dev/pipeline",
+    "violations": []
+  },
+  {
+    "name": "dev-verify",
+    "url": "/dev/verify",
+    "violations": []
+  },
+  {
+    "name": "tools-collect",
+    "url": "/tools/collect",
+    "violations": []
+  }
+]

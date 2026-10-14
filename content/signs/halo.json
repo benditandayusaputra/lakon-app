@@ -1,0 +1,89 @@
+{
+  "id": "halo",
+  "gloss": {
+    "id": "halo",
+    "en": "hello"
+  },
+  "dialect": "bisindo-jakarta",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 2150,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 450,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "five-spread",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.25, 0.15, 0.35]
+        },
+        "orientation": {
+          "palm": "forward",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 1100,
+      "easing": "linear",
+      "dominant": {
+        "handshape": "five-spread",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.25, 0.2, 0.35]
+        },
+        "orientation": {
+          "palm": "forward",
+          "fingers": "up"
+        }
+      },
+      "hold": 100,
+      "path": {
+        "shape": "gelombang",
+        "plane": "frontal",
+        "repeat": 3,
+        "curvature": 0.6,
+        "tilt": 24
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 500,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "five-spread",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": null,
+    "mouth": null,
+    "head": null,
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/halo.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: \"PRIVATE LESSON IN SIGN LANGUAGE WITH SURYA SAHETAPY\", kanal Gogirl! TV, https://www.youtube.com/watch?v=G_MnbyHWa50, penanda: Surya Sahetapy (Tuli, besar di Jakarta), lisensi Creative Commons (reuse allowed), diakses 1 Sep 2026. Segmen 7,8-9,3 dtk: lambaian telapak terbuka di samping kepala."
+}

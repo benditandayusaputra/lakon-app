@@ -1,0 +1,196 @@
+{
+  "id": "kedai-kopi",
+  "title": {
+    "id": "Memesan minuman di kedai kopi",
+    "en": "Ordering a drink at a coffee shop"
+  },
+  "sdg": [10],
+  "vocab": ["halo", "kopi", "minum", "panas", "dingin", "manis", "pahit", "terima-kasih"],
+  "estimatedMinutes": 20,
+  "nodes": [
+    {
+      "id": "sapa",
+      "actor": "barista",
+      "line": {
+        "id": "Selamat pagi, mau pesan apa?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "halo"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "halo",
+          "options": ["halo", "maaf", "tolong"]
+        }
+      },
+      "next": "pesan"
+    },
+    {
+      "id": "pesan",
+      "actor": "barista",
+      "line": {
+        "id": "Mau minum apa?"
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Tunjuk menu: minuman apa yang mau kamu pesan?",
+          "options": ["Kopi", "Teh", "Cokelat"],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Pelanggan melihat menu dan memilih minuman.",
+          "options": ["Kopi", "Teh", "Cokelat"],
+          "correct": 0
+        }
+      },
+      "next": "suhu"
+    },
+    {
+      "id": "suhu",
+      "actor": "barista",
+      "line": {
+        "id": "Panas atau dingin?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "panas"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "panas",
+          "options": ["panas", "dingin"]
+        }
+      },
+      "next": "rasa"
+    },
+    {
+      "id": "rasa",
+      "actor": "barista",
+      "line": {
+        "id": "Manis atau pahit?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "manis"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "manis",
+          "options": ["manis", "pahit", "dingin"]
+        }
+      },
+      "next": "harga"
+    },
+    {
+      "id": "harga",
+      "actor": "barista",
+      "line": {
+        "id": "Ada lagi? Ini totalnya di layar kasir."
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Layar kasir menunjukkan total. Berapa yang harus kamu bayar?",
+          "options": ["Rp20.000", "Rp12.000", "Rp25.000"],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Pelanggan selesai memesan. Bagaimana kamu menyampaikan totalnya?",
+          "options": [
+            "Tunjukkan angka di layar kasir",
+            "Sebutkan dengan suara",
+            "Menulis di udara"
+          ],
+          "correct": 0
+        }
+      },
+      "next": "bayar"
+    },
+    {
+      "id": "bayar",
+      "actor": "barista",
+      "line": {
+        "id": "Totalnya seperti di layar ya. Bayarnya bagaimana?"
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Kasir menunjuk stiker QRIS di meja. Apa yang kamu lakukan?",
+          "options": [
+            "Pindai QRIS, lalu tunjukkan bukti bayar",
+            "Menyerahkan ponsel ke kasir",
+            "Menunggu kasir bicara lagi"
+          ],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Pelanggan mau membayar. Cara paling jelas menyampaikan metode bayar?",
+          "options": [
+            "Tunjuk stiker QRIS atau mesin kartu",
+            "Menjelaskan dengan suara",
+            "Membiarkan pelanggan menebak"
+          ],
+          "correct": 0
+        }
+      },
+      "next": "ambil"
+    },
+    {
+      "id": "ambil",
+      "actor": "barista",
+      "line": {
+        "id": "Pembayaran diterima. Nomor pesananmu 12, tunggu sebentar ya."
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Barista mengangkat papan bernomor 12. Apa yang kamu lakukan?",
+          "options": [
+            "Maju ke meja ambil dan tunjukkan struk",
+            "Tetap duduk sampai dipanggil dengan suara",
+            "Memesan ulang dari awal"
+          ],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Pesanan pelanggan Tuli sudah siap. Cara memanggilnya?",
+          "options": [
+            "Angkat papan nomor dan lambaikan tangan",
+            "Sebut namanya dengan suara keras",
+            "Menunggu ia datang sendiri"
+          ],
+          "correct": 0
+        }
+      },
+      "next": "tutup"
+    },
+    {
+      "id": "tutup",
+      "actor": "barista",
+      "line": {
+        "id": "Ini pesanannya. Sampai jumpa!"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "terima-kasih"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "terima-kasih",
+          "options": ["terima-kasih", "halo", "maaf"]
+        }
+      },
+      "next": null
+    }
+  ]
+}

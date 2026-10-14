@@ -1,0 +1,99 @@
+{
+  "id": "kopi",
+  "gloss": {
+    "id": "kopi",
+    "en": "coffee"
+  },
+  "dialect": "bisindo-jakarta",
+  "structure": "asymmetric",
+  "dominance": "right",
+  "duration": 2150,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 400,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "c-curve",
+        "location": {
+          "anchor": "ruang-netral",
+          "offset": [0.15, 0.7, -0.1]
+        },
+        "orientation": {
+          "palm": "down",
+          "fingers": "in"
+        }
+      },
+      "nonDominant": {
+        "handshape": "fist",
+        "location": {
+          "anchor": "ruang-netral",
+          "offset": [0.1, -0.05, -0.15]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "forward"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 1200,
+      "easing": "linear",
+      "dominant": {
+        "handshape": "c-curve",
+        "location": {
+          "anchor": "ruang-netral",
+          "offset": [0.2, 0.7, -0.1]
+        },
+        "orientation": {
+          "palm": "down",
+          "fingers": "in"
+        }
+      },
+      "hold": 100,
+      "path": {
+        "shape": "lingkaran",
+        "plane": "horizontal",
+        "repeat": 3,
+        "curvature": 1.0
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "c-curve",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": null,
+    "mouth": null,
+    "head": null,
+    "gaze": "melihat ke tangan"
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/kopi.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: \"Belajar Bahasa Isyarat di Kopi Tuli\", kanal BenarNews Indonesia, https://www.youtube.com/watch?v=0TBz-UHOYtM, penanda: Adhika Prakoso (Tuli, pendiri Kopi Tuli/KOPTUL Jakarta), diakses 1 Sep 2026. Segmen 0,6-2,3 dtk (diulang 6,6-8,0 dtk, juga tergambar di logo KOPTUL): tangan kanan melengkung menghadap bawah memutar kecil di atas kepalan kiri, seperti memutar gilingan kopi."
+}

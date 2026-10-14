@@ -1,0 +1,41 @@
+{
+  "id": "five-spread",
+  "label": {
+    "id": "telapak datar, jari terbuka",
+    "en": "flat palm, fingers spread"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [0, 0, 0],
+      "abduct": 45,
+      "oppose": 0
+    },
+    "index": {
+      "flex": [0, 0, 0],
+      "abduct": 15
+    },
+    "middle": {
+      "flex": [0, 0, 0],
+      "abduct": 15
+    },
+    "ring": {
+      "flex": [0, 0, 0],
+      "abduct": 15
+    },
+    "pinky": {
+      "flex": [0, 0, 0],
+      "abduct": 15
+    }
+  },
+  "usedIn": ["halo", "panas", "sakit", "uji-gerak"],
+  "notes": null,
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "id": "terima-kasih",
+  "gloss": {
+    "id": "terima kasih",
+    "en": "thank you"
+  },
+  "dialect": "bisindo-jakarta",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 1550,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 350,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "dagu",
+          "offset": [0.1, -0.55, 0.05]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 500,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "ruang-netral",
+          "offset": [0.15, 0.15, 0.3]
+        },
+        "orientation": {
+          "palm": "up",
+          "fingers": "forward"
+        }
+      },
+      "hold": 250,
+      "path": {
+        "shape": "busur",
+        "plane": "sagittal",
+        "curvature": 0.4
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": {
+    "activePart": "ujung-jari",
+    "passivePart": "dagu",
+    "type": "touch"
+  },
+  "nonManual": {
+    "brow": null,
+    "mouth": null,
+    "head": null,
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/terima-kasih.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: \"PRIVATE LESSON IN SIGN LANGUAGE WITH SURYA SAHETAPY\", kanal Gogirl! TV, https://www.youtube.com/watch?v=G_MnbyHWa50, penanda: Surya Sahetapy (Tuli, besar di Jakarta), lisensi Creative Commons (reuse allowed), diakses 1 Sep 2026. Segmen 54,3-57,0 dtk: telapak terbuka dari dagu bergerak keluar-depan."
+}

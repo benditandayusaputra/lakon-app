@@ -1,0 +1,66 @@
+{
+  "dingin": {
+    "example": 3.012,
+    "others": 3.457
+  },
+  "dokter": {
+    "example": 1.939,
+    "others": 2.85
+  },
+  "halo": {
+    "example": 1.56,
+    "others": 3.163
+  },
+  "kopi": {
+    "example": 3.075,
+    "others": 4.144
+  },
+  "maaf": {
+    "example": 1.267,
+    "others": 2.335
+  },
+  "makan": {
+    "example": 1.406,
+    "others": 1.881
+  },
+  "manis": {
+    "example": 2.142,
+    "others": 2.539
+  },
+  "mata": {
+    "example": 1.518,
+    "others": 1.992
+  },
+  "minum": {
+    "example": 1.594,
+    "others": 2.047
+  },
+  "pahit": {
+    "example": 2.727,
+    "others": 2.889
+  },
+  "panas": {
+    "example": 1.641,
+    "others": 2.725
+  },
+  "perawat": {
+    "example": 3.087,
+    "others": 3.972
+  },
+  "sakit": {
+    "example": 2.767,
+    "others": 3.226
+  },
+  "sama-sama": {
+    "example": 1.602,
+    "others": 2.955
+  },
+  "tangan": {
+    "example": 3.69,
+    "others": 4.694
+  },
+  "terima-kasih": {
+    "example": 2.537,
+    "others": 3.317
+  }
+}

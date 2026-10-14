@@ -1,0 +1,102 @@
+{
+  "id": "pahit",
+  "gloss": {
+    "id": "pahit",
+    "en": "bitter"
+  },
+  "dialect": "bisindo-jatim",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 2050,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 400,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "index",
+        "location": {
+          "anchor": "dagu",
+          "offset": [0.15, -0.5, 0.25]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 400,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "index",
+        "location": {
+          "anchor": "dagu",
+          "offset": [0.15, -0.55, 0.2]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 700,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "dada",
+          "offset": [0.35, 0.4, 0.25]
+        },
+        "orientation": {
+          "palm": "down",
+          "fingers": "in"
+        }
+      },
+      "hold": 100
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": {
+    "activePart": "ujung-telunjuk",
+    "passivePart": "bibir",
+    "type": "touch"
+  },
+  "nonManual": {
+    "brow": "berkerut",
+    "mouth": "meringis seperti mengecap rasa pahit",
+    "head": null,
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/pahit.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"PAHIT\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9MDTPM64YWH2TFPC9KWEKM4.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 1,3-3,6 dtk: ujung telunjuk menyentuh bibir, lalu telapak datar menghadap bawah di depan dada dengan jari ke arah dalam, wajah meringis."
+}

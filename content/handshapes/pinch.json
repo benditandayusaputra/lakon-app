@@ -1,0 +1,41 @@
+{
+  "id": "pinch",
+  "label": {
+    "id": "jempol dan jari rapat mencapit",
+    "en": "flat pinch"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [40, 20, 0],
+      "abduct": 0,
+      "oppose": 55
+    },
+    "index": {
+      "flex": [50, 10, 0],
+      "abduct": 0
+    },
+    "middle": {
+      "flex": [50, 10, 0],
+      "abduct": 0
+    },
+    "ring": {
+      "flex": [50, 10, 0],
+      "abduct": 0
+    },
+    "pinky": {
+      "flex": [50, 10, 0],
+      "abduct": 0
+    }
+  },
+  "usedIn": ["makan", "perawat"],
+  "notes": null,
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

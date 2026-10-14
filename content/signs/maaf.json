@@ -1,0 +1,88 @@
+{
+  "id": "maaf",
+  "gloss": {
+    "id": "maaf",
+    "en": "sorry"
+  },
+  "dialect": "bisindo-jakarta",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 2050,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 400,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "ring-f",
+        "location": {
+          "anchor": "dagu",
+          "offset": [0.25, -0.3, 0.2]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 1100,
+      "easing": "linear",
+      "dominant": {
+        "handshape": "ring-f",
+        "location": {
+          "anchor": "dagu",
+          "offset": [0.2, -0.2, 0.1]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "up"
+        }
+      },
+      "hold": 100,
+      "path": {
+        "shape": "gelombang",
+        "plane": "sagittal",
+        "repeat": 2,
+        "curvature": 0.4
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "ring-f",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": "sedikit terangkat, memohon",
+    "mouth": null,
+    "head": "sedikit menunduk",
+    "gaze": "ke lawan bicara"
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/maaf.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor animasi, BELUM divalidasi penanda Tuli. Sumber: animasi \"Maaf\" kolaborasi Starbucks Indonesia x Pusbisindo, dimuat di artikel JEO Kompas \"Kopi, Bahasa Isyarat, dan Rasa Aman\", https://jeo.kompas.com/kopi-bahasa-isyarat-dan-rasa-aman (berkas: https://d3xrl3sy6kkq9.cloudfront.net/starbucks/img/maaf.gif), kosakata disusun bersama Pusbisindo, diakses 1 Sep 2026. Animasi: tangan bentuk cincin O di samping pipi digerakkan maju-mundur kecil dua kali. Video peraga memakai bentuk OK (ring-f) di samping mulut, bukan cincin O."
+}

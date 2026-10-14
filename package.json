@@ -1,0 +1,35 @@
+{
+  "name": "lakon",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.24.0",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @lakon/web dev",
+    "build": "pnpm --filter @lakon/web build",
+    "check:signs": "node tools/check-signs.mjs",
+    "check:content": "node tools/validate-content.mjs",
+    "peraga": "node tools/encode-peraga.mjs",
+    "typecheck": "tsc -b --pretty && pnpm --filter @lakon/web exec tsc --noEmit",
+    "test": "vitest run",
+    "e2e": "pnpm --filter @lakon/web e2e",
+    "db:push": "pnpm --filter @lakon/web db:push",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@vercel/blob": "^2.8.1",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.10",
+    "tsx": "^4.23.13",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.21.0",
+    "vitest": "^3.0.5"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "o-round",
+  "label": {
+    "id": "semua jari melengkung bertemu jempol",
+    "en": "all fingers curved to meet thumb"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [30, 25, 0],
+      "abduct": 0,
+      "oppose": 60
+    },
+    "index": {
+      "flex": [45, 60, 30],
+      "abduct": 0
+    },
+    "middle": {
+      "flex": [45, 60, 30],
+      "abduct": 0
+    },
+    "ring": {
+      "flex": [45, 60, 30],
+      "abduct": 0
+    },
+    "pinky": {
+      "flex": [45, 60, 30],
+      "abduct": 0
+    }
+  },
+  "usedIn": [],
+  "notes": null,
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

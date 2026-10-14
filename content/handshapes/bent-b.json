@@ -1,0 +1,41 @@
+{
+  "id": "bent-b",
+  "label": {
+    "id": "telapak rapat, menekuk di pangkal",
+    "en": "flat hand bent at knuckles"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [10, 5, 0],
+      "abduct": 0,
+      "oppose": 0
+    },
+    "index": {
+      "flex": [70, 0, 0],
+      "abduct": 0
+    },
+    "middle": {
+      "flex": [70, 0, 0],
+      "abduct": 0
+    },
+    "ring": {
+      "flex": [70, 0, 0],
+      "abduct": 0
+    },
+    "pinky": {
+      "flex": [70, 0, 0],
+      "abduct": 0
+    }
+  },
+  "usedIn": [],
+  "notes": null,
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

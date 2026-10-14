@@ -1,0 +1,89 @@
+{
+  "id": "dingin",
+  "gloss": {
+    "id": "dingin",
+    "en": "cold"
+  },
+  "dialect": "bisindo-jatim",
+  "structure": "symmetric",
+  "dominance": "right",
+  "duration": 2250,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 400,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "fist",
+        "location": {
+          "anchor": "dada",
+          "offset": [0.35, 0.22, 0.05]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 1300,
+      "easing": "linear",
+      "dominant": {
+        "handshape": "fist",
+        "location": {
+          "anchor": "dada",
+          "offset": [0.35, 0.27, 0.05]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "up"
+        }
+      },
+      "hold": 100,
+      "path": {
+        "shape": "zigzag",
+        "plane": "frontal",
+        "repeat": 3,
+        "curvature": 1.0,
+        "tilt": 10
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "fist",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": null,
+    "mouth": "bibir dirapatkan, kesan menggigil",
+    "head": "bahu terangkat, tubuh mengkerut",
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/dingin.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"DINGIN\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9MCQFPWGJ44KG7X98KTX1RK.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 2,3-4,3 dtk: dua kepalan di depan dada dekat bahu digetarkan kecil seperti menggigil, bahu ikut terangkat."
+}

@@ -1,0 +1,92 @@
+{
+  "id": "makan",
+  "gloss": {
+    "id": "makan",
+    "en": "eat"
+  },
+  "dialect": "bisindo-jatim",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 1850,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 400,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "pinch",
+        "location": {
+          "anchor": "dada",
+          "offset": [0.3, 0.15, 0.4]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 850,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "pinch",
+        "location": {
+          "anchor": "dagu",
+          "offset": [0.05, -0.5, 0.25]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "up"
+        }
+      },
+      "hold": 150,
+      "path": {
+        "shape": "busur",
+        "plane": "sagittal",
+        "repeat": 2,
+        "curvature": 0.4
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "pinch",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": {
+    "activePart": "ujung-jari",
+    "passivePart": "bibir",
+    "type": "tap"
+  },
+  "nonManual": {
+    "brow": null,
+    "mouth": "sedikit terbuka seperti mengunyah",
+    "head": null,
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/makan.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"MAKAN\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9NR1TG9DQYFH4H4ZSNJXXEA.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 0,7-2,7 dtk: ujung jari terkumpul diangkat dan disentuhkan ke mulut dua kali seperti menyuap."
+}

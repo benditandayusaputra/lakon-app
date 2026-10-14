@@ -1,0 +1,41 @@
+{
+  "id": "claw",
+  "label": {
+    "id": "jari melengkung dan merenggang",
+    "en": "curved, spread fingers"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [25, 20, 0],
+      "abduct": 20,
+      "oppose": 35
+    },
+    "index": {
+      "flex": [45, 50, 30],
+      "abduct": 15
+    },
+    "middle": {
+      "flex": [45, 50, 30],
+      "abduct": 15
+    },
+    "ring": {
+      "flex": [45, 50, 30],
+      "abduct": 15
+    },
+    "pinky": {
+      "flex": [45, 50, 30],
+      "abduct": 15
+    }
+  },
+  "usedIn": [],
+  "notes": null,
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": ["packages/*/src/**/*.ts", "tools/**/*.mjs", "vitest.config.ts"],
+  "compilerOptions": {
+    "paths": {
+      "@lakon/sign-schema": ["./packages/sign-schema/src/index.ts"],
+      "@lakon/sign-compiler": ["./packages/sign-compiler/src/index.ts"],
+      "@lakon/cv-core": ["./packages/cv-core/src/index.ts"]
+    },
+    "baseUrl": "."
+  }
+}

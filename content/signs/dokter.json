@@ -1,0 +1,105 @@
+{
+  "id": "dokter",
+  "gloss": {
+    "id": "dokter",
+    "en": "doctor"
+  },
+  "dialect": "bisindo-jatim",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 2200,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 400,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "fist",
+        "location": {
+          "anchor": "dada",
+          "offset": [-0.07, 0.3, 0.15]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "in"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 600,
+      "easing": "linear",
+      "dominant": {
+        "handshape": "fist",
+        "location": {
+          "anchor": "dada",
+          "offset": [-0.07, 0.3, 0.05]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "in"
+        }
+      },
+      "hold": 100,
+      "path": {
+        "shape": "zigzag",
+        "plane": "sagittal",
+        "repeat": 2,
+        "curvature": 0.2
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 500,
+      "easing": "ease-in-out",
+      "hold": 150,
+      "dominant": {
+        "handshape": "fist",
+        "location": {
+          "anchor": "dada",
+          "offset": [0.28, 0.16, 0.05]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "fist",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": null,
+    "mouth": null,
+    "head": null,
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/dokter.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"DOKTER\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K87S5BC19H3HW12WH08VBMAK.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 1,0-2,7 dtk: kepalan tangan kanan diketukkan dua kali ke dada sisi kiri. Video peraga: kepalan mengetuk dada kiri lalu pindah ke dada kanan atas."
+}

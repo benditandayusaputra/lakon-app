@@ -1,0 +1,196 @@
+{
+  "id": "puskesmas",
+  "title": {
+    "id": "Mendaftar dan menyampaikan keluhan di puskesmas",
+    "en": "Registering and describing symptoms at a community clinic"
+  },
+  "sdg": [3, 10],
+  "vocab": ["halo", "sakit", "panas", "dokter", "perawat", "minum", "makan", "terima-kasih"],
+  "estimatedMinutes": 20,
+  "nodes": [
+    {
+      "id": "sapa",
+      "actor": "petugas",
+      "line": {
+        "id": "Selamat pagi, ada yang bisa dibantu?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "halo"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "halo",
+          "options": ["halo", "maaf", "sama-sama"]
+        }
+      },
+      "next": "daftar"
+    },
+    {
+      "id": "daftar",
+      "actor": "petugas",
+      "line": {
+        "id": "Mau berobat? Silakan daftar dulu di loket."
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Petugas menyodorkan formulir pendaftaran. Apa yang kamu tunjukkan?",
+          "options": ["Kartu identitas (KTP/BPJS)", "Uang tunai", "Nomor telepon teman"],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Pasien Tuli mau mendaftar. Cara paling jelas meminta datanya?",
+          "options": [
+            "Sodorkan formulir dan tunjuk kolom yang harus diisi",
+            "Jelaskan panjang lebar dengan suara",
+            "Minta pasien menunggu tanpa penjelasan"
+          ],
+          "correct": 0
+        }
+      },
+      "next": "antre"
+    },
+    {
+      "id": "antre",
+      "actor": "petugas",
+      "line": {
+        "id": "Sudah terdaftar. Nomormu A-07, pantau layar antrean ya."
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Layar antrean menunjukkan A-06 menuju Poli Umum. Apa yang kamu lakukan?",
+          "options": [
+            "Bersiap, nomorku tepat setelah ini",
+            "Langsung masuk ruang periksa",
+            "Pulang dulu, nanti kembali"
+          ],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Cara memanggil pasien Tuli yang sedang menunggu?",
+          "options": [
+            "Tampilkan nomor di layar dan lambaikan tangan",
+            "Panggil nama lewat pengeras suara saja",
+            "Menunggu pasien bertanya sendiri"
+          ],
+          "correct": 0
+        }
+      },
+      "next": "keluhan"
+    },
+    {
+      "id": "keluhan",
+      "actor": "dokter",
+      "line": {
+        "id": "Silakan duduk. Apa keluhannya?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "sakit"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "sakit",
+          "options": ["sakit", "panas", "minum"]
+        }
+      },
+      "next": "bagian"
+    },
+    {
+      "id": "bagian",
+      "actor": "dokter",
+      "line": {
+        "id": "Bagian mana yang sakit? Tunjuk saja."
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Kepalamu pusing sejak semalam. Bagian mana yang kamu tunjuk?",
+          "options": ["Kepala", "Kaki", "Perut"],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Pasien menunjuk kepalanya sambil meringis. Apa artinya?",
+          "options": ["Kepalanya sakit", "Dia lupa sesuatu", "Dia menolak diperiksa"],
+          "correct": 0
+        }
+      },
+      "next": "gejala"
+    },
+    {
+      "id": "gejala",
+      "actor": "dokter",
+      "line": {
+        "id": "Sejak kapan? Badannya panas tidak?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "panas"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "panas",
+          "options": ["panas", "sakit", "makan"]
+        }
+      },
+      "next": "apotek"
+    },
+    {
+      "id": "apotek",
+      "actor": "petugas-apotek",
+      "line": {
+        "id": "Ini obatnya. Perhatikan label aturan pakainya ya."
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Label obat tertulis: 3×1 sesudah makan. Bagaimana cara minumnya?",
+          "options": [
+            "Tiga kali sehari, sesudah makan",
+            "Satu kali sehari, sebelum tidur",
+            "Dua kali sehari, sebelum makan"
+          ],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Cara paling jelas menyampaikan aturan minum obat ke pasien Tuli?",
+          "options": [
+            "Tunjuk label obat dan angkanya satu per satu",
+            "Jelaskan cepat dengan suara",
+            "Biarkan pasien membaca sendiri tanpa dicek"
+          ],
+          "correct": 0
+        }
+      },
+      "next": "tutup"
+    },
+    {
+      "id": "tutup",
+      "actor": "dokter",
+      "line": {
+        "id": "Semoga lekas sembuh ya!"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "terima-kasih"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "terima-kasih",
+          "options": ["terima-kasih", "halo", "maaf"]
+        }
+      },
+      "next": null
+    }
+  ]
+}

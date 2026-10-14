@@ -1,0 +1,28 @@
+{
+  "kind": "dynamic",
+  "labels": [
+    "dingin",
+    "dokter",
+    "halo",
+    "kopi",
+    "maaf",
+    "makan",
+    "manis",
+    "mata",
+    "minum",
+    "pahit",
+    "panas",
+    "perawat",
+    "sakit",
+    "sama-sama",
+    "tangan",
+    "terima-kasih"
+  ],
+  "inputShape": [
+    8,
+    134
+  ],
+  "url": "classifier.onnx",
+  "accuracySeen": 1.0,
+  "accuracyUnseen": null
+}

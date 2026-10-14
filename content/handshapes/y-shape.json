@@ -1,0 +1,41 @@
+{
+  "id": "y-shape",
+  "label": {
+    "id": "jempol dan kelingking terbuka",
+    "en": "thumb and pinky out"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [0, 0, 0],
+      "abduct": 45,
+      "oppose": 0
+    },
+    "index": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "middle": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "ring": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "pinky": {
+      "flex": [0, 0, 0],
+      "abduct": 20
+    }
+  },
+  "usedIn": [],
+  "notes": null,
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

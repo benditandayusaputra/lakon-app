@@ -1,0 +1,88 @@
+{
+  "id": "panas",
+  "gloss": {
+    "id": "panas",
+    "en": "hot"
+  },
+  "dialect": "bisindo-jatim",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 2200,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 400,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "five-spread",
+        "location": {
+          "anchor": "pelipis",
+          "offset": [0.3, 0.15, 0.15]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 1250,
+      "easing": "linear",
+      "dominant": {
+        "handshape": "five-spread",
+        "location": {
+          "anchor": "pelipis",
+          "offset": [0.35, 0.15, 0.2]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "up"
+        }
+      },
+      "hold": 100,
+      "path": {
+        "shape": "gelombang",
+        "plane": "horizontal",
+        "repeat": 2,
+        "curvature": 0.65
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "five-spread",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": null,
+    "mouth": null,
+    "head": "miring menjauhi tangan, kesan gerah",
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/panas.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"PANAS\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9MCTSN98SM1Z56XJ4T9HZZH.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip: tangan kanan terbuka dikibas di samping kepala, 2,3-4,8 dtk."
+}

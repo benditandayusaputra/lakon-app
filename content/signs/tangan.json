@@ -1,0 +1,99 @@
+{
+  "id": "tangan",
+  "gloss": {
+    "id": "tangan",
+    "en": "hand"
+  },
+  "dialect": "bisindo-jatim",
+  "structure": "asymmetric",
+  "dominance": "right",
+  "duration": 1850,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 400,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "dada",
+          "offset": [0.0, 0.4, 0.25]
+        },
+        "orientation": {
+          "palm": "down",
+          "fingers": "in"
+        }
+      },
+      "nonDominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "dada",
+          "offset": [0.35, 0.55, 0.15]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 900,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "dada",
+          "offset": [-0.08, 0.5, 0.25]
+        },
+        "orientation": {
+          "palm": "down",
+          "fingers": "in"
+        }
+      },
+      "hold": 100,
+      "path": {
+        "shape": "gelombang",
+        "plane": "frontal",
+        "repeat": 2,
+        "curvature": 1.0
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": null,
+    "mouth": null,
+    "head": null,
+    "gaze": "melihat ke tangan"
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/tangan.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"TANGAN\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9NVB45899A50XV8GFJ0K1W7.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 2,3-5,3 dtk: kedua tangan terbuka di depan dada, telapak dominan mengusap area lengan bawah tangan satunya dua kali. Video peraga memakai tangan kiri mengusap lengan kanan; avatar dicerminkan ke dominan kanan agar konsisten dengan isyarat lain."
+}

@@ -1,0 +1,88 @@
+{
+  "id": "sama-sama",
+  "gloss": {
+    "id": "sama-sama",
+    "en": "you're welcome"
+  },
+  "dialect": "bisindo-jakarta",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 1850,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 350,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "index",
+        "location": {
+          "anchor": "perut",
+          "offset": [0.25, 0.6, 0.4]
+        },
+        "orientation": {
+          "palm": "down",
+          "fingers": "in"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 900,
+      "easing": "linear",
+      "dominant": {
+        "handshape": "index",
+        "location": {
+          "anchor": "perut",
+          "offset": [0.28, 0.65, 0.37]
+        },
+        "orientation": {
+          "palm": "down",
+          "fingers": "in"
+        }
+      },
+      "hold": 150,
+      "path": {
+        "shape": "zigzag",
+        "plane": "sagittal",
+        "repeat": 2,
+        "curvature": 0.3
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "index",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": null,
+    "mouth": "tersenyum",
+    "head": "sedikit mengangguk",
+    "gaze": "ke lawan bicara"
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/sama-sama.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: \"PRIVATE LESSON IN SIGN LANGUAGE WITH SURYA SAHETAPY\", kanal Gogirl! TV, https://www.youtube.com/watch?v=G_MnbyHWa50, penanda: Surya Sahetapy (Tuli, besar di Jakarta), lisensi Creative Commons (reuse allowed), diakses 1 Sep 2026. Segmen 56,3-58,6 dtk (berlabel \"Sama-sama\"): kepalan rileks punggung jari ke depan di depan dada, diguncang kecil ke depan dua kali sambil tersenyum dan mengangguk. Video peraga: telunjuk mendatar ke arah dalam setinggi perut atas, digoyang kecil."
+}

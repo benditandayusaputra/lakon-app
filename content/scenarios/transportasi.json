@@ -1,0 +1,195 @@
+{
+  "id": "transportasi",
+  "title": {
+    "id": "Menanyakan rute dan membeli tiket transportasi",
+    "en": "Asking for directions and buying a transit ticket"
+  },
+  "sdg": [11],
+  "vocab": ["halo", "maaf", "terima-kasih", "sama-sama", "panas", "dingin", "sakit", "tangan"],
+  "estimatedMinutes": 15,
+  "nodes": [
+    {
+      "id": "sapa",
+      "actor": "petugas-loket",
+      "line": {
+        "id": "Selamat siang, mau ke mana?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "halo"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "halo",
+          "options": ["halo", "maaf", "sama-sama"]
+        }
+      },
+      "next": "rute"
+    },
+    {
+      "id": "rute",
+      "actor": "petugas-loket",
+      "line": {
+        "id": "Tujuannya ke mana?"
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Tunjuk peta rute: kamu mau turun di halte mana?",
+          "options": ["Balai Kota", "Pasar Lama", "Taman Bunga"],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Penumpang menunjuk peta rute. Halte mana yang ditunjuk?",
+          "options": ["Balai Kota", "Pasar Lama", "Taman Bunga"],
+          "correct": 0
+        }
+      },
+      "next": "ulang"
+    },
+    {
+      "id": "ulang",
+      "actor": "petugas-loket",
+      "line": {
+        "id": "Balai Kota ya. Lewat koridor satu, transit di Pasar Lama, lalu lanjut ke…"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "maaf"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "maaf",
+          "options": ["maaf", "halo", "sama-sama"]
+        }
+      },
+      "next": "tiket"
+    },
+    {
+      "id": "tiket",
+      "actor": "petugas-loket",
+      "line": {
+        "id": "Ke Balai Kota lewat koridor satu. Berapa tiketnya?"
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Tunjukkan jumlah dengan jari: berapa tiket yang kamu beli?",
+          "options": ["1 tiket", "2 tiket", "3 tiket"],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Penumpang mengangkat satu jari. Berapa tiket yang diminta?",
+          "options": ["1 tiket", "2 tiket", "3 tiket"],
+          "correct": 0
+        }
+      },
+      "next": "harga"
+    },
+    {
+      "id": "harga",
+      "actor": "petugas-loket",
+      "line": {
+        "id": "Satu tiket. Totalnya ada di layar loket."
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Layar loket menunjukkan total. Berapa yang harus kamu bayar?",
+          "options": ["Rp5.000", "Rp3.500", "Rp10.000"],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Penumpang selesai memesan. Bagaimana kamu menyampaikan totalnya?",
+          "options": [
+            "Tunjukkan angka di layar loket",
+            "Sebutkan dengan suara",
+            "Menulis di udara"
+          ],
+          "correct": 0
+        }
+      },
+      "next": "bayar"
+    },
+    {
+      "id": "bayar",
+      "actor": "petugas-loket",
+      "line": {
+        "id": "Lima ribu rupiah. Bayarnya bagaimana?"
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Petugas menunjuk alat tempel kartu di depan kaca. Apa yang kamu lakukan?",
+          "options": [
+            "Tempelkan kartu uang elektronik di alatnya",
+            "Menyerahkan dompet ke petugas",
+            "Menunggu petugas bicara lagi"
+          ],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Penumpang mau membayar. Cara paling jelas menyampaikan metode bayar?",
+          "options": [
+            "Tunjuk alat tempel kartu di depan loket",
+            "Menjelaskan dengan suara",
+            "Membiarkan penumpang menebak"
+          ],
+          "correct": 0
+        }
+      },
+      "next": "turun"
+    },
+    {
+      "id": "turun",
+      "actor": "petugas-loket",
+      "line": {
+        "id": "Ini tiketnya. Nanti turun di halte ketiga ya."
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Petugas menunjukkan tiga jari. Kamu turun di halte ke berapa?",
+          "options": ["Halte ketiga", "Halte pertama", "Halte kelima"],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Bagaimana kamu memastikan penumpang tahu tempat turun?",
+          "options": [
+            "Tunjukkan tiga jari dan titik halte di peta",
+            "Menyebutkan dengan suara saja",
+            "Menulis di udara"
+          ],
+          "correct": 0
+        }
+      },
+      "next": "tutup"
+    },
+    {
+      "id": "tutup",
+      "actor": "petugas-loket",
+      "line": {
+        "id": "Busnya segera tiba. Hati-hati di jalan!"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "terima-kasih"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "terima-kasih",
+          "options": ["terima-kasih", "halo", "sama-sama"]
+        }
+      },
+      "next": null
+    }
+  ]
+}

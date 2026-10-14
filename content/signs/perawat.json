@@ -1,0 +1,87 @@
+{
+  "id": "perawat",
+  "gloss": {
+    "id": "perawat",
+    "en": "nurse"
+  },
+  "dialect": "bisindo-jatim",
+  "structure": "symmetric",
+  "dominance": "right",
+  "duration": 1900,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 450,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "index",
+        "location": {
+          "anchor": "pelipis",
+          "offset": [0.17, 0.2, 0.15]
+        },
+        "orientation": {
+          "palm": "forward",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 900,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "pinch",
+        "location": {
+          "anchor": "bahu",
+          "offset": [-0.05, 0.35, 0.3]
+        },
+        "orientation": {
+          "palm": "forward",
+          "fingers": "up"
+        }
+      },
+      "hold": 100,
+      "path": {
+        "shape": "busur",
+        "plane": "frontal",
+        "curvature": 0.3
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "pinch",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": null,
+    "mouth": null,
+    "head": null,
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/perawat.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"PERAWAT\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K87S4BDWQS395AYE8E3P55XF.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 1,7-4,0 dtk: dua tangan bentuk L (telunjuk dan ibu jari terbuka) di sisi atas kepala, lalu turun ke samping bahu sambil jari mengatup, seperti menggambar topi perawat; inventaris belum punya bentuk L sehingga draf memakai telunjuk lalu jepitan."
+}

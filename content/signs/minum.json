@@ -1,0 +1,87 @@
+{
+  "id": "minum",
+  "gloss": {
+    "id": "minum",
+    "en": "drink"
+  },
+  "dialect": "bisindo-jatim",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 1950,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 400,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "c-curve",
+        "location": {
+          "anchor": "dagu",
+          "offset": [0.3, -0.6, 0.4]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 900,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "c-curve",
+        "location": {
+          "anchor": "dagu",
+          "offset": [0.2, -0.45, 0.25]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "up"
+        }
+      },
+      "hold": 200,
+      "path": {
+        "shape": "busur",
+        "plane": "sagittal",
+        "curvature": 0.3
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "c-curve",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": null,
+  "nonManual": {
+    "brow": null,
+    "mouth": "sedikit terbuka seperti meneguk",
+    "head": "sedikit mendongak",
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/minum.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"MINUM\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9NR0J84JHMW2PB60ES6E0DR.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 1,8-3,4 dtk: tangan membentuk genggaman gelas (lengkung C) diangkat ke mulut lalu dimiringkan seperti meneguk."
+}

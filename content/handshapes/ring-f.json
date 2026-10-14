@@ -1,0 +1,41 @@
+{
+  "id": "ring-f",
+  "label": {
+    "id": "jempol dan telunjuk membentuk cincin",
+    "en": "thumb and index ring"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [30, 20, 0],
+      "abduct": 0,
+      "oppose": 50
+    },
+    "index": {
+      "flex": [50, 60, 20],
+      "abduct": 0
+    },
+    "middle": {
+      "flex": [0, 0, 0],
+      "abduct": 10
+    },
+    "ring": {
+      "flex": [0, 0, 0],
+      "abduct": 10
+    },
+    "pinky": {
+      "flex": [0, 0, 0],
+      "abduct": 10
+    }
+  },
+  "usedIn": ["maaf"],
+  "notes": null,
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

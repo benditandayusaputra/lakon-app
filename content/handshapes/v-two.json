@@ -1,0 +1,41 @@
+{
+  "id": "v-two",
+  "label": {
+    "id": "telunjuk dan tengah terbuka",
+    "en": "index and middle spread"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [20, 40, 0],
+      "abduct": 0,
+      "oppose": 40
+    },
+    "index": {
+      "flex": [0, 0, 0],
+      "abduct": 20
+    },
+    "middle": {
+      "flex": [0, 0, 0],
+      "abduct": 20
+    },
+    "ring": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "pinky": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    }
+  },
+  "usedIn": [],
+  "notes": null,
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

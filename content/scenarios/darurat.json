@@ -1,0 +1,166 @@
+{
+  "id": "darurat",
+  "title": {
+    "id": "Meminta pertolongan dalam situasi darurat",
+    "en": "Asking for help in an emergency"
+  },
+  "sdg": [3, 11],
+  "vocab": ["halo", "sakit", "tangan", "terima-kasih", "mata", "dokter", "perawat", "maaf"],
+  "estimatedMinutes": 15,
+  "nodes": [
+    {
+      "id": "panggil",
+      "actor": "warga",
+      "line": {
+        "id": "Ada apa? Kamu butuh bantuan?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "halo"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "halo",
+          "options": ["halo", "sakit", "terima-kasih"]
+        }
+      },
+      "next": "kejadian"
+    },
+    {
+      "id": "kejadian",
+      "actor": "warga",
+      "line": {
+        "id": "Apa yang terjadi?"
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Tunjuk kartu kejadian: apa yang terjadi padamu?",
+          "options": ["Kehilangan dompet", "Jatuh dari sepeda", "Tersesat"],
+          "correct": 1
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Warga Tuli menunjuk kartu kejadian. Apa yang terjadi?",
+          "options": ["Kehilangan dompet", "Jatuh dari sepeda", "Tersesat"],
+          "correct": 1
+        }
+      },
+      "next": "luka"
+    },
+    {
+      "id": "luka",
+      "actor": "warga",
+      "line": {
+        "id": "Kamu terluka? Ada yang sakit?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "sakit"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "sakit",
+          "options": ["sakit", "halo", "tangan"]
+        }
+      },
+      "next": "bagian"
+    },
+    {
+      "id": "bagian",
+      "actor": "warga",
+      "line": {
+        "id": "Bagian mana yang sakit?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "tangan"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "tangan",
+          "options": ["tangan", "sakit", "halo"]
+        }
+      },
+      "next": "lokasi"
+    },
+    {
+      "id": "lokasi",
+      "actor": "warga",
+      "line": {
+        "id": "Di mana kejadiannya? Sepedamu masih di sana?"
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Tunjuk di peta lingkungan: di mana kamu terjatuh?",
+          "options": ["Taman RW", "Perempatan depan pos", "Warung ujung jalan"],
+          "correct": 1
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Warga Tuli menunjuk peta di dinding pos. Di mana kejadiannya?",
+          "options": ["Taman RW", "Perempatan depan pos", "Warung ujung jalan"],
+          "correct": 1
+        }
+      },
+      "next": "pihak"
+    },
+    {
+      "id": "pihak",
+      "actor": "warga",
+      "line": {
+        "id": "Saya bantu telepon. Hubungi siapa dulu?"
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Tunjuk papan nomor darurat: siapa yang perlu dihubungi dulu?",
+          "options": ["Ambulans", "Polisi", "Damkar"],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Kamu akan menelepon bantuan. Cara paling jelas menyampaikannya ke warga Tuli?",
+          "options": [
+            "Tunjuk nomor di papan darurat, lalu telepon di depannya",
+            "Menjelaskan dengan suara sambil menelepon",
+            "Pergi menelepon tanpa memberi tahu"
+          ],
+          "correct": 0
+        }
+      },
+      "next": "telepon"
+    },
+    {
+      "id": "telepon",
+      "actor": "warga",
+      "line": {
+        "id": "Saya telepon 119 sekarang. Tarik napas, saya di sini."
+      },
+      "next": "tutup"
+    },
+    {
+      "id": "tutup",
+      "actor": "warga",
+      "line": {
+        "id": "Ambulans sedang ke sini. Bertahan ya."
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "terima-kasih"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "terima-kasih",
+          "options": ["terima-kasih", "halo", "sakit"]
+        }
+      },
+      "next": null
+    }
+  ]
+}

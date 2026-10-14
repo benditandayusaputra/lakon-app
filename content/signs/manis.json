@@ -1,0 +1,102 @@
+{
+  "id": "manis",
+  "gloss": {
+    "id": "manis",
+    "en": "sweet"
+  },
+  "dialect": "bisindo-jatim",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 2050,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 350,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "dagu",
+          "offset": [0.1, -0.4, 0.25]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 450,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "dagu",
+          "offset": [0.1, -0.45, 0.25]
+        },
+        "orientation": {
+          "palm": "back",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 550,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "thumb-up",
+        "location": {
+          "anchor": "dada",
+          "offset": [0.3, 0.2, 0.15]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "forward"
+        }
+      },
+      "hold": 250
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "thumb-up",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": {
+    "activePart": "ujung-jari",
+    "passivePart": "bibir",
+    "type": "touch"
+  },
+  "nonManual": {
+    "brow": null,
+    "mouth": "tersenyum setelah mencicip",
+    "head": null,
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/manis.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"MANIS\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9MDX0V442EXD3MA7327QJ46.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 3,3-5,3 dtk: ujung jari telapak terbuka menyentuh bibir, lalu tangan turun ke ruang netral menjadi jempol tegak sambil tersenyum."
+}

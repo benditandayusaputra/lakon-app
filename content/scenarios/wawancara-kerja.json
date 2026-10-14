@@ -1,0 +1,189 @@
+{
+  "id": "wawancara-kerja",
+  "title": {
+    "id": "Wawancara kerja singkat",
+    "en": "A short job interview"
+  },
+  "sdg": [8],
+  "vocab": ["halo", "kopi", "panas", "maaf", "terima-kasih", "manis", "pahit", "dingin"],
+  "estimatedMinutes": 15,
+  "nodes": [
+    {
+      "id": "sapa",
+      "actor": "pewawancara",
+      "line": {
+        "id": "Selamat pagi! Kamu pelamar barista, ya? Silakan duduk."
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "halo"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "halo",
+          "options": ["halo", "maaf", "terima-kasih"]
+        }
+      },
+      "next": "berkas"
+    },
+    {
+      "id": "berkas",
+      "actor": "pewawancara",
+      "line": {
+        "id": "Sudah pernah bekerja sebelumnya?"
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Kamu belum punya isyarat untuk menjawab ini. Cara paling jelas?",
+          "options": [
+            "Buka CV, tunjuk bagian pengalaman",
+            "Mengangguk saja tanpa bukti",
+            "Diam dan menunggu"
+          ],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Pelamar Tuli menunjuk bagian pengalaman di CV-nya. Apa yang kamu lakukan?",
+          "options": [
+            "Baca bagian itu, angguk, lalu lanjut",
+            "Minta pelamar menjelaskan dengan suara",
+            "Abaikan CV dan ganti pertanyaan"
+          ],
+          "correct": 0
+        }
+      },
+      "next": "kopi"
+    },
+    {
+      "id": "kopi",
+      "actor": "pewawancara",
+      "line": {
+        "id": "Kami di sini jual kopi. Kamu suka kopi?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "kopi"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "kopi",
+          "options": ["kopi", "minum", "makan"]
+        }
+      },
+      "next": "menu"
+    },
+    {
+      "id": "menu",
+      "actor": "pewawancara",
+      "line": {
+        "id": "Tes kecil, ya. Pelanggan minta minuman paling laris kami. Tunjuk di menu!"
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Lihat papan menu. Minuman mana yang paling laris?",
+          "options": ["Kopi Susu Aren", "Teh Melati", "Cokelat Panas"],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Pelamar menunjuk menu. Minuman mana yang paling laris?",
+          "options": ["Kopi Susu Aren", "Teh Melati", "Cokelat Panas"],
+          "correct": 0
+        }
+      },
+      "next": "pelanggan"
+    },
+    {
+      "id": "pelanggan",
+      "actor": "pewawancara",
+      "line": {
+        "id": "Bagus. Kalau pelanggan Tuli datang ke kasir, apa yang kamu lakukan?"
+      },
+      "task": {
+        "deaf": {
+          "type": "point",
+          "prompt": "Pelanggan Tuli berdiri di depan kasir. Cara paling jelas melayaninya?",
+          "options": [
+            "Tatap matanya, lambaikan tangan, lalu tunjuk menu",
+            "Bicara lebih keras",
+            "Menunggu ia bicara duluan"
+          ],
+          "correct": 0
+        },
+        "service": {
+          "type": "point",
+          "prompt": "Pelamar menunjuk kartu: tatap mata, lambai, tunjuk menu. Penilaianmu?",
+          "options": [
+            "Tepat, itu cara melayani yang jelas",
+            "Kurang, seharusnya bicara lebih keras",
+            "Salah, seharusnya diam saja"
+          ],
+          "correct": 0
+        }
+      },
+      "next": "panas"
+    },
+    {
+      "id": "panas",
+      "actor": "pewawancara",
+      "line": {
+        "id": "Pelanggan minta kopinya panas. Bagaimana isyaratnya?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "panas"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "panas",
+          "options": ["panas", "dingin", "manis"]
+        }
+      },
+      "next": "maaf"
+    },
+    {
+      "id": "maaf",
+      "actor": "pewawancara",
+      "line": {
+        "id": "Kalau pesanan salah, apa yang kamu sampaikan ke pelanggan?"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "maaf"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "maaf",
+          "options": ["maaf", "terima-kasih", "halo"]
+        }
+      },
+      "next": "tutup"
+    },
+    {
+      "id": "tutup",
+      "actor": "pewawancara",
+      "line": {
+        "id": "Bagus sekali. Nanti kami kabari. Terima kasih sudah datang!"
+      },
+      "task": {
+        "deaf": {
+          "type": "produce",
+          "sign": "terima-kasih"
+        },
+        "service": {
+          "type": "receptive",
+          "sign": "terima-kasih",
+          "options": ["terima-kasih", "maaf", "halo"]
+        }
+      },
+      "next": null
+    }
+  ]
+}

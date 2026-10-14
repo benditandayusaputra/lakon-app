@@ -1,0 +1,92 @@
+{
+  "id": "mata",
+  "gloss": {
+    "id": "mata",
+    "en": "eye"
+  },
+  "dialect": "bisindo-jatim",
+  "structure": "dominant-only",
+  "dominance": "right",
+  "duration": 1750,
+  "recognitionMode": true,
+  "phases": [
+    {
+      "name": "onset",
+      "duration": 400,
+      "easing": "ease-out",
+      "dominant": {
+        "handshape": "index",
+        "location": {
+          "anchor": "mata",
+          "offset": [0.12, -0.2, 0.25]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "up"
+        }
+      }
+    },
+    {
+      "name": "stroke",
+      "duration": 700,
+      "easing": "linear",
+      "dominant": {
+        "handshape": "index",
+        "location": {
+          "anchor": "mata",
+          "offset": [0.12, -0.15, 0.18]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "up"
+        }
+      },
+      "hold": 200,
+      "path": {
+        "shape": "zigzag",
+        "plane": "sagittal",
+        "repeat": 2,
+        "curvature": 0.15
+      }
+    },
+    {
+      "name": "retraction",
+      "duration": 450,
+      "easing": "ease-in",
+      "dominant": {
+        "handshape": "index",
+        "location": {
+          "anchor": "bahu",
+          "offset": [0.0, -1.2, 0.08]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "down"
+        }
+      }
+    }
+  ],
+  "contact": {
+    "activePart": "ujung-telunjuk",
+    "passivePart": "bawah-mata",
+    "type": "tap"
+  },
+  "nonManual": {
+    "brow": null,
+    "mouth": null,
+    "head": null,
+    "gaze": null
+  },
+  "media": {
+    "video": {
+      "depan": "/peraga/mata.mp4"
+    }
+  },
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  },
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"MATA\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9NVEYEZQWPMCPNJQZSES8HF.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 1,8-4,2 dtk: ujung telunjuk menunjuk dan menyentuh area bawah mata dua kali."
+}
