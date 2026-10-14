@@ -8,28 +8,28 @@
   "dialect": "bisindo-jakarta",
   "fingers": {
     "thumb": {
-      "flex": [40, 20, 10],
+      "flex": [30, 20, 0],
       "abduct": 0,
-      "oppose": 90
+      "oppose": 50
     },
     "index": {
-      "flex": [30, 80, 30],
+      "flex": [50, 60, 20],
       "abduct": 0
     },
     "middle": {
-      "flex": [0, 10, 5],
+      "flex": [0, 0, 0],
       "abduct": 10
     },
     "ring": {
-      "flex": [0, 10, 5],
+      "flex": [0, 0, 0],
       "abduct": 10
     },
     "pinky": {
-      "flex": [0, 10, 5],
+      "flex": [0, 0, 0],
       "abduct": 10
     }
   },
-  "usedIn": ["huruf-o", "huruf-q", "maaf"],
+  "usedIn": ["maaf"],
   "notes": null,
   "source": "candidate",
   "review": {

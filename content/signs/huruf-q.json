@@ -28,7 +28,7 @@
         }
       },
       "nonDominant": {
-        "handshape": "ring-f",
+        "handshape": "o-ring",
         "location": {
           "anchor": "ruang-netral",
           "offset": [0.12, 0.4, 0.1]

@@ -16,7 +16,7 @@
       "hold": 900,
       "easing": "ease-out",
       "dominant": {
-        "handshape": "ring-f",
+        "handshape": "o-ring",
         "location": {
           "anchor": "ruang-netral",
           "offset": [0.2, 0.35, 0.1]

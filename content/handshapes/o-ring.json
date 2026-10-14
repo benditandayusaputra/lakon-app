@@ -1,0 +1,41 @@
+{
+  "id": "o-ring",
+  "label": {
+    "id": "lingkaran jempol-telunjuk tertutup rapat",
+    "en": "closed thumb-index ring"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [40, 20, 10],
+      "abduct": 0,
+      "oppose": 90
+    },
+    "index": {
+      "flex": [30, 80, 30],
+      "abduct": 0
+    },
+    "middle": {
+      "flex": [0, 10, 5],
+      "abduct": 10
+    },
+    "ring": {
+      "flex": [0, 10, 5],
+      "abduct": 10
+    },
+    "pinky": {
+      "flex": [0, 10, 5],
+      "abduct": 10
+    }
+  },
+  "usedIn": ["huruf-o", "huruf-q"],
+  "notes": "Kandidat anatomis untuk ejaan jari abjad, diturunkan dari klip HaiDokter × GERKATIN × PUSBISINDO.",
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}
