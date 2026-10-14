@@ -7,13 +7,14 @@
   "dialect": "bisindo-jatim",
   "structure": "dominant-only",
   "dominance": "right",
-  "duration": 2050,
+  "duration": 2400,
   "recognitionMode": true,
   "phases": [
     {
       "name": "onset",
-      "duration": 350,
+      "duration": 300,
       "easing": "ease-out",
+      "hold": 200,
       "dominant": {
         "handshape": "b-flat",
         "location": {
@@ -22,42 +23,47 @@
         },
         "orientation": {
           "palm": "back",
-          "fingers": "up"
+          "fingers": "up",
+          "lean": -34,
+          "twist": 30
         }
       }
     },
     {
       "name": "stroke",
-      "duration": 450,
+      "duration": 600,
       "easing": "ease-in-out",
       "dominant": {
         "handshape": "b-flat",
         "location": {
-          "anchor": "dagu",
-          "offset": [0.1, -0.45, 0.25]
+          "anchor": "pipi",
+          "offset": [0.37, -0.52, -0.02]
         },
         "orientation": {
           "palm": "back",
-          "fingers": "up"
+          "fingers": "up",
+          "lean": -34,
+          "twist": 30
         }
       }
     },
     {
       "name": "stroke",
-      "duration": 550,
+      "duration": 300,
       "easing": "ease-out",
+      "hold": 550,
       "dominant": {
         "handshape": "thumb-up",
         "location": {
           "anchor": "dada",
-          "offset": [0.3, 0.2, 0.15]
+          "offset": [0.47, 0.44, 0.15]
         },
         "orientation": {
           "palm": "in",
-          "fingers": "forward"
+          "fingers": "forward",
+          "lean": 40
         }
-      },
-      "hold": 250
+      }
     },
     {
       "name": "retraction",
@@ -79,7 +85,7 @@
   "contact": {
     "activePart": "ujung-jari",
     "passivePart": "bibir",
-    "type": "touch"
+    "type": "brush"
   },
   "nonManual": {
     "brow": null,
@@ -98,5 +104,5 @@
     "role": null,
     "date": null
   },
-  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"MANIS\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9MDX0V442EXD3MA7327QJ46.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 3,3-5,3 dtk: ujung jari telapak terbuka menyentuh bibir, lalu tangan turun ke ruang netral menjadi jempol tegak sambil tersenyum."
+  "notes": "Draf dari impor video, BELUM divalidasi penanda Tuli. Sumber: Balai Bahasa Provinsi Jawa Timur (Kemendikdasmen), Video Kosaisyarat BISINDO \"MANIS\", https://balaibahasajatim.kemendikdasmen.go.id/storage/videos/01K9MDX0V442EXD3MA7327QJ46.mp4 (halaman: https://balaibahasajatim.kemendikdasmen.go.id/video), penanda tidak disebutkan namanya, diakses 1 Sep 2026. Varian Jawa Timur; ganti bila tersedia sumber varian Jakarta. Isyarat di klip 3,3-5,3 dtk: telapak terbuka menempel di bawah mulut lalu mengusap ke samping, kemudian menjadi jempol tegak setinggi bahu sambil tersenyum."
 }
