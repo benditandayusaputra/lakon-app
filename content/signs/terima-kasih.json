@@ -7,12 +7,28 @@
   "dialect": "bisindo-jakarta",
   "structure": "dominant-only",
   "dominance": "right",
-  "duration": 1550,
+  "duration": 1600,
   "recognitionMode": true,
   "phases": [
     {
       "name": "onset",
-      "duration": 350,
+      "duration": 150,
+      "easing": "ease-in-out",
+      "dominant": {
+        "handshape": "b-flat",
+        "location": {
+          "anchor": "ruang-netral",
+          "offset": [0.25, 0.35, 0.55]
+        },
+        "orientation": {
+          "palm": "in",
+          "fingers": "forward"
+        }
+      }
+    },
+    {
+      "name": "onset",
+      "duration": 250,
       "easing": "ease-out",
       "dominant": {
         "handshape": "b-flat",
@@ -21,8 +37,10 @@
           "offset": [0.1, -0.55, 0.05]
         },
         "orientation": {
-          "palm": "back",
-          "fingers": "up"
+          "palm": "in",
+          "fingers": "up",
+          "lean": 20,
+          "twist": 85
         }
       }
     },
@@ -34,19 +52,15 @@
         "handshape": "b-flat",
         "location": {
           "anchor": "ruang-netral",
-          "offset": [0.15, 0.15, 0.3]
+          "offset": [0.15, 0.3, 0.5]
         },
         "orientation": {
           "palm": "up",
-          "fingers": "forward"
+          "fingers": "forward",
+          "lean": -20
         }
       },
-      "hold": 250,
-      "path": {
-        "shape": "busur",
-        "plane": "sagittal",
-        "curvature": 0.4
-      }
+      "hold": 250
     },
     {
       "name": "retraction",
@@ -56,7 +70,7 @@
         "handshape": "b-flat",
         "location": {
           "anchor": "bahu",
-          "offset": [0.0, -1.2, 0.08]
+          "offset": [0, -1.2, 0.08]
         },
         "orientation": {
           "palm": "in",
