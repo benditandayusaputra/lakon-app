@@ -119,6 +119,12 @@ export const pathSchema = z.object({
   tilt: z.number().min(0).max(45).optional(),
 })
 
+export const headSchema = z.object({
+  // Derajat menoleh dan memiringkan kepala; positif menjauhi tangan dominan.
+  turn: z.number().min(-45).max(45).optional(),
+  tilt: z.number().min(-45).max(45).optional(),
+})
+
 export const phaseSchema = z.object({
   name: z.enum(PHASE_NAMES),
   duration: z.number().positive().max(5000),
@@ -127,6 +133,7 @@ export const phaseSchema = z.object({
   path: pathSchema.optional(),
   dominant: handSpecSchema,
   nonDominant: handSpecSchema.optional(),
+  head: headSchema.optional(),
 })
 
 export const contactSchema = z.object({

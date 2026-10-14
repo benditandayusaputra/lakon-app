@@ -17,6 +17,7 @@ const setQuat = (target: Quaternion, tuple: QuatTuple) => {
 }
 
 export const applyCompiledFrame = (avatar: AvatarRig, frame: CompiledFrame) => {
+  if (avatar.neck) setQuat(avatar.neck.quaternion, frame.head)
   for (const side of ['left', 'right'] as Side[]) {
     const rig = avatar[side]
     const hand = frame.hands[side]

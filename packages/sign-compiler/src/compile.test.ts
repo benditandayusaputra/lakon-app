@@ -14,6 +14,7 @@ import {
   compileSign,
   evalPath,
   handshapeQuats,
+  headQuat,
   orientationQuat,
   sampleCompiled,
   type CompiledFrame,
@@ -363,6 +364,38 @@ describe('orientationQuat', () => {
       const palmIn = orientationQuat(side, { palm: 'in', fingers: 'up' }, rest)
       expect(twisted.angleTo(palmIn)).toBeLessThan(1e-6)
     }
+  })
+})
+
+describe('headQuat', () => {
+  const wajah = (side: 'left' | 'right', head: { turn?: number; tilt?: number }) =>
+    new Vector3(0, 0, 1).applyQuaternion(headQuat(head, side))
+  const puncak = (side: 'left' | 'right', head: { turn?: number; tilt?: number }) =>
+    new Vector3(0, 1, 0).applyQuaternion(headQuat(head, side))
+
+  it('menoleh dan miring menjauhi tangan dominan, bercermin untuk tangan kiri', () => {
+    expect(wajah('right', { turn: 20 }).x).toBeGreaterThan(0.3)
+    expect(wajah('left', { turn: 20 }).x).toBeLessThan(-0.3)
+    expect(puncak('right', { tilt: 20 }).x).toBeGreaterThan(0.3)
+    expect(puncak('left', { tilt: 20 }).x).toBeLessThan(-0.3)
+  })
+
+  it('tanpa head kepala tetap netral', () => {
+    expect(headQuat(undefined, 'right').angleTo(new Quaternion())).toBeLessThan(1e-9)
+  })
+})
+
+describe('gerak kepala', () => {
+  it('menuju pose fase, ditahan, lalu kembali netral saat retraksi', () => {
+    const sign = baseSign()
+    const retraksi = { ...sign.phases.at(-1)!, name: 'retraction' as const, hold: 0 }
+    const phases = [...sign.phases.map((phase) => ({ ...phase, head: { turn: 20 } })), retraksi]
+    const compiled = compileSign({ ...sign, duration: 1200, phases }, shapes, rig)
+    const sudut = (frame: CompiledFrame) =>
+      (new Quaternion(...frame.head).angleTo(new Quaternion()) * 180) / Math.PI
+    expect(sudut(compiled.frames[0]!)).toBeLessThan(1)
+    expect(sudut(sampleCompiled(compiled, 600))).toBeCloseTo(20, 0)
+    expect(sudut(compiled.frames.at(-1)!)).toBeLessThan(1e-6)
   })
 })
 

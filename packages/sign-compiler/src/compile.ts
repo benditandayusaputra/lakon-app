@@ -67,6 +67,7 @@ export type CompiledHandFrame = {
 
 export type CompiledFrame = {
   t: number
+  head: QuatTuple
   hands: Record<Side, CompiledHandFrame>
 }
 
@@ -246,6 +247,16 @@ export const orientationQuat = (
     .multiplyScalar(Math.cos(twist))
     .addScaledVector(leanedThumb, Math.sin(twist))
   return frameFromForwardNormal(leaned, twisted).multiply(restFrame.clone().invert())
+}
+
+export const headQuat = (head: SignPhase['head'], dominance: Side): Quaternion => {
+  const lateral = lateralSign(dominance)
+  const turn = new Quaternion().setFromAxisAngle(
+    new Vector3(0, 1, 0),
+    -lateral * toRad(head?.turn ?? 0),
+  )
+  const tilt = new Quaternion().setFromAxisAngle(new Vector3(0, 0, 1), lateral * toRad(head?.tilt ?? 0))
+  return turn.multiply(tilt)
 }
 
 export const solveArm = (
@@ -563,6 +574,7 @@ export const compileSign = (
   const domTargets = sign.phases.map((phase) =>
     resolveHandSpec(rig, dominance, dominance, anchors, phase.dominant, shapes),
   )
+  const headTargets = sign.phases.map((phase) => headQuat(phase.head, dominance))
   const domRest = restTarget(rig, dominance)
   const domSegments = buildSegments(sign.phases, domTargets, domRest)
 
@@ -628,6 +640,8 @@ export const compileSign = (
 
   for (const t of times) {
     const dom = sampleSegments(domSegments, t, rig.shoulderWidth)
+    const headFrom = dom.segmentIndex > 0 ? headTargets[dom.segmentIndex - 1]! : new Quaternion()
+    const head = headFrom.clone().slerp(headTargets[dom.segmentIndex]!, dom.eased)
 
     let nonDomSample: { wristPos: Vector3; wristQuat: Quaternion; fingers: FingerParams }
     if (nonDomMoves) {
@@ -737,7 +751,7 @@ export const compileSign = (
     reference.push(frameFeatures(frameInput))
     phaseByFrame.push(phaseIndexAt(t))
 
-    frames.push({ t, hands: handFrames })
+    frames.push({ t, head: qtup(head), hands: handFrames })
   }
 
   return { id: sign.id, duration: totalDuration, fps, frames, reference, phaseByFrame }
@@ -802,5 +816,5 @@ export const sampleCompiled = (compiled: CompiledSign, tMs: number): CompiledFra
       },
     }
   }
-  return { t: clamped, hands }
+  return { t: clamped, head: lerpQuat(a.head, b.head), hands }
 }

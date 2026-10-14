@@ -1,3 +1,4 @@
+import type { Object3D } from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { VRMLoaderPlugin, VRMUtils, type VRM, type VRMHumanBoneName } from '@pixiv/three-vrm'
 import { FINGER_NAMES, initHandRig, type HandBoneMap, type HandRig, type Side } from './solver'
@@ -6,6 +7,7 @@ export const AVATAR_URL = '/models/seed-san.vrm'
 
 export type AvatarRig = {
   vrm: VRM
+  neck: Object3D | null
   left: HandRig
   right: HandRig
 }
@@ -66,7 +68,10 @@ export const rigFromVrm = (vrm: VRM): AvatarRig => {
   const left = initHandRig('left', leftBones)
   const right = initHandRig('right', rightBones)
 
-  return { vrm, left, right }
+  const neck =
+    vrm.humanoid.getNormalizedBoneNode('neck') ?? vrm.humanoid.getNormalizedBoneNode('head')
+
+  return { vrm, neck, left, right }
 }
 
 export const loadAvatar = async (url: string = AVATAR_URL): Promise<AvatarRig> => {
