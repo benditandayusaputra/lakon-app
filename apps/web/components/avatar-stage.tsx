@@ -41,8 +41,6 @@ const PILIHAN_MODE = [
   ['3d', Box, '3D'],
 ] as const
 
-let modeTerakhir: ModePeraga = 'manusia'
-
 export function AvatarStage({
   compiled,
   sign,
@@ -72,7 +70,7 @@ export function AvatarStage({
   const [speed, setSpeed] = useState(1)
   const [mirror, setMirror] = useState(mirrorDefault)
   const [sudut, setSudut] = useState<SudutPeraga>('depan')
-  const [modePilihan, setModePilihan] = useState<ModePeraga>(modeTerakhir)
+  const [modePilihan, setModePilihan] = useState<ModePeraga>('manusia')
   const [rigError, setRigError] = useState<string | null>(null)
   const [videoGagal, setVideoGagal] = useState(false)
   const [sempit, setSempit] = useState(false)
@@ -87,10 +85,7 @@ export function AvatarStage({
   const teruskanRig = useCallback((rig: CompilerRig) => onRigReadyRef.current?.(rig), [])
 
   const terapkan = (hasil: { mode: ModePeraga; sudut: SudutPeraga }) => {
-    if (video) {
-      modeTerakhir = hasil.mode
-      setModePilihan(hasil.mode)
-    }
+    if (video) setModePilihan(hasil.mode)
     setSudut(hasil.sudut)
   }
 
@@ -106,6 +101,8 @@ export function AvatarStage({
 
   useEffect(() => {
     setVideoGagal(false)
+    setModePilihan('manusia')
+    setSudut('depan')
   }, [isyarat?.id])
 
   useLayoutEffect(() => {
