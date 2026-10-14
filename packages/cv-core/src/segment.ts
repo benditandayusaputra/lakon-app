@@ -24,7 +24,7 @@ const hasHand = (feature: Float32Array) =>
 export const trimToHands = (frames: Float32Array[], margin = 3): Float32Array[] => {
   const first = frames.findIndex(hasHand)
   if (first < 0) return []
-  const last = frames.findLastIndex(hasHand)
+  const last = frames.length - 1 - [...frames].reverse().findIndex(hasHand)
   return frames.slice(Math.max(0, first - margin), last + margin + 1)
 }
 
