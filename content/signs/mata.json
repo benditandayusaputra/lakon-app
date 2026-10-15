@@ -21,8 +21,9 @@
           "offset": [0.12, -0.2, 0.25]
         },
         "orientation": {
-          "palm": "in",
-          "fingers": "up"
+          "palm": "back",
+          "fingers": "up",
+          "lean": -30
         }
       }
     },
@@ -37,8 +38,9 @@
           "offset": [0.12, -0.15, 0.18]
         },
         "orientation": {
-          "palm": "in",
-          "fingers": "up"
+          "palm": "back",
+          "fingers": "up",
+          "lean": -30
         }
       },
       "hold": 200,
@@ -57,7 +59,7 @@
         "handshape": "index",
         "location": {
           "anchor": "bahu",
-          "offset": [0.0, -1.2, 0.08]
+          "offset": [0, -1.2, 0.08]
         },
         "orientation": {
           "palm": "in",

@@ -46,7 +46,7 @@ export const deriveAnchors = (rig: CompilerRig, dominance: Side): Record<Anchor,
   const anchors: Record<Anchor, Vec3Tuple> = {
     dahi: at(head, 0, 0.35, 0.4),
     pelipis: at(head, lateral * 0.25, 0.3, 0.28),
-    mata: at(head, lateral * 0.1, 0.22, 0.4),
+    mata: at(head, lateral * 0.2, 0.3, 0.38),
     hidung: at(head, 0, 0.12, 0.42),
     pipi: at(head, lateral * 0.2, 0.08, 0.34),
     dagu: at(head, 0, -0.05, 0.38),
