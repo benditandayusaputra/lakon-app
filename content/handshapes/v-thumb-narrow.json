@@ -1,0 +1,41 @@
+{
+  "id": "v-thumb-narrow",
+  "label": {
+    "id": "telunjuk tegak, jempol condong sedang",
+    "en": "index up, thumb at a moderate angle"
+  },
+  "localName": null,
+  "dialect": "bisindo-jakarta",
+  "fingers": {
+    "thumb": {
+      "flex": [0, 0, 0],
+      "abduct": 15,
+      "oppose": 0
+    },
+    "index": {
+      "flex": [0, 0, 0],
+      "abduct": 0
+    },
+    "middle": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "ring": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    },
+    "pinky": {
+      "flex": [90, 100, 70],
+      "abduct": 0
+    }
+  },
+  "usedIn": ["huruf-v"],
+  "notes": "Kandidat anatomis untuk ejaan jari abjad, diturunkan dari klip HaiDokter × GERKATIN × PUSBISINDO.",
+  "source": "candidate",
+  "review": {
+    "status": "draft",
+    "validatedBy": null,
+    "role": null,
+    "date": null
+  }
+}

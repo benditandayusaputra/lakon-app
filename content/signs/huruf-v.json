@@ -16,7 +16,7 @@
       "hold": 900,
       "easing": "ease-out",
       "dominant": {
-        "handshape": "v-thumb",
+        "handshape": "v-thumb-narrow",
         "location": {
           "anchor": "ruang-netral",
           "offset": [0.22, 0.3, 0.05]

@@ -9,7 +9,7 @@
   "fingers": {
     "thumb": {
       "flex": [0, 0, 0],
-      "abduct": 0,
+      "abduct": -20,
       "oppose": 0
     },
     "index": {

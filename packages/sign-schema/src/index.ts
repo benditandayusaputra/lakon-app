@@ -65,7 +65,8 @@ const fingerSchema = z.object({
 
 const thumbSchema = z.object({
   flex: flexTriple,
-  abduct: z.number().min(0).max(60).default(0),
+  // Nilai negatif merapatkan jempol ke telunjuk; nol adalah posisi istirahat model yang sudah condong.
+  abduct: z.number().min(-30).max(60).default(0),
   oppose: z.number().min(0).max(90).default(0),
 })
 

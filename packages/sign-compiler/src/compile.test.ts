@@ -339,6 +339,13 @@ describe('handshapeQuats', () => {
   it.each(['left', 'right'] as const)('abduct jempol membuka menjauhi telunjuk (%s)', (side) => {
     expect(thumbSpreadDeg(side, 45)).toBeGreaterThan(thumbSpreadDeg(side, 0) + 30)
   })
+
+  it.each(['left', 'right'] as const)(
+    'abduct negatif merapatkan jempol ke telunjuk (%s)',
+    (side) => {
+      expect(thumbSpreadDeg(side, -25)).toBeLessThan(thumbSpreadDeg(side, 0) - 15)
+    },
+  )
 })
 
 describe('orientationQuat', () => {

@@ -165,6 +165,16 @@ describe('validateContent', () => {
     expect(issues.some((i) => i.path.includes('fingers.thumb.oppose'))).toBe(true)
   })
 
+  it('menerima jempol merapat ke telunjuk sampai 30 derajat', () => {
+    const rapat = (abduct: number) => {
+      const bentuk = handshape('b-flat')
+      bentuk.fingers.thumb.abduct = abduct
+      return validateContent(content({ handshapes: { 'b-flat': bentuk } }))
+    }
+    expect(rapat(-25)).toEqual([])
+    expect(rapat(-40).some((i) => i.path.includes('fingers.thumb.abduct'))).toBe(true)
+  })
+
   it('menerima kemiringan dan putaran tangan, menolak yang melewati 90 derajat', () => {
     const putar = (lean: number, twist: number) => {
       const isyarat = sign('halo')
