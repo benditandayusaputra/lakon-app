@@ -20,6 +20,9 @@ export const arahDariParam = (nilai: string | undefined): ArahAbjad =>
 // Urutan soal tetap agar nomor soal di grid tidak berubah antarkunjungan.
 export const URUTAN_BACA = acak(HURUF, 26)
 
+export const geserSoal = (soal: number, langkah: number) =>
+  (soal + langkah + URUTAN_BACA.length) % URUTAN_BACA.length
+
 export const SUMBER_URL = 'https://www.youtube.com/watch?v=AZ8pT075NFI'
 
 // Detik tiap huruf mulai ditahan di video sumber, dipetakan dari storyboard YouTube.

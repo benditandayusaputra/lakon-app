@@ -9,6 +9,7 @@ import {
   detikSumber,
   formatWaktu,
   geserHuruf,
+  geserSoal,
   HURUF,
   hurufDariParam,
   idHuruf,
@@ -32,6 +33,12 @@ describe('abjad', () => {
     expect(geserHuruf('a', 1)).toBe('b')
     expect(geserHuruf('z', 1)).toBe('a')
     expect(geserHuruf('a', -1)).toBe('z')
+  })
+
+  it('geser soal berputar di kedua ujung', () => {
+    expect(geserSoal(0, 1)).toBe(1)
+    expect(geserSoal(25, 1)).toBe(0)
+    expect(geserSoal(0, -1)).toBe(25)
   })
 
   it('parameter URL yang tidak dikenal jatuh ke huruf A', () => {

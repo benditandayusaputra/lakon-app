@@ -12,6 +12,7 @@ import {
   detikSumber,
   formatWaktu,
   geserHuruf,
+  geserSoal,
   HURUF,
   idHuruf,
   labelHuruf,
@@ -185,14 +186,17 @@ export function AbjadBelajar({ awal, arahAwal }: { awal: string; arahAwal: ArahA
         signId={id}
         kandidat={KANDIDAT_BACA}
         label={labelHuruf}
-        onLulus={() => simpan('dikuasai', percobaan + 1)}
+        onLulus={() => {
+          simpan('dikuasai', percobaan + 1)
+          pilihSoal(geserSoal(soal, 1))
+        }}
         onGagal={gagalSekali}
         onLewati={() => simpan('dinilai-sendiri', percobaan)}
       />
       {sudahDibaca ? (
         <button
           type="button"
-          onClick={() => pilihSoal((soal + 1) % URUTAN_BACA.length)}
+          onClick={() => pilihSoal(geserSoal(soal, 1))}
           className="tombol-cta self-end"
         >
           <Check aria-hidden className="inline-block h-[1em] w-[1em]" />
@@ -378,9 +382,7 @@ export function AbjadBelajar({ awal, arahAwal }: { awal: string; arahAwal: ArahA
               <button
                 type="button"
                 onClick={() =>
-                  arah === 'service'
-                    ? pilihSoal((soal + URUTAN_BACA.length - 1) % URUTAN_BACA.length)
-                    : pilih(geserHuruf(huruf, -1))
+                  arah === 'service' ? pilihSoal(geserSoal(soal, -1)) : pilih(geserHuruf(huruf, -1))
                 }
                 className="tombol-sekunder px-3"
                 aria-label={
@@ -394,9 +396,7 @@ export function AbjadBelajar({ awal, arahAwal }: { awal: string; arahAwal: ArahA
               <button
                 type="button"
                 onClick={() =>
-                  arah === 'service'
-                    ? pilihSoal((soal + 1) % URUTAN_BACA.length)
-                    : pilih(geserHuruf(huruf, 1))
+                  arah === 'service' ? pilihSoal(geserSoal(soal, 1)) : pilih(geserHuruf(huruf, 1))
                 }
                 className="tombol-sekunder px-3"
                 aria-label={
