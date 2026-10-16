@@ -45,9 +45,9 @@ describe('similarity', () => {
     expect(similarity(passScore(calibration), calibration)).toBeCloseTo(PASS_SIMILARITY)
   })
 
-  it('lulus mulai kemiripan 40%', () => {
-    expect(PASS_SIMILARITY).toBe(0.4)
-    expect(passScore(calibration)).toBeCloseTo(3.2)
+  it('lulus mulai kemiripan 30%', () => {
+    expect(PASS_SIMILARITY).toBe(0.3)
+    expect(passScore(calibration)).toBeCloseTo(3.4)
   })
 })
 

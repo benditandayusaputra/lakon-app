@@ -27,7 +27,7 @@ flowchart LR
     end
     W -- "worldLandmarks" --> OVR
     W -- "worldLandmarks" --> VER[cv-core\nsegmentasi → DTW → umpan balik]
-    W -- "prediksi stabil" --> FUSE[decideAttempt\nkemiripan 40% atau model]
+    W -- "prediksi stabil" --> FUSE[decideAttempt\nkemiripan 30% atau model]
     VER --> FUSE
     FUSE --> UI
     SW[Service worker\ncache offline]
@@ -73,12 +73,13 @@ flowchart LR
 - **Referensi verifikasi** dihitung dalam satu lintasan dengan keyframe avatar,
   lewat kinematika maju pada kerangka avatar yang terukur, dan dilewatkan ke
   `frameFeatures` yang sama dengan saat runtime; tidak ada jalur kedua.
-- **Lulus bila minimal 40% mirip contoh**: skor DTW tiap isyarat dikalibrasi
+- **Lulus bila minimal 30% mirip contoh**: skor DTW tiap isyarat dikalibrasi
   terhadap landmark video peraga (`content/peraga-landmarks/`, diekstrak
   `tools/extract-peraga.mjs`). 100% berarti semirip video penanda, 0% berarti
   sejauh median isyarat lain. Hasil kalibrasi adalah snapshot uji
   (`features/practice/calibration.json`); bila spesifikasi isyarat berubah,
-  uji gagal sampai diperbarui dengan `pnpm vitest -u`.
+  uji gagal sampai diperbarui dengan `pnpm vitest -u`. Peragaan juga dinilai
+  dalam versi cermin, karena tangan dominan kiri sah dalam bahasa isyarat.
 - **Model klasifikasi di balik sakelar**: `NEXT_PUBLIC_PAKAI_MODEL=1` membuat
   praktik memuat `public/models/classifier.json` dan lulus hanya bila model
   minimal 80% yakin. Tanpa sakelar, atau bila model gagal dimuat, praktik

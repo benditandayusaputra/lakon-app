@@ -16,7 +16,7 @@ export type PeragaRecording = {
 
 export type SignCalibration = { example: number; others: number }
 
-export const PASS_SIMILARITY = 0.4
+export const PASS_SIMILARITY = 0.3
 
 // Urutan titik pose yang disimpan tools/extract-peraga.mjs: bahu kiri, bahu kanan, pergelangan kiri, kanan.
 const STORED_POSE_POINTS = [11, 12, 15, 16] as const
