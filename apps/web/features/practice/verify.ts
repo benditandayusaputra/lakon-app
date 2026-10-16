@@ -3,6 +3,7 @@ import {
   dtwDetailed,
   frameFeatures,
   maskUnusedHands,
+  mirrorFeatures,
   translateFeedback,
   trimToHands,
   type Feedback,
@@ -34,17 +35,27 @@ export const featuresFromObservation = (
 export const recordingWindowMs = (signDurationMs: number): number =>
   Math.max(3000, signDurationMs * 1.5 + 1000)
 
+const scoreFrames = (
+  frames: Float32Array[],
+  compiled: CompiledSign,
+  thresholds?: FeedbackThresholds,
+) => {
+  const masked = maskUnusedHands(frames, compiled.reference)
+  const result = dtwDetailed(masked, compiled.reference)
+  const analysis = analyzePath(masked, compiled.reference, result.path, compiled.phaseByFrame)
+  return { score: result.score, analysis, feedback: translateFeedback(analysis, thresholds) }
+}
+
 export const scoreAgainstReference = (
   frames: Float32Array[],
   compiled: CompiledSign,
   thresholds?: FeedbackThresholds,
 ): VerifyResult => {
   const trimmed = trimToHands(frames)
-  const masked = maskUnusedHands(trimmed.length > 0 ? trimmed : frames, compiled.reference)
-  const result = dtwDetailed(masked, compiled.reference)
-  const analysis = analyzePath(masked, compiled.reference, result.path, compiled.phaseByFrame)
-  const feedback = translateFeedback(analysis, thresholds)
-  return { score: result.score, analysis, feedback, frameCount: frames.length }
+  const source = trimmed.length > 0 ? trimmed : frames
+  const asIs = scoreFrames(source, compiled, thresholds)
+  const mirrored = scoreFrames(source.map(mirrorFeatures), compiled, thresholds)
+  return { ...(mirrored.score < asIs.score ? mirrored : asIs), frameCount: frames.length }
 }
 
 export type VerifyRun = {

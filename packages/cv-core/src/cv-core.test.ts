@@ -10,6 +10,7 @@ import {
   featureDistance,
   frameFeatures,
   jointAngle,
+  mirrorFeatures,
   shoulderWidth,
 } from './index'
 
@@ -101,4 +102,19 @@ test('label tangan dipasangkan dengan pergelangan pose di sisi yang sama', () =>
   const features = frameFeatures({ hands: [{ handedness: 'Right', world: hand() }], pose: pose() })
   expect(features[SIDE_OFFSET.Right + HAND_LANDMARK_DIMS]).toBeCloseTo(-0.625, 5)
   expect(HAND_LABEL_TO_USER_SIDE.Right).toBe('kanan')
+})
+
+test('mirrorFeatures menukar tangan, membalik x, dan kembali utuh bila dicerminkan dua kali', () => {
+  const frame = new Float32Array(FRAME_FEATURE_DIM)
+  frame.set([0.5, -0.2, 0.1], SIDE_OFFSET.Right)
+  frame[FLAGS_OFFSET + 1] = 1
+  const mirrored = mirrorFeatures(frame)
+  expect(Array.from(mirrored.subarray(SIDE_OFFSET.Left, SIDE_OFFSET.Left + 3))).toEqual([
+    -0.5,
+    expect.closeTo(-0.2),
+    expect.closeTo(0.1),
+  ])
+  expect(mirrored[FLAGS_OFFSET]).toBe(1)
+  expect(mirrored[FLAGS_OFFSET + 1]).toBe(0)
+  expect(Array.from(mirrorFeatures(mirrored))).toEqual(Array.from(frame))
 })

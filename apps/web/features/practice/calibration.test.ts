@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
-import { FLAGS_OFFSET, FRAME_FEATURE_DIM, SIDE_OFFSET } from '@lakon/cv-core'
+import { FLAGS_OFFSET, FRAME_FEATURE_DIM, SIDE_OFFSET, mirrorFeatures } from '@lakon/cv-core'
 import { compileSign, type CompiledSign } from '@lakon/sign-compiler'
 import { handshapeSchema, signSchema } from '@lakon/sign-schema'
 import { SEED_SAN_RIG } from '../avatar/seed-san-rig'
@@ -95,6 +95,22 @@ describe('rekaman kamera', () => {
     const kosong = new Float32Array(FRAME_FEATURE_DIM)
     const denganJeda = [...Array(30).fill(kosong), ...frames, ...Array(15).fill(kosong)]
     expect(scoreAgainstReference(denganJeda, reference).score).toBeCloseTo(
+      scoreAgainstReference(frames, reference).score,
+      6,
+    )
+  })
+})
+
+describe('tangan dominan kiri', () => {
+  it('peragaan cermin dinilai sama dengan peragaan tangan kanan', () => {
+    const handshapes = readJsonDir('handshapes/').map((raw) => handshapeSchema.parse(raw))
+    const sign = signSchema.parse(readJsonDir('signs/').find((raw) => raw.id === 'halo'))
+    const reference = compileSign(sign, handshapes, SEED_SAN_RIG)
+    const recording = (readJsonDir('peraga-landmarks/') as PeragaRecording[]).find(
+      (r) => r.id === 'halo',
+    )!
+    const frames = recordingFeatures(recording)
+    expect(scoreAgainstReference(frames.map(mirrorFeatures), reference).score).toBeCloseTo(
       scoreAgainstReference(frames, reference).score,
       6,
     )

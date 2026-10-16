@@ -123,3 +123,20 @@ export const frameFeatures = (input: FrameInput): Float32Array => {
 
   return out
 }
+
+const MIRRORED_SIDE: Record<HandLabel, HandLabel> = { Left: 'Right', Right: 'Left' }
+const flagIndex = (label: HandLabel) => FLAGS_OFFSET + (label === 'Left' ? 0 : 1)
+
+// Tangan dominan kiri itu sah dalam bahasa isyarat; cerminnya setara peragaan tangan kanan.
+export const mirrorFeatures = (frame: Float32Array): Float32Array => {
+  const out = new Float32Array(frame.length)
+  for (const label of ['Left', 'Right'] as HandLabel[]) {
+    const from = SIDE_OFFSET[label]
+    const to = SIDE_OFFSET[MIRRORED_SIDE[label]]
+    for (let i = 0; i < HAND_BLOCK_DIMS; i++) {
+      out[to + i] = i % 3 === 0 ? -frame[from + i]! : frame[from + i]!
+    }
+    out[flagIndex(MIRRORED_SIDE[label])] = frame[flagIndex(label)]!
+  }
+  return out
+}

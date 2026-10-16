@@ -5,7 +5,7 @@
   },
   "dokter": {
     "example": 1.939,
-    "others": 2.874
+    "others": 2.424
   },
   "halo": {
     "example": 1.407,
@@ -25,7 +25,7 @@
   },
   "manis": {
     "example": 1.442,
-    "others": 2.329
+    "others": 2.18
   },
   "mata": {
     "example": 1.546,
@@ -37,7 +37,7 @@
   },
   "pahit": {
     "example": 1.563,
-    "others": 2.559
+    "others": 2.53
   },
   "panas": {
     "example": 1.629,
@@ -49,18 +49,18 @@
   },
   "sakit": {
     "example": 1.237,
-    "others": 2.471
+    "others": 2.37
   },
   "sama-sama": {
     "example": 1.602,
-    "others": 3.163
+    "others": 2.634
   },
   "tangan": {
     "example": 3.437,
-    "others": 4.018
+    "others": 4.013
   },
   "terima-kasih": {
     "example": 2.307,
-    "others": 2.993
+    "others": 2.978
   }
 }
