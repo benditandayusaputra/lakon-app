@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'lakon-v3'
+const CACHE_VERSION = 'lakon-v4'
 const HALAMAN_PRIBADI = ['/profil']
 const PAGE_CACHE = `${CACHE_VERSION}-pages`
 const ASSET_CACHE = `${CACHE_VERSION}-assets`

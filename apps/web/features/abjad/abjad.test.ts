@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { compileSign } from '@lakon/sign-compiler'
 import { parseHandshape, parseSign } from '@lakon/sign-schema'
-import { SEED_SAN_RIG } from '../avatar/seed-san-rig'
+import { AVATAR_RIG } from '../avatar/avatar-rig'
 import {
   arahDariParam,
   detikSumber,
@@ -87,7 +87,7 @@ describe('abjad', () => {
     const handshapes = [...handshapeIds].map((id) => parseHandshape(baca('handshapes', id)))
     for (const sign of signs) {
       expect(sign.media?.video.depan).toBe(`/peraga/${sign.id}.mp4`)
-      expect(compileSign(sign, handshapes, SEED_SAN_RIG).frames.length).toBeGreaterThan(0)
+      expect(compileSign(sign, handshapes, AVATAR_RIG).frames.length).toBeGreaterThan(0)
     }
   })
 })

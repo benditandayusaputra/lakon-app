@@ -1,6 +1,6 @@
 import type { CompilerRig } from '@lakon/sign-compiler'
 
-export const SEED_SAN_RIG: CompilerRig = {
+export const AVATAR_RIG: CompilerRig = {
   shoulderWidth: 0.28280192544365473,
   body: {
     head: [0, 1.332016081968714, -0.012038999809557405],

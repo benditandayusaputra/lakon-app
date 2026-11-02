@@ -81,8 +81,8 @@ export default async function HealthPage() {
     },
     {
       label: 'Berkas avatar VRM',
-      ok: await fileOk('models/seed-san.vrm'),
-      detail: 'public/models/seed-san.vrm',
+      ok: await fileOk('models/silakon.vrm'),
+      detail: 'public/models/silakon.vrm',
     },
     {
       label: 'WASM MediaPipe lokal',

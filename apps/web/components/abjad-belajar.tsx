@@ -21,7 +21,7 @@ import {
   URUTAN_BACA,
   type ArahAbjad,
 } from '@/features/abjad/abjad'
-import { SEED_SAN_RIG } from '@/features/avatar/seed-san-rig'
+import { AVATAR_RIG } from '@/features/avatar/avatar-rig'
 import { useContent } from '@/features/content/use-content'
 import { lepasKamera } from '@/features/practice/capture'
 import { bacaProgres, saveSignProgress, type SignProgressEntry } from '@/features/progress/store'
@@ -117,7 +117,7 @@ export function AbjadBelajar({ awal, arahAwal }: { awal: string; arahAwal: ArahA
   const compiled = useMemo(() => {
     if (!sign || !content) return null
     try {
-      return compileSign(sign, content.handshapes, SEED_SAN_RIG)
+      return compileSign(sign, content.handshapes, AVATAR_RIG)
     } catch {
       return null
     }

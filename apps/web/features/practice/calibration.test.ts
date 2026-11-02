@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { FLAGS_OFFSET, FRAME_FEATURE_DIM, SIDE_OFFSET, mirrorFeatures } from '@lakon/cv-core'
 import { compileSign, type CompiledSign } from '@lakon/sign-compiler'
 import { handshapeSchema, signSchema } from '@lakon/sign-schema'
-import { SEED_SAN_RIG } from '../avatar/seed-san-rig'
+import { AVATAR_RIG } from '../avatar/avatar-rig'
 import {
   PASS_SIMILARITY,
   calibrate,
@@ -68,7 +68,7 @@ describe('kalibrasi isyarat', () => {
     const references = Object.fromEntries(
       readJsonDir('signs/')
         .map((raw) => signSchema.parse(raw))
-        .map((sign) => [sign.id, compileSign(sign, handshapes, SEED_SAN_RIG)]),
+        .map((sign) => [sign.id, compileSign(sign, handshapes, AVATAR_RIG)]),
     )
     const examples = Object.fromEntries(
       (readJsonDir('peraga-landmarks/') as PeragaRecording[]).map((recording) => [
@@ -87,7 +87,7 @@ describe('rekaman kamera', () => {
   it('frame tanpa tangan sebelum dan sesudah isyarat tidak mengubah skor', () => {
     const handshapes = readJsonDir('handshapes/').map((raw) => handshapeSchema.parse(raw))
     const sign = signSchema.parse(readJsonDir('signs/').find((raw) => raw.id === 'halo'))
-    const reference = compileSign(sign, handshapes, SEED_SAN_RIG)
+    const reference = compileSign(sign, handshapes, AVATAR_RIG)
     const recording = (readJsonDir('peraga-landmarks/') as PeragaRecording[]).find(
       (r) => r.id === 'halo',
     )!
@@ -105,7 +105,7 @@ describe('tangan dominan kiri', () => {
   it('peragaan cermin dinilai sama dengan peragaan tangan kanan', () => {
     const handshapes = readJsonDir('handshapes/').map((raw) => handshapeSchema.parse(raw))
     const sign = signSchema.parse(readJsonDir('signs/').find((raw) => raw.id === 'halo'))
-    const reference = compileSign(sign, handshapes, SEED_SAN_RIG)
+    const reference = compileSign(sign, handshapes, AVATAR_RIG)
     const recording = (readJsonDir('peraga-landmarks/') as PeragaRecording[]).find(
       (r) => r.id === 'halo',
     )!

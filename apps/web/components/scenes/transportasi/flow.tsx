@@ -10,7 +10,7 @@ import { IzinKamera } from '@/components/scenes/izin-kamera'
 import { KeluarAdegan } from '@/components/scenes/keluar-adegan'
 import { TiraiSelesai } from '@/components/scenes/tirai-selesai'
 import { SyncBadge } from '@/components/sync-badge'
-import { SEED_SAN_RIG } from '@/features/avatar/seed-san-rig'
+import { AVATAR_RIG } from '@/features/avatar/avatar-rig'
 import { useContent } from '@/features/content/use-content'
 import {
   createScenarioEngine,
@@ -134,7 +134,7 @@ export function TransportasiFlow() {
       let compiled: CompiledSign | null = null
       if (sign) {
         try {
-          compiled = compileSign(sign, content.handshapes, SEED_SAN_RIG)
+          compiled = compileSign(sign, content.handshapes, AVATAR_RIG)
         } catch {
           compiled = null
         }

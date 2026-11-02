@@ -6,8 +6,8 @@ import { format, resolveConfig } from 'prettier'
 
 const root = join(import.meta.dirname, '..')
 const webDir = join(root, 'apps', 'web')
-const vrmPath = join(webDir, 'public', 'models', 'seed-san.vrm')
-const target = join(webDir, 'features', 'avatar', 'seed-san-rig.ts')
+const vrmPath = join(webDir, 'public', 'models', 'silakon.vrm')
+const target = join(webDir, 'features', 'avatar', 'avatar-rig.ts')
 
 const webParent = pathToFileURL(join(webDir, 'extract-rig.js')).href
 const fromWeb = (...segments) => pathToFileURL(join(webDir, ...segments)).href
@@ -54,11 +54,11 @@ if (!vrm) {
 const rig = extractCompilerRig(rigFromVrm(vrm))
 const source = `import type { CompilerRig } from '@lakon/sign-compiler'
 
-export const SEED_SAN_RIG: CompilerRig = ${JSON.stringify(rig)}
+export const AVATAR_RIG: CompilerRig = ${JSON.stringify(rig)}
 `
 
 const options = await resolveConfig(target)
 await writeFile(target, await format(source, { ...options, filepath: target }))
 
 console.log(`Compiler rig written to ${target}`)
-console.log('Rerun this script whenever seed-san.vrm is replaced')
+console.log('Rerun this script whenever silakon.vrm is replaced')

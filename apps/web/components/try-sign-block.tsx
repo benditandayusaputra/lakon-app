@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo } from 'react'
 import { compileSign } from '@lakon/sign-compiler'
-import { SEED_SAN_RIG } from '@/features/avatar/seed-san-rig'
+import { AVATAR_RIG } from '@/features/avatar/avatar-rig'
 import { useContent } from '@/features/content/use-content'
 import { PracticeBlock } from '@/components/practice-block'
 import { lepasKamera } from '@/features/practice/capture'
@@ -24,7 +24,7 @@ export default function TrySignBlock({
     const sign = content.signs.halo ?? Object.values(content.signs)[0]
     if (!sign) return null
     try {
-      return { sign, compiled: compileSign(sign, content.handshapes, SEED_SAN_RIG) }
+      return { sign, compiled: compileSign(sign, content.handshapes, AVATAR_RIG) }
     } catch {
       return null
     }

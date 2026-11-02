@@ -3,7 +3,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { VRMLoaderPlugin, VRMUtils, type VRM, type VRMHumanBoneName } from '@pixiv/three-vrm'
 import { FINGER_NAMES, initHandRig, type HandBoneMap, type HandRig, type Side } from './solver'
 
-export const AVATAR_URL = '/models/seed-san.vrm'
+export const AVATAR_URL = '/models/silakon.vrm'
 
 export type AvatarRig = {
   vrm: VRM
@@ -52,8 +52,6 @@ export const rigFromVrm = (vrm: VRM): AvatarRig => {
   vrm.scene.traverse((object) => {
     object.frustumCulled = false
   })
-  // Lengan robot di ransel Seed-san terbaca sebagai tangan ketiga saat peragaan.
-  vrm.scene.getObjectByName('robo_arm')?.removeFromParent()
 
   const missing: string[] = []
   const leftBones = collectHandBones(vrm, 'left', missing)

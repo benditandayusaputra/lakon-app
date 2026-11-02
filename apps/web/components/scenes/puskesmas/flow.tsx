@@ -14,7 +14,7 @@ import { SceneLuarPuskesmas } from '@/components/scenes/puskesmas/scene-luar'
 import { SceneBelajarPuskesmas } from '@/components/scenes/puskesmas/scene-belajar'
 import { SceneUjianPuskesmas } from '@/components/scenes/puskesmas/scene-ujian'
 import { SceneResepPuskesmas } from '@/components/scenes/puskesmas/scene-resep'
-import { SEED_SAN_RIG } from '@/features/avatar/seed-san-rig'
+import { AVATAR_RIG } from '@/features/avatar/avatar-rig'
 import { useContent } from '@/features/content/use-content'
 import {
   createScenarioEngine,
@@ -135,7 +135,7 @@ export function PuskesmasFlow() {
       let compiled: CompiledSign | null = null
       if (sign) {
         try {
-          compiled = compileSign(sign, content.handshapes, SEED_SAN_RIG)
+          compiled = compileSign(sign, content.handshapes, AVATAR_RIG)
         } catch {
           compiled = null
         }
