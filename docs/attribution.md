@@ -22,30 +22,31 @@
 
 ## Avatar 3D dan metadata izin VRM-nya
 
-Avatar: **Seed-san** (`apps/web/public/models/seed-san.vrm`), VRM 1.0, diambil
-dari repositori spesifikasi resmi VRM Consortium (`vrm-c/vrm-specification`,
-direktori samples).
+Avatar: **Silakon** (`apps/web/public/models/silakon.vrm`), VRM 1.0, karakter
+orisinal Tim Lakon. Mesh, rambut, pakaian, warna, wajah, dan ke-28 ekspresinya
+dibangkitkan oleh `tools/avatar/` dari bentuk matematis; tidak ada model,
+tekstur, atau foto pihak ketiga di dalamnya.
 
-`VRMC_vrm.meta` yang tertanam di berkas (dibaca langsung dari binernya):
+Posisi sendi kerangkanya diukur dari rig **Seed-san** © VirtualCast, Inc.
+(VRM Public License 1.0, dari repositori `vrm-c/vrm-specification`) yang
+dipakai selama pengembangan, supaya semua isyarat, anchor, dan kalibrasi DTW
+yang sudah disetel tetap sama persis. Model Seed-san sendiri tidak lagi ada di
+repositori.
 
-| Bidang               | Nilai                           |
-| -------------------- | ------------------------------- |
-| name                 | Seed-san                        |
-| authors              | VirtualCast, Inc.               |
-| copyrightInformation | VirtualCast, Inc.               |
-| licenseUrl           | https://vrm.dev/licenses/1.0/   |
-| avatarPermission     | everyone                        |
-| commercialUsage      | corporation                     |
-| allowRedistribution  | true                            |
-| modification         | allowModificationRedistribution |
-| creditNotation       | **required**                    |
+`VRMC_vrm.meta` yang tertanam di berkas (diatur di `META` pada
+`tools/avatar/build.py`):
 
-Syarat pencantuman kredit dipenuhi di sini dan di README:
-**Avatar 3D: "Seed-san" © VirtualCast, Inc., dipakai di bawah VRM Public License 1.0.**
-
-Rencana produksi memakai dua karakter buatan tim di VRoid Studio (lihat brief
-karakter di dokumen desain); Seed-san adalah pengganti selama pengembangan
-sampai model-model itu selesai.
+| Bidang               | Nilai                         |
+| -------------------- | ----------------------------- |
+| name                 | Silakon                       |
+| authors              | Tim Lakon                     |
+| copyrightInformation | © 2026 Tim Lakon              |
+| licenseUrl           | https://vrm.dev/licenses/1.0/ |
+| avatarPermission     | onlyAuthor                    |
+| commercialUsage      | personalNonProfit             |
+| allowRedistribution  | false                         |
+| modification         | prohibited                    |
+| creditNotation       | required                      |
 
 ## Sumber konten isyarat
 

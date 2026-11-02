@@ -70,6 +70,11 @@ flowchart LR
   three-vrm, sehingga sumbu engsel jari menjadi konstanta lintas-rig;
   kompiler (M4) memakai konstanta yang sama — satu sumber kebenaran untuk
   geometri.
+- **Avatar Silakon dibangkitkan dari kode** (`tools/avatar/`): kerangkanya
+  disamakan bit demi bit dengan rig sebelumnya, sehingga `avatar-rig.ts`,
+  keyframe, dan referensi DTW identik. Ekspresi wajah non-manual diturunkan
+  dari bidang `nonManual` konten di `features/avatar/ekspresi.ts` dan hanya
+  memengaruhi wajah, bukan referensi verifikasi.
 - **Referensi verifikasi** dihitung dalam satu lintasan dengan keyframe avatar,
   lewat kinematika maju pada kerangka avatar yang terukur, dan dilewatkan ke
   `frameFeatures` yang sama dengan saat runtime; tidak ada jalur kedua.

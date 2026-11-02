@@ -82,7 +82,8 @@ dan `SEED_VALIDATOR_PASSWORD` di `.env` sebelum menjalankan
 ## Tumpukan teknologi
 
 - Next.js App Router, TypeScript strict, Tailwind CSS
-- React Three Fiber + three.js + @pixiv/three-vrm (avatar 3D)
+- React Three Fiber + three.js + @pixiv/three-vrm untuk avatar 3D Silakon buatan
+  tim, dibangkitkan dari kode di `tools/avatar/`
 - MediaPipe Tasks Vision di Web Worker (landmark tangan + pose, di-host sendiri)
 - ONNX Runtime Web (WebGPU, cadangan WASM SIMD) untuk pengklasifikasi opsional
 - Kompiler isyarat buatan sendiri: satu spesifikasi parametrik → keyframe avatar
@@ -136,13 +137,49 @@ CDN).
 
 Dua hal perlu diperbarui manual saat aset di baliknya berubah:
 
-- Mengganti `apps/web/public/models/seed-san.vrm` membuat ukuran di
-  `apps/web/features/avatar/seed-san-rig.ts` tidak berlaku lagi; berkas itu
-  dibaca kompiler isyarat sebagai pengganti mengunduh avatar 10 MB. Buat ulang
-  berkas tersebut dari VRM baru sebelum dipakai.
+- Mengganti `apps/web/public/models/silakon.vrm` membuat ukuran di
+  `apps/web/features/avatar/avatar-rig.ts` tidak berlaku lagi; berkas itu
+  dibaca kompiler isyarat sebagai pengganti mengunduh avatar. `pnpm avatar`
+  membangun ulang keduanya sekaligus.
 - Mengganti apa pun di `apps/web/public/models/` atau `/mediapipe/` memerlukan
   kenaikan `CACHE_VERSION` di `apps/web/public/sw.js`, kalau tidak perangkat
   yang sudah menyimpan berkas lama akan terus memakainya.
+
+## Avatar 3D
+
+Peraga 3D memakai **Silakon**, karakter VRM 1.0 orisinal buatan tim (4,0 MB).
+Bentuknya dibangkitkan oleh kode di `tools/avatar/` tanpa model atau tekstur
+dari internet: tubuh, rambut, dan pakaian dari bentuk matematis (SDF), wajah
+dari bentuk vektor yang bisa dianimasikan. Tidak ada aksesori di punggung atau
+benda lain yang bisa terbaca sebagai tangan.
+
+- Kerangka 52 tulang humanoid, termasuk 15 tulang jari per tangan. Posisi
+  sendinya sama persis dengan rig sebelumnya, jadi semua isyarat, anchor, dan
+  kalibrasi DTW tidak berubah.
+- Tangan berwarna kulit di atas baju polos gelap, dengan garis tepi tipis dan
+  kuku sebagai penanda sisi punggung tangan, supaya bentuk tangan tetap
+  terbaca di layar kecil.
+- 28 ekspresi wajah untuk isyarat non-manual: preset VRM (`happy`, `angry`,
+  `sad`, `relaxed`, `surprised`, `aa`, `ih`, `ou`, `ee`, `oh`, kedip, dan arah
+  tatapan) serta `alisNaik`, `alisKerut`, `alisSedih`, `mataSipit`,
+  `mataLebar`, `pipiGembung`, `bibirRapat`, `bibirMaju`, `meringis`,
+  `senyum`, dan `lidahKeluar`.
+- `apps/web/features/avatar/ekspresi.ts` menerjemahkan bidang `nonManual` di
+  konten (misalnya "berkerut", "tersenyum", "melihat ke tangan") menjadi
+  ekspresi selama gerak inti, ditambah kedip alami dan tatapan ke lawan
+  bicara.
+
+Membangun ulang avatar (Python 3.11 atau lebih baru, sekitar 2 menit):
+
+```bash
+pip install -r tools/avatar/requirements.txt
+pnpm avatar
+```
+
+Warna kulit, rambut, dan pakaian ada di `tools/avatar/style.py`; bentuk tubuh,
+tangan, dan rambut di `tools/avatar/parts.py`; mata, alis, mulut, hidung, dan
+semua ekspresi di `tools/avatar/face.py`. Di Linux, pymeshlab memerlukan paket
+sistem `libopengl0`.
 
 ## Dokumentasi teknis
 
@@ -163,7 +200,8 @@ data latih), `/tools/sign-editor` (editor isyarat dengan impor video ke draf).
 Skrip: `pnpm test` (unit), `pnpm e2e` (Playwright, membangun produksi dan
 memakai umpan kamera palsu), `pnpm check:content` (validator konten),
 `pnpm typecheck`, `pnpm lint`, `python3 training/train.py` (pelatihan
-pengklasifikasi + ekspor ONNX dengan laporan akurasi per kontributor).
+pengklasifikasi + ekspor ONNX dengan laporan akurasi per kontributor),
+`pnpm avatar` (bangun ulang avatar 3D dan rig kompilernya).
 
 ## Keputusan desain yang diambil manual oleh tim
 
@@ -193,7 +231,9 @@ serah terima desain kami:
 
 ## Kredit
 
-Avatar 3D (pengganti selama pengembangan): **"Seed-san" © VirtualCast, Inc.**,
-dipakai di bawah [VRM Public License 1.0](https://vrm.dev/licenses/1.0/).
+Avatar 3D: **Silakon** © 2026 Tim Lakon, dibangkitkan oleh `tools/avatar/`.
+Posisi sendi kerangkanya diukur dari rig "Seed-san" © VirtualCast, Inc.
+([VRM Public License 1.0](https://vrm.dev/licenses/1.0/)) yang dipakai selama
+pengembangan.
 Sumber isyarat, video peragaan manusia, serta lisensi pustaka dan font
 tercantum di [docs/attribution.md](docs/attribution.md).
