@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest'
-import { gantiMode, KAMERA_SUDUT, sudutTersedia, sumberSudut } from './peraga'
+import {
+  gantiMode,
+  KAMERA_SUDUT,
+  pilihanAwal,
+  pilihanUntuk,
+  sudutTersedia,
+  sumberSudut,
+} from './peraga'
 
 describe('peraga', () => {
   it('tanpa video: semua sudut dilayani peraga 3D', () => {
@@ -31,5 +38,20 @@ describe('peraga', () => {
     expect(gantiMode(video, 'manusia', 'kanan')).toEqual({ mode: 'manusia', sudut: 'depan' })
     expect(gantiMode(video, 'manusia', 'kiri')).toEqual({ mode: 'manusia', sudut: 'kiri' })
     expect(gantiMode(undefined, 'manusia', 'kiri')).toEqual({ mode: '3d', sudut: 'kiri' })
+  })
+
+  it('pilihan peraga bertahan selama isyaratnya sama', () => {
+    const pilihan = { ...pilihanAwal('huruf-a'), mode: '3d' as const, sudut: 'kiri' as const }
+    expect(pilihanUntuk(pilihan, 'huruf-a')).toBe(pilihan)
+  })
+
+  it('ganti isyarat kembali ke peraga manusia dari depan', () => {
+    const pilihan = { isyarat: 'huruf-a', mode: '3d' as const, sudut: 'kiri' as const, videoGagal: true }
+    expect(pilihanUntuk(pilihan, 'huruf-b')).toEqual({
+      isyarat: 'huruf-b',
+      mode: 'manusia',
+      sudut: 'depan',
+      videoGagal: false,
+    })
   })
 })

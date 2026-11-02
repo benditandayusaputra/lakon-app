@@ -22,3 +22,20 @@ export const gantiMode = (video: VideoPeraga, mode: ModePeraga, sudut: SudutPera
   mode === 'manusia' && video
     ? { mode, sudut: video[sudut] ? sudut : ('depan' as const) }
     : { mode: '3d' as const, sudut }
+
+export type PilihanPeraga = {
+  isyarat: string | undefined
+  mode: ModePeraga
+  sudut: SudutPeraga
+  videoGagal: boolean
+}
+
+export const pilihanAwal = (isyarat: string | undefined): PilihanPeraga => ({
+  isyarat,
+  mode: 'manusia',
+  sudut: 'depan',
+  videoGagal: false,
+})
+
+export const pilihanUntuk = (pilihan: PilihanPeraga, isyarat: string | undefined) =>
+  pilihan.isyarat === isyarat ? pilihan : pilihanAwal(isyarat)

@@ -20,6 +20,8 @@ import { signTersimpan } from '@/features/content/use-content'
 import {
   gantiMode,
   KAMERA_SUDUT,
+  pilihanAwal,
+  pilihanUntuk,
   SUDUT_PERAGA,
   sudutTersedia,
   sumberSudut,
@@ -70,25 +72,21 @@ export function AvatarStage({
   const [playing, setPlaying] = useState(true)
   const [speed, setSpeed] = useState(1)
   const [mirror, setMirror] = useState(mirrorDefault)
-  const [sudut, setSudut] = useState<SudutPeraga>('depan')
-  const [modePilihan, setModePilihan] = useState<ModePeraga>('manusia')
   const [rigError, setRigError] = useState<string | null>(null)
-  const [videoGagal, setVideoGagal] = useState(false)
   const [sempit, setSempit] = useState(false)
   const stageRef = useRef<HTMLDivElement | null>(null)
   const onRigReadyRef = useRef(onRigReady)
   onRigReadyRef.current = onRigReady
 
   const isyarat = sign ?? (compiled ? signTersimpan(compiled.id) : undefined)
-  const video = videoGagal ? undefined : isyarat?.media?.video
-  const mode: ModePeraga = video ? modePilihan : '3d'
+  const [pilihanTersimpan, setPilihan] = useState(() => pilihanAwal(isyarat?.id))
+  const pilihan = pilihanUntuk(pilihanTersimpan, isyarat?.id)
+  if (pilihan !== pilihanTersimpan) setPilihan(pilihan)
+  const { sudut } = pilihan
+  const video = pilihan.videoGagal ? undefined : isyarat?.media?.video
+  const mode: ModePeraga = video ? pilihan.mode : '3d'
   const sumber = mode === 'manusia' ? sumberSudut(video, sudut) : undefined
   const teruskanRig = useCallback((rig: CompilerRig) => onRigReadyRef.current?.(rig), [])
-
-  const terapkan = (hasil: { mode: ModePeraga; sudut: SudutPeraga }) => {
-    if (video) setModePilihan(hasil.mode)
-    setSudut(hasil.sudut)
-  }
 
   useEffect(() => {
     playbackRef.current.compiled = compiled
@@ -103,12 +101,6 @@ export function AvatarStage({
     playbackRef.current.playing = playing
     playbackRef.current.speed = speed
   }, [playing, speed])
-
-  useEffect(() => {
-    setVideoGagal(false)
-    setModePilihan('manusia')
-    setSudut('depan')
-  }, [isyarat?.id])
 
   useLayoutEffect(() => {
     const el = stageRef.current
@@ -172,7 +164,7 @@ export function AvatarStage({
               muted
               loop
               autoPlay
-              onError={() => setVideoGagal(true)}
+              onError={() => setPilihan({ ...pilihan, videoGagal: true })}
             />
           ) : (
             <Canvas camera={{ fov: 30, position: [...posisiKamera] as [number, number, number] }}>
@@ -197,7 +189,7 @@ export function AvatarStage({
               <button
                 key={id}
                 type="button"
-                onClick={() => terapkan(gantiMode(video, id, sudut))}
+                onClick={() => setPilihan({ ...pilihan, ...gantiMode(video, id, sudut) })}
                 aria-pressed={mode === id}
                 className={`flex min-h-12 items-center gap-1.5 rounded-full px-3 transition-colors ${
                   mode === id ? 'bg-halaman text-teks' : 'hover:bg-white/15'
@@ -235,7 +227,7 @@ export function AvatarStage({
             <button
               key={id}
               type="button"
-              onClick={() => setSudut(id)}
+              onClick={() => setPilihan({ ...pilihan, sudut: id })}
               aria-pressed={sudut === id}
               className={`flex-1 ${tombolPilih(sudut === id)}`}
               style={{ minHeight: 48 }}
