@@ -1,7 +1,8 @@
-import type { Object3D } from 'three'
+import { Object3D } from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { VRMLoaderPlugin, VRMUtils, type VRM, type VRMHumanBoneName } from '@pixiv/three-vrm'
 import { FINGER_NAMES, initHandRig, type HandBoneMap, type HandRig, type Side } from './solver'
+import { TITIK_LAWAN } from './ekspresi'
 
 export const AVATAR_URL = '/models/silakon.vrm'
 
@@ -10,6 +11,8 @@ export type AvatarRig = {
   neck: Object3D | null
   left: HandRig
   right: HandRig
+  tatap: Object3D
+  wajah: Record<string, number>
 }
 
 const FINGER_BONE_SUFFIXES: Record<(typeof FINGER_NAMES)[number], [string, string, string]> = {
@@ -69,7 +72,15 @@ export const rigFromVrm = (vrm: VRM): AvatarRig => {
   const neck =
     vrm.humanoid.getNormalizedBoneNode('neck') ?? vrm.humanoid.getNormalizedBoneNode('head')
 
-  return { vrm, neck, left, right }
+  const tatap = new Object3D()
+  tatap.position.copy(TITIK_LAWAN)
+  tatap.updateMatrixWorld()
+  if (vrm.lookAt) {
+    vrm.lookAt.target = tatap
+    vrm.lookAt.autoUpdate = true
+  }
+
+  return { vrm, neck, left, right, tatap, wajah: {} }
 }
 
 export const loadAvatar = async (url: string = AVATAR_URL): Promise<AvatarRig> => {

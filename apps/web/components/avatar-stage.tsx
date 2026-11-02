@@ -15,6 +15,7 @@ import { Canvas } from '@react-three/fiber'
 import type { CompiledSign, CompilerRig } from '@lakon/sign-compiler'
 import type { Sign } from '@lakon/sign-schema'
 import { CompiledAvatar, type Playback } from '@/components/compile-lab'
+import { ekspresiIsyarat } from '@/features/avatar/ekspresi'
 import { signTersimpan } from '@/features/content/use-content'
 import {
   gantiMode,
@@ -93,6 +94,10 @@ export function AvatarStage({
     playbackRef.current.compiled = compiled
     playbackRef.current.time = 0
   }, [compiled])
+
+  useEffect(() => {
+    playbackRef.current.ekspresi = isyarat ? ekspresiIsyarat(isyarat) : null
+  }, [isyarat])
 
   useEffect(() => {
     playbackRef.current.playing = playing

@@ -11,6 +11,7 @@ import {
 } from '@lakon/sign-compiler'
 import { parseHandshape, parseSign, type Handshape, type Sign } from '@lakon/sign-schema'
 import { extractCompilerRig } from '@/features/avatar/compiler-rig'
+import { ekspresiIsyarat, terapkanWajah, type EkspresiIsyarat } from '@/features/avatar/ekspresi'
 import { applyCompiledFrame } from '@/features/avatar/player'
 import { disposeAvatar, loadAvatar, type AvatarRig } from '@/features/avatar/vrm'
 
@@ -19,6 +20,7 @@ export type Playback = {
   playing: boolean
   speed: number
   time: number
+  ekspresi?: EkspresiIsyarat | null
 }
 
 export function CompiledAvatar({
@@ -82,7 +84,7 @@ export function CompiledAvatar({
     }
   }, [onRigReady, onRigError])
 
-  useFrame((_, delta) => {
+  useFrame((state, delta) => {
     if (!avatar) return
     const playback = playbackRef.current
     const compiled = playback.compiled
@@ -100,6 +102,12 @@ export function CompiledAvatar({
         sliderEl.current.value = String(Math.round(shownTime))
       }
     }
+    terapkanWajah(
+      avatar,
+      compiled ? (playback.ekspresi ?? null) : null,
+      playback.time,
+      state.clock.elapsedTime,
+    )
     avatar.vrm.update(delta)
   })
 
@@ -164,6 +172,7 @@ export function CompileLab() {
       try {
         const compiled = compileSign(sign, handshapes, rig)
         playbackRef.current.compiled = compiled
+        playbackRef.current.ekspresi = ekspresiIsyarat(sign)
         playbackRef.current.time = 0
         setDuration(compiled.duration)
         setError(null)
